@@ -1,1 +1,1 @@
-# CodeStruct
+# CodeStruct Lab
