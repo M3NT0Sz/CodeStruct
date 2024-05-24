@@ -12,38 +12,38 @@
   height: 5vh;
   padding: 20px;
 
-  a {
+  & > a {
     display: flex;
     flex-direction: row;
     align-items: center;
     text-decoration: none;
-    img {
+    & >img {
       height: 5vh;
     }
-    h1 {
+    & >h1 {
       color: #fff;
     }
   }
 
-  ul {
+  & > ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    h3 {
+    & > h3 {
       font-size: 16px;
-      a {
+      & > a {
         display: block;
         padding: 20px;
         color: #fff;
         text-transform: uppercase;
         text-decoration: none;
         transition: 0.5s;
-        li {
+        & > li {
           list-style: none;
           padding: 10px;
         }
       }
-      a:hover {
+      & > a:hover {
         background-color: #fff;
         color: #8954bb;
       }
@@ -69,7 +69,7 @@
   width: 100%;
   height: 20vh;
 
-  p {
+  & > p {
     padding: 10px;
   }
 }
