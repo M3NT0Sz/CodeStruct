@@ -18,14 +18,148 @@
           <a href="./tipoAbstratoDados.html"><li>Tipo Abstrato de Dados</li></a>
         </h3>
         <h3>
-          <a href="./listasSimplesmenteEncadeadas.html"><li>Listas Simplesmente Encadeadas</li></a>
+          <a href="./listasSimplesmenteEncadeadas.html"
+            ><li>Listas Simplesmente Encadeadas</li></a
+          >
         </h3>
         <h3>
-          <a href="./listasDuplamenteEncadeadas.html"><li>Listas Duplamente Encadeadas</li></a>
+          <a href="./listasDuplamenteEncadeadas.html"
+            ><li>Listas Duplamente Encadeadas</li></a
+          >
         </h3>
       </ul>
     </header>
-    <section class="tela">a</section>
+    <section class="tela">
+      <section class="tela80">
+        <header class="pagNome">
+          <h1>Listas Simplesmente Encadeadas</h1>
+        </header>
+        <section class="video">
+          <h2>Vídeo Explicativo</h2>
+          <section class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/bqwIoNiHAuQ?si=AHYhT-lLrGOjG0K-"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </section>
+        </section>
+        <section class="textos">
+          <h2>Introdução</h2>
+          <p>
+            As listas simplesmente encadeadas são uma das estruturas de dados
+            mais básicas e fundamentais na ciência da computação. Em uma lista
+            simplesmente encadeada, cada nó contém um valor e um ponteiro para o
+            próximo nó da sequência. Essa estrutura permite a inserção e remoção
+            de elementos de forma eficiente.
+          </p>
+        </section>
+
+        <section class="textos">
+          <h2>Importância</h2>
+          <p>
+            Listas simplesmente encadeadas são amplamente utilizadas em diversas
+            aplicações devido à sua simplicidade e eficiência. Elas são
+            especialmente úteis em situações onde as operações de inserção e
+            remoção são frequentes, como em implementações de filas e pilhas,
+            bem como em algoritmos que requerem uma estrutura de dados dinâmica.
+          </p>
+        </section>
+
+        <section class="textos">
+          <h2>Funcionamento</h2>
+          <p>
+            Uma lista simplesmente encadeada é composta por nós, onde cada nó
+            contém dois componentes principais:
+          </p>
+          <ul>
+            <li>O valor armazenado.</li>
+            <li>Um ponteiro para o próximo nó.</li>
+          </ul>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg"
+            alt="Estrutura de uma lista simplesmente encadeada"
+          />
+        </section>
+
+        <section>
+          <h2>Exemplo de Código em C#</h2>
+          <section class="code-container">
+            <pre><code class="language-csharp">
+public class Node
+{
+    public int Value;
+    public Node Next;
+    
+    public Node(int value)
+    {
+        Value = value;
+        Next = null;
+    }
+}
+
+public class SinglyLinkedList
+{
+    private Node head;
+
+    public SinglyLinkedList()
+    {
+        head = null;
+    }
+
+    public void AddToEnd(int value)
+    {
+        Node newNode = new Node(value);
+        if (head == null)
+        {
+            head = newNode;
+        }
+        else
+        {
+            Node current = head;
+            while (current.Next != null)
+            {
+                current = current.Next;
+            }
+            current.Next = newNode;
+        }
+    }
+
+    public void PrintList()
+    {
+        Node current = head;
+        while (current != null)
+        {
+            Console.Write(current.Value + " ");
+            current = current.Next;
+        }
+        Console.WriteLine();
+    }
+}
+
+// Exemplo de uso
+SinglyLinkedList list = new SinglyLinkedList();
+list.AddToEnd(1);
+list.AddToEnd(2);
+list.AddToEnd(3);
+list.PrintList();
+                </code></pre>
+          </section>
+        </section>
+
+        <section class="textos">
+          <h2>Conclusão</h2>
+          <p>
+            Listas simplesmente encadeadas são uma estrutura de dados versátil e
+            eficiente, adequada para uma variedade de aplicações em ciência da
+            computação. Sua simplicidade de implementação e eficiência nas
+            operações de inserção e remoção as tornam uma escolha popular entre
+            os desenvolvedores e engenheiros de software.
+          </p>
+        </section>
+      </section>
+    </section>
+
     <footer class="rodape">
       <p>
         Desenvolvido por FATEC - Análise e Desenvolvimento de Sistemas - AMS

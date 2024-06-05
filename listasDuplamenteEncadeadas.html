@@ -15,17 +15,155 @@
       </a>
       <ul>
         <h3>
-          <a href="./tipoAbstratoDados.html"><li>Tipo Abstrato de Dados</li></a>
+          <a href="./tipoAbstratoDados.html">
+            <li>Tipo Abstrato de Dados</li>
+          </a>
         </h3>
         <h3>
-          <a href="./listasSimplesmenteEncadeadas.html"><li>Listas Simplesmente Encadeadas</li></a>
+          <a href="./listasSimplesmenteEncadeadas.html">
+            <li>Listas Simplesmente Encadeadas</li>
+          </a>
         </h3>
         <h3>
-          <a href="./listasDuplamenteEncadeadas.html"><li>Listas Duplamente Encadeadas</li></a>
+          <a href="./listasDuplamenteEncadeadas.html">
+            <li>Listas Duplamente Encadeadas</li>
+          </a>
         </h3>
       </ul>
     </header>
-    <section class="tela">a</section>
+    <section class="tela">
+      <section class="tela80">
+        <section class="video">
+          <h2>Vídeo Explicativo</h2>
+          <section>
+            <iframe
+              src="https://www.youtube.com/embed/RCWPih5bEVs?si=SyOvsphKEsONM_pU"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </section>
+        </section>
+
+        <section class="textos">
+          <h2>Introdução</h2>
+          <p>
+            As listas duplamente encadeadas são uma estrutura de dados
+            fundamental na ciência da computação. Ao contrário das listas
+            simplesmente encadeadas, onde cada nó aponta apenas para o próximo
+            nó, as listas duplamente encadeadas permitem a navegação nos dois
+            sentidos, pois cada nó aponta tanto para o próximo quanto para o nó
+            anterior.
+          </p>
+        </section>
+
+        <section class="textos">
+          <h2>Importância</h2>
+          <p>
+            Essa estrutura de dados é extremamente útil em diversos cenários,
+            como na implementação de navegadores de páginas da web (para ir e
+            voltar entre as páginas), em editores de texto (para desfazer e
+            refazer ações) e em várias outras aplicações onde é necessário
+            navegar bidirecionalmente através dos dados. A possibilidade de
+            navegação nos dois sentidos aumenta a flexibilidade e eficiência em
+            operações de inserção e remoção de elementos.
+          </p>
+        </section>
+
+        <section class="textos">
+          <h2>Funcionamento</h2>
+          <p>
+            Uma lista duplamente encadeada é composta por nós, onde cada nó
+            contém três componentes principais:
+          </p>
+          <ul>
+            <li>O valor armazenado.</li>
+            <li>Um ponteiro para o próximo nó.</li>
+            <li>Um ponteiro para o nó anterior.</li>
+          </ul>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Doubly-linked-list.svg"
+            alt="Estrutura de uma lista duplamente encadeada"
+          />
+        </section>
+
+        <section>
+          <h2>Exemplo de Código em C#</h2>
+          <section>
+            <pre><code class="language-csharp">
+public class Node
+{
+public int Value;
+public Node Next;
+public Node Previous;
+
+public Node(int value)
+{
+    Value = value;
+    Next = null;
+    Previous = null;
+}
+}
+
+public class DoublyLinkedList
+{
+private Node head;
+private Node tail;
+
+public DoublyLinkedList()
+{
+    head = null;
+    tail = null;
+}
+
+public void AddToEnd(int value)
+{
+    Node newNode = new Node(value);
+    if (head == null)
+    {
+        head = newNode;
+        tail = newNode;
+    }
+    else
+    {
+        tail.Next = newNode;
+        newNode.Previous = tail;
+        tail = newNode;
+    }
+}
+
+public void PrintList()
+{
+    Node current = head;
+    while (current != null)
+    {
+        Console.Write(current.Value + " ");
+        current = current.Next;
+    }
+    Console.WriteLine();
+}
+}
+
+// Exemplo de uso
+DoublyLinkedList list = new DoublyLinkedList();
+list.AddToEnd(1);
+list.AddToEnd(2);
+list.AddToEnd(3);
+list.PrintList();
+            </code></pre>
+          </section>
+        </section>
+        <section class="textos">
+          <h2>Conclusão</h2>
+          <p>
+            As listas duplamente encadeadas são uma estrutura de dados poderosa
+            e flexível, essencial para a implementação eficiente de várias
+            operações em ciência da computação. Sua capacidade de navegação
+            bidirecional e fácil manipulação de nós as torna uma escolha popular
+            para muitos desenvolvedores e engenheiros de software.
+          </p>
+        </section>
+      </section>
+    </section>
     <footer class="rodape">
       <p>
         Desenvolvido por FATEC - Análise e Desenvolvimento de Sistemas - AMS

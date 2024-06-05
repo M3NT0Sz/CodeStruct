@@ -17,10 +17,10 @@
     flex-direction: row;
     align-items: center;
     text-decoration: none;
-    & >img {
+    & > img {
       height: 5vh;
     }
-    & >h1 {
+    & > h1 {
       color: #fff;
     }
   }
@@ -56,8 +56,81 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 75vh;
+
+  & > .tela80 {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    & > h1 {
+      font-size: 25px;
+      color: #8954bb;
+      margin: 20px;
+    }
+    & > .paragrafo {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      & > p {
+        font-size: 20px;
+      }
+    }
+    & > textarea {
+      margin: 20px;
+      display: flex;
+      width: 500px;
+      height: 250px;
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+    }
+  }
 }
+
+pre > code.language-csharp {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  display: block;
+  padding: 30px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-size: 14px;
+}
+.video{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  & > section > iframe{
+    width: 500px;
+    height: 300px;
+    margin: 20px;
+  }
+}
+
+.pagNome{
+  font-size: 35px;
+  margin: 20px;
+}
+
+.textos{
+  width: 100%;
+  & > h2{
+    font-size: 30px;
+  }
+  & > p{
+    margin: 20px;
+    font-size: 20px;
+  }
+  & > ul{
+    font-size: 20px;
+    margin: 20px;
+  }
+}
+
 
 .rodape {
   display: flex;
