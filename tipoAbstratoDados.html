@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/style_TAD.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="shortcut icon" href="./Imagens/Logo.png" type="image/x-icon" />
     <title>CodeStruct</title>
   </head>
@@ -25,27 +25,105 @@
         </h3>
       </ul>
     </header>
-    <main class="tela">
-      <nav class="conteudo-titulo">
-          <h1>TAD - Tipo Abstrato de Dados</h1>
-      </nav>
+    <section class="tela">
+      <section class="tela80">
+        <header class="pagNome">
+          <h1>Tipo Abstrato de Dados</h1>
+        </header>
+        <section class="video">
+          <h2>Vídeo Explicativo</h2>
+          <section>
+            <iframe src="https://www.youtube.com/embed/06PJrmeG784?si=foy7GeAu2oTJ1cae" frameborder="0" allowfullscreen></iframe>
+          </section>
+        </section>
 
-      <article class="conteudo">
-        <div class="video">
-          "vídeo"
-        </div>
-        <div class="conteudo-escrito">
-        <p>Na ciência da computação, um Tipo Abstrato de Dados (abreviado TAD) é um modelo matemático
-          para tipos de dados; ou seja, na programação de computadores é um código que define e
-          implementa um novo tipo de informação ou um novo tipo de objeto utilizado na linguagem de
-          programação orientada a objetos, que é definido pelo seu comportamento do ponto de vista de
-          um usuário, do dado, especificamente em termos de valores possíveis,
-          operações possíveis no dado desse tipo, e o comportamento dessas operações. Esse modelo
-          matemático contrasta com estrutura de dados, que são representações concretas de dado, e
-          são o ponto de vista de um implementador, não de um usuário.</p>
-        </div>
-      </article>
-    </main>
+        <section class="textos">
+          <h2>Introdução</h2>
+          <p>Os Tipos Abstrato de Dados (TAD) são conceitos fundamentais na ciência da computação que
+             definem estruturas de dados de maneira abstrata, independentemente de implementações específicas.
+             Um TAD especifica um conjunto de valores possíveis e um conjunto de operações que podem ser
+             realizadas sobre esses valores, permitindo que os desenvolvedores se concentrem em como usar a
+             estrutura de dados em vez de como ela é implementada.
+          </p>
+        </section>
+
+        <section class="textos">
+          <h2>Importância</h2>
+          <p>Os TADs são cruciais para o desenvolvimento de software robusto e eficiente, pois promovem a
+            reutilização de código e a modularidade. Eles permitem que programadores definam e utilizem
+            estruturas de dados sem se preocupar com os detalhes de implementação, facilitando a
+            manutenção e a evolução do software. Exemplos comuns de TADs incluem listas, filas,
+            pilhas, árvores e grafos.
+          </p>
+        </section>
+
+        <section class="textos">
+          <h2>Funcionamento</h2>
+          <p>Um TAD define uma interface clara para operações sobre uma estrutura de dados. Por exemplo, um
+            TAD para uma lista pode incluir operações como adicionar um elemento, remover um elemento e
+            acessar um elemento em uma posição específica. A implementação concreta desses métodos pode
+            variar, mas a interface permanece consistente.
+          </p>
+        </section>
+
+        <section class="textos">
+          <h2>Exemplo de Código em C#</h2>
+          <section>
+            <pre><code class="language-csharp">
+public class Fila
+{
+private No head;
+private No tail;
+
+private class No
+{
+public string Valor;
+public No Proximo;
+public No(string valor) => Valor = valor;
+}
+
+public void Enfileirar(string valor)
+{
+No novoNo = new No(valor);
+if (tail != null) tail.Proximo = novoNo;
+tail = novoNo;
+if (head == null) head = novoNo;
+}
+
+public string Desenfileirar()
+{
+if (head == null) throw new InvalidOperationException("A fila está vazia.");
+string valor = head.Valor;
+head = head.Proximo;
+if (head == null) tail = null;
+return valor;
+}
+}
+
+// Exemplo de uso
+public class Program
+{
+public static void Main()
+{
+Fila fila = new Fila();
+fila.Enfileirar("primeiro");
+fila.Enfileirar("segundo");
+Console.WriteLine(fila.Desenfileirar()); // Saída: primeiro
+Console.WriteLine(fila.Desenfileirar()); // Saída: segundo
+}
+}
+            </code></pre>
+          </section>
+        </section>
+
+        <section class="textos">
+          <h2>Conclusão</h2>
+          <p>Os tipos abstratos de dados são ferramentas poderosas na ciência da computação, permitindo a criação de software mais organizado, modular e fácil de manter. Ao focar na interface e nas operações permitidas por uma estrutura de dados, os desenvolvedores podem criar soluções flexíveis e eficientes, abstraindo os detalhes da implementação e facilitando o desenvolvimento de aplicações complexas.
+          </p>
+        </section>
+
+      </section>
+    </section>
     <footer class="rodape">
       <p>
         Desenvolvido por FATEC - Análise e Desenvolvimento de Sistemas - AMS

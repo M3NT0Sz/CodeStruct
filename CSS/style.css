@@ -97,6 +97,7 @@ pre > code.language-csharp {
   border-radius: 5px;
   overflow-x: auto;
   font-size: 14px;
+  margin-bottom: 30px;
 }
 .video{
   display: flex;
