@@ -148,6 +148,65 @@ body.dark pre > code.language-csharp {
   }
 }
 
+.imgInicial {
+  width: 95%;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+.navDesen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #8954bb;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.navbar-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.developer-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.developer {
+  text-align: center;
+  color: #fff;
+}
+
+.developer img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+
+}
+
+.developer-name {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
 pre > .language-csharp {
   background-color: #2d2d2d;
   color: #f8f8f2;
