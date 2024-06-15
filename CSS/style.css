@@ -115,6 +115,7 @@ body.dark pre > code.language-csharp {
   justify-content: center;
   align-items: center;
   width: 100%;
+  flex-direction: column;
 
   & > .tela80 {
     width: 80%;
@@ -149,23 +150,23 @@ body.dark pre > code.language-csharp {
 }
 
 .imgInicial {
-  width: 95%;
-  margin-top: 10px;
+  width: 50%;
+  height: auto;
 }
 
-
-
-
-
-
-
+.imagemProg{
+  display: flex;
+  justify-content: center;
+  background-color: #191919;
+}
 
 .navDesen {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #8954bb;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   color: #fff;
   margin-bottom: 20px;
   width: 100%;
