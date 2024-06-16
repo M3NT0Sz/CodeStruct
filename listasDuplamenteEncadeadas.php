@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -9,26 +12,45 @@
   </head>
   <body>
     <header class="navbar">
-      <a href="./index.html">
+      <a href="./index.php">
         <img src="Imagens/Logo.png" />
         <h1>CodeStruct</h1>
       </a>
 
       <ul>
-        <h3>
-          <a href="./tipoAbstratoDados.html"><li>Tipo Abstrato de Dados</li></a>
-        </h3>
-        <h3>
-          <a href="./listasSimplesmenteEncadeadas.html"
-            ><li>Listas Simplesmente Encadeadas</li></a
-          >
-        </h3>
-        <h3>
-          <a href="./listasDuplamenteEncadeadas.html"
-            ><li>Listas Duplamente Encadeadas</li></a
-          >
-        </h3>
-      </ul>
+      <h3>
+        <a href="./tipoAbstratoDados.php">
+          <li>Tipo Abstrato de Dados</li>
+        </a>
+      </h3>
+      <h3>
+        <a href="./listasSimplesmenteEncadeadas.php">
+          <li>Listas Simplesmente Encadeadas</li>
+        </a>
+      </h3>
+      <h3>
+        <a href="./listasDuplamenteEncadeadas.php">
+          <li>Listas Duplamente Encadeadas</li>
+        </a>
+      </h3>
+      <h3>
+        <?php
+        if (isset($_SESSION['logado']) != "") {
+        ?>
+          <a href="./processamento/processamento.php">
+            <li>Sair</li>
+          </a>
+        <?php
+        } else {
+        ?>
+          <a href="./login.php">
+            <li>Entrar</li>
+          </a>
+        <?php
+        }
+        ?>
+      </h3>
+    </ul>
 
       <input type="checkbox" class="checkbox" id="chk" />
       <label class="label" for="chk">

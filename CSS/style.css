@@ -63,6 +63,61 @@ body.dark pre > code.language-csharp {
   color: white;
 }
 
+.containerLogin {
+  width: 35%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 10px 0 #8954bb;
+  border-radius: 20px;
+  margin: 20px;
+
+  & > h3 {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+    & > a{
+      color: #8954bb;
+    }
+
+    & > input {
+      width: 25vw;
+      height: 30px;
+      border: none;
+      box-shadow: 0 0 5px 0 #8954bb;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
+
+  & > .cadastro{
+    color: #8954bb;
+  }
+
+  & > button{
+    background-color: #8954bb;
+    border: none;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 0 10px 0 #8954bb;
+    width: 25vw;
+    transition: 1s;
+    font-size: 20px;
+  }
+
+  & > button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #000;
+  }
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -154,7 +209,7 @@ body.dark pre > code.language-csharp {
   height: auto;
 }
 
-.imagemProg{
+.imagemProg {
   display: flex;
   justify-content: center;
   background-color: #191919;
@@ -193,20 +248,12 @@ body.dark pre > code.language-csharp {
   height: 160px;
   border-radius: 50%;
   border: 3px solid #fff;
-
 }
 
 .developer-name {
   margin-top: 5px;
   font-size: 14px;
 }
-
-
-
-
-
-
-
 
 pre > .language-csharp {
   background-color: #2d2d2d;
@@ -218,39 +265,38 @@ pre > .language-csharp {
   font-size: 14px;
   margin-bottom: 30px;
 }
-.video{
+.video {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 20px;
-  & > section > iframe{
+  & > section > iframe {
     width: 500px;
     height: 300px;
     margin: 20px;
   }
 }
 
-.pagNome{
+.pagNome {
   font-size: 35px;
   margin: 20px;
 }
 
-.textos{
+.textos {
   width: 100%;
-  & > h2{
+  & > h2 {
     font-size: 30px;
   }
-  & > p{
+  & > p {
     margin: 20px;
     font-size: 20px;
   }
-  & > ul{
+  & > ul {
     font-size: 20px;
     margin: 20px;
   }
 }
-
 
 .rodape {
   display: flex;
