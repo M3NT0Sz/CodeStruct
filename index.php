@@ -88,7 +88,7 @@
       <h1 class="navbar-title">Desenvolvedores</h1>
       <section class="developer-container">
         <section class="developer">
-          <img src="Imagens/pessoa-og.jpg" alt="Desenvolvedor 1" />
+          <img src="Imagens/Ian.jpeg" alt="Desenvolvedor 1" />
           <section class="developer-name">Ian</section>
         </section>
         <section class="developer">
