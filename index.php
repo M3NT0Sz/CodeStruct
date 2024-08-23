@@ -80,9 +80,12 @@
           forma simples e efetiva de como aprender do início ao fim como
           utilizar e implementar os seguintes tipos de Estrutura de Dados:<br />
           <br />
-          - Tipo Abstrato de Dados (TAD)<br />
-          - Lista Simplesmente Encadeadas<br />
-          - Lista Duplamente Encadeadas<br /><br />
+          - Tipo Abstrato de Dados (TAD)<br /> 
+          - Lista Simplesmente Encadeadas<br /> 
+          - Lista Duplamente Encadeadas<br /> 
+          - Fila FIFO<br /> 
+          - Fila de Prioridades<br /> 
+          - Pilha<br /><br />
         </p>
       </section>
     </section>
