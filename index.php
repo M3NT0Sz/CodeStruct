@@ -22,17 +22,12 @@
     <ul>
       <h3>
         <a href="./tipoAbstratoDados.php">
-          <li>Tipo Abstrato de Dados</li>
+          <li>Conteudos</li>
         </a>
       </h3>
       <h3>
         <a href="./listasSimplesmenteEncadeadas.php">
-          <li>Listas Simplesmente Encadeadas</li>
-        </a>
-      </h3>
-      <h3>
-        <a href="./listasDuplamenteEncadeadas.php">
-          <li>Listas Duplamente Encadeadas</li>
+          <li>Jornada</li>
         </a>
       </h3>
       <h3>
