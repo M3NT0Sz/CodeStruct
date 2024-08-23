@@ -26,7 +26,7 @@
         </a>
       </h3>
       <h3>
-        <a href="./listasSimplesmenteEncadeadas.php">
+        <a href="./jornada.php">
           <li>Jornada</li>
         </a>
       </h3>
