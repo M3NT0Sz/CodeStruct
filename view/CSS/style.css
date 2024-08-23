@@ -55,6 +55,18 @@ body.dark pre > code.language-csharp {
   transform: translateX(24px);
 }
 
+.dropdown li{
+  display: block;
+}
+
+.dropdown{
+  width: 100%;
+  background-color: #8954bb;
+  position: absolute;
+  z-index: 999;
+  display: none;
+}
+
 .fa-moon {
   color: white;
 }

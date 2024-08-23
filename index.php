@@ -7,22 +7,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./CSS/style.css" />
-  <link rel="shortcut icon" href="./Imagens/Logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./view/CSS/style.css" />
+  <link rel="shortcut icon" href="./view/Imagens/Logo.png" type="image/x-icon" />
   <title>CodeStruct</title>
 </head>
 
 <body>
   <header class="navbar">
     <a href="./index.php">
-      <img src="Imagens/Logo.png" />
+      <img src="./view/Imagens/Logo.png" />
       <h1>CodeStruct</h1>
     </a>
 
     <ul>
       <h3>
         <a href="./tipoAbstratoDados.php">
-          <li>Conteudos</li>
+          <li>
+            <a href="#">Conteudos ↓</a>
+            <ul class="dropdown">
+              <li><a href="./view/tipoAbstratoDados.php">TAD</a></li>
+              <li><a href="./view/listasSimplesmenteEncadeadas.php">Listas Simplesmente Encadeadas</a></li>
+              <li><a href="./view/listasDuplamenteEncadeadas.php">Listas Duplamente Encadeadas</a></li>
+            </ul>
+          </li>
         </a>
       </h3>
       <h3>
@@ -55,12 +62,12 @@
       <i class="fas fa-sun"></i>
       <div class="bola"></div>
     </label>
-    <script src="./JS/script.js"></script>
+    <script src="./view/JS/script.js"></script>
     <script src="https://kit.fontawesome.com/5bcdea54fd.js" crossorigin="anonymous"></script>
   </header>
   <section class="tela">
     <section class="imagemProg">
-      <img class="imgInicial" src="Imagens/programacao.png" />
+      <img class="imgInicial" src="./view/Imagens/programacao.png" />
     </section>
     <section class="tela80">
       <header class="pagNome">
@@ -83,15 +90,15 @@
       <h1 class="navbar-title">Desenvolvedores</h1>
       <section class="developer-container">
         <section class="developer">
-          <img src="Imagens/Ian.jpeg" alt="Desenvolvedor 1" />
+          <img src="./view/Imagens/Ian.jpeg" alt="Desenvolvedor 1" />
           <section class="developer-name">Ian</section>
         </section>
         <section class="developer">
-          <img src="Imagens/MatheusMendes.jpeg" alt="Desenvolvedor 2" />
+          <img src="./view/Imagens/MatheusMendes.jpeg" alt="Desenvolvedor 2" />
           <section class="developer-name">Matheus Mendes</section>
         </section>
         <section class="developer">
-          <img src="Imagens/MatheusWilliam.jpeg" alt="Desenvolvedor 3" />
+          <img src="./view/Imagens/MatheusWilliam.jpeg" alt="Desenvolvedor 3" />
           <section class="developer-name">Matheus William</section>
         </section>
       </section>
