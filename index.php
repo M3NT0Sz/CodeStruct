@@ -1,5 +1,5 @@
 <?php
-  session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -21,35 +21,41 @@
 
     <ul>
       <h3>
-        <a href="./tipoAbstratoDados.php">
-          <li>
-            <a href="#">Conteudos ↓</a>
-            <ul class="dropdown">
-              <li><a href="./view/tipoAbstratoDados.php">TAD</a></li>
-              <li><a href="./view/listasSimplesmenteEncadeadas.php">Listas Simplesmente Encadeadas</a></li>
-              <li><a href="./view/listasDuplamenteEncadeadas.php">Listas Duplamente Encadeadas</a></li>
-            </ul>
-          </li>
-        </a>
+        <li onclick="toggleDropdown()" style="cursor: pointer;">
+          <a href="#">
+            Conteúdos
+          </a>
+          <ul id="myDropdown" class="dropdown-content">
+            <li><a href="./view/tipoAbstratoDados.php">TAD</a></li>
+            <li><a href="./view/listasSimplesmenteEncadeadas.php">Listas Simplesmente Encadeadas</a></li>
+            <li><a href="./view/listasDuplamenteEncadeadas.php">Listas Duplamente Encadeadas</a></li>
+          </ul>
+        </li>
       </h3>
       <h3>
-        <a href="./jornada.php">
-          <li>Jornada</li>
-        </a>
+        <li>
+          <a href="./jornada.php">
+            Jornada
+          </a>
+        </li>
       </h3>
       <h3>
         <?php
         if (isset($_SESSION['logado']) != "") {
         ?>
-          <a href="./processamento/processamento.php">
-            <li>Sair</li>
-          </a>
+          <li>
+            <a href="./processamento/processamento.php">
+              Sair
+            </a>
+          </li>
         <?php
         } else {
         ?>
-          <a href="./login.php">
-            <li>Entrar</li>
-          </a>
+          <li>
+            <a href="./login.php">
+              Entrar
+            </a>
+          </li>
         <?php
         }
         ?>
@@ -80,11 +86,11 @@
           forma simples e efetiva de como aprender do início ao fim como
           utilizar e implementar os seguintes tipos de Estrutura de Dados:<br />
           <br />
-          - Tipo Abstrato de Dados (TAD)<br /> 
-          - Lista Simplesmente Encadeadas<br /> 
-          - Lista Duplamente Encadeadas<br /> 
-          - Fila FIFO<br /> 
-          - Fila de Prioridades<br /> 
+          - Tipo Abstrato de Dados (TAD)<br />
+          - Lista Simplesmente Encadeadas<br />
+          - Lista Duplamente Encadeadas<br />
+          - Fila FIFO<br />
+          - Fila de Prioridades<br />
           - Pilha<br /><br />
         </p>
       </section>
