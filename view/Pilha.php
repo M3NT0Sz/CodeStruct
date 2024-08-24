@@ -19,18 +19,18 @@
 
       <ul>
       <h3>
-        <a href="./tipoAbstratoDados.php">
-          <li>Tipo Abstrato de Dados</li>
+        <a href="./FilaFIFO.php">
+          <li>Fila FIFO</li>
         </a>
       </h3>
       <h3>
-        <a href="./listasSimplesmenteEncadeadas.php">
-          <li>Listas Simplesmente Encadeadas</li>
+        <a href="./FilaDePrioridade.php">
+          <li>Fila de Prioridade</li>
         </a>
       </h3>
       <h3>
-        <a href="./listasDuplamenteEncadeadas.php">
-          <li>Listas Duplamente Encadeadas</li>
+        <a href="./Pilha.php">
+          <li>Pilha</li>
         </a>
       </h3>
       <h3>
@@ -73,7 +73,7 @@
           <h2>Vídeo Explicativo</h2>
           <section>
             <iframe
-              src="https://www.youtube.com/embed/2V91Re1czwA?si=Ncu7hKYfn9FDKsPp"
+              src="https://www.youtube.com/embed/nHF_pgep9qE?si=3pCoFkR9hapfcsGP"
               frameborder="0"
               allowfullscreen
             ></iframe>

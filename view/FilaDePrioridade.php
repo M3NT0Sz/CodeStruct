@@ -24,7 +24,7 @@
         </a>
       </h3>
       <h3>
-        <a href="./FilaDePrioridade.php">       
+        <a href="./FilaDePrioridade.php">
           <li>Fila de Prioridade</li>
         </a>
       </h3>
@@ -67,13 +67,13 @@
     <section class="tela">
       <section class="tela80">
         <header class="pagNome">
-          <h1>Fila FIFO</h1>
+          <h1>Fila de Prioridade</h1>
         </header>
         <section class="video">
           <h2>Vídeo Explicativo</h2>
           <section>
             <iframe
-              src="https://www.youtube.com/embed/EtHZa8XJyYI?si=9tROhifSa7F33O7L"
+              src="https://www.youtube.com/embed/0CcMXlRcciA?si=JvoJ3f9Z5GI8qsws"
               frameborder="0"
               allowfullscreen
             ></iframe>
@@ -82,96 +82,69 @@
         <section class="textos">
           <h2>Introdução</h2>
           <p>
-          FIFO, que significa "First In, First Out" (Primeiro a Entrar, Primeiro a Sair), é um conceito amplamente
-          utilizado em ciência da computação, estruturas de dados e sistemas de filas. Em uma fila FIFO, os elementos
-          são inseridos em uma extremidade (normalmente chamada de "cauda" ou "fundo") e removidos da outra extremidade 
-          (chamada de "cabeça" ou "frente"). Isso significa que o primeiro elemento a ser inserido na fila será
-          o primeiro a ser removido, seguindo uma ordem cronológica de chegada.
+          
           </p>
         </section>
 
         <section class="textos">
           <h2>Importância</h2>
           <p>
-            A fila FIFO (First In, First Out) é importante por várias razões:
+            Essa estrutura de dados é extremamente útil em diversos cenários,
+            como na implementação de navegadores de páginas da web (para ir e
+            voltar entre as páginas), em editores de texto (para desfazer e
+            refazer ações) e em várias outras aplicações onde é necessário
+            navegar bidirecionalmente através dos dados. A possibilidade de
+            navegação nos dois sentidos aumenta a flexibilidade e eficiência em
+            operações de inserção e remoção de elementos.
           </p>
-          <ul>
-            <li><b>Manutenção da Ordem:</b> Assegura que os elementos sejam processados na ordem em que foram inseridos,
-            o que é crucial em sistemas onde a sequência de chegada deve ser preservada, como em filas de impressão ou
-            gerenciamento de tarefas.</li>
-
-            <li><b>Simplicidade e Eficiência:</b> A estrutura FIFO é fácil de entender e implementar, o que a torna ideal para
-            organizar dados e processos de maneira eficiente e sem complexidade adicional.</li>
-
-            <li><b>Gerenciamento em Redes:</b> Em redes de computadores, filas FIFO são usadas para organizar pacotes de dados,
-             garantindo que sejam processados na ordem correta, o que é essencial para a integridade das comunicações
-             e a sincronização dos dados.</li>
-
-            <li><b>Distribuição Justa de Recursos:</b> Em sistemas operacionais, a FIFO ajuda a gerenciar recursos limitados,
-            como tempo de CPU ou acesso a dispositivos, de forma que todos os processos tenham uma chance justa de serem executados.
-
-            <li><b>Previsibilidade:</b> Fornece um comportamento previsível no processamento de tarefas, o que é importante para aplicações
-            em tempo real e sistemas críticos, onde é necessário garantir que as tarefas sejam executadas na ordem correta.</li>
-          </ul>
         </section>
 
         <section class="textos">
           <h2>Funcionamento</h2>
           <p>
-            O funcionamento da fila FIFO (First In, First Out) é baseado em duas operações principais:
+            Uma lista duplamente encadeada é composta por nós, onde cada nó
+            contém três componentes principais:
           </p>
           <ul>
-            <li><b>Enqueue:</b> Esta operação adiciona um novo elemento à fila. O elemento é inserido na cauda ou fundo da fila. 
-              O novo item se torna o último na fila.</li>
-            <li><b>Dequeue:</b> Esta operação remove um elemento da fila. O elemento removido é sempre o que está na 
-              cabeça ou frente da fila, ou seja, o primeiro a ter sido adicionado.</li>
+            <li>O valor armazenado.</li>
+            <li>Um ponteiro para o próximo nó.</li>
+            <li>Um ponteiro para o nó anterior.</li>
           </ul>
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Fifo_queue.png"
-            alt="Estrutura de uma fila FIFO"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Doubly-linked-list.svg"
+            alt="Estrutura de uma lista duplamente encadeada"
           />
           <p>
-            Nesta imagem, todo novo elemento é adicionado ao final da fila pela operação Enqueue 
-            e posteriormente todo elemento que fica no iníco da fila é removido pela operação Dequeue.
+            Nesta imagem, cada caixa representa um nó da lista, onde os
+            ponteiros para frente e para trás conectam os nós em ambas as
+            direções.
           </p>
         </section>
 
         <section class="textos">
-        <h2>Vantagens e Desvantagens</h2><br>
-        <h3>Vantagens</h3>
-        <ul>
-          <li>
-            Simples e Intuitiva: Fácil de entender e implementar.
-          </li>
-          <li>
-            Mantém a Ordem: Processa itens na ordem em que foram adicionados.
-          </li>
-          <li>
-            Justiça: Distribui recursos de forma equitativa.
-          </li>
-          <li>
-            Previsibilidade: Comportamento previsível, essencial para sistemas críticos.
-          </li>
-          <li>
-            Facilidade de Implementação: Simples de implementar usando listas encadeadas ou arrays circulares.
-          </li>
-        </ul>
-        <h3>Desvantagens</h3>
-        <ul>
-          <li>
-            Sobrecarregamento: Pode consumir muita memória se a fila crescer demais.
-          </li>
-          <li>
-            Sem Prioridades: Não permite tratamento diferencial de itens com base em urgência.
-          </li>
-          <li>
-            Desperdício de Recursos: Pode ser ineficiente em alguns cenários.
-          </li>
-          <li>
-            Não Adaptável: Não é ideal para situações que exigem reordenação ou gerenciamento complexo.
-          </li>
-        </ul>
-
+          <h2>Vantagens e Desvantagens</h2>
+          <h3>Vantagens</h3>
+          <ul>
+            <li>
+              Navegação bidirecional: Permite mover-se para frente e para trás
+              na lista.
+            </li>
+            <li>
+              Remoção eficiente: A remoção de um nó pode ser feita facilmente,
+              dado o nó a ser removido.
+            </li>
+          </ul>
+          <h3>Desvantagens</h3>
+          <ul>
+            <li>
+              Maior uso de memória: Cada nó armazena um ponteiro adicional para
+              o nó anterior.
+            </li>
+            <li>
+              Complexidade de implementação: Mais complexa de implementar em
+              comparação com listas simplesmente encadeadas.
+            </li>
+          </ul>
         </section>
 
         <section class="textos">
