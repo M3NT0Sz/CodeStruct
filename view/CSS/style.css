@@ -50,7 +50,6 @@ body.dark pre > code.language-csharp {
   background-color: #f1f1f1;
 }
 
-
 .checkbox {
   opacity: 0;
   position: absolute;
@@ -343,4 +342,77 @@ pre > .language-csharp {
   & > p {
     padding: 10px;
   }
+}
+
+.jogoTudo{
+  display: flex;
+  flex-direction: row;
+}
+
+.menuEsquerda {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100vh;
+  align-items: center;
+  background-color: #5b5066;
+}
+
+.imgJogo > img {
+  width: 160px;
+  height: 160px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.configuracaoJogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > a > button {
+    background-color: #8954bb;
+    border: none;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 0 10px 0 #8954bb;
+    transition: 1s;
+    font-size: 20px;
+    width: 200px;
+  }
+
+  & > a > button:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+
+.JogarBtn{
+  width: 250px!important;
+  height: 80px;
+}
+
+.jogoDireita{
+  width: 80%;
+}
+
+.cimaJogo{
+  background-color: #5b5066;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #fff;
+}
+
+.cimaJogo > img{
+  width: 80px;
 }

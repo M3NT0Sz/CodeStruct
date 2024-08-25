@@ -34,7 +34,7 @@ session_start();
       </h3>
       <h3>
         <li>
-          <a href="./jornada.php">
+          <a href="./view/jornada.php">
             Jornada
           </a>
         </li>
@@ -44,7 +44,7 @@ session_start();
         if (isset($_SESSION['logado']) != "") {
         ?>
           <li>
-            <a href="./processamento/processamento.php">
+            <a href="./model/processamento.php">
               Sair
             </a>
           </li>
@@ -52,7 +52,7 @@ session_start();
         } else {
         ?>
           <li>
-            <a href="./login.php">
+            <a href="./view/login.php">
               Entrar
             </a>
           </li>
