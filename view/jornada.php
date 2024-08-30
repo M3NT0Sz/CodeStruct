@@ -12,7 +12,7 @@ session_start();
     <title>CodeStruct - Jornada</title>
 </head>
 
-<body>
+<body class="bodyJogo">
     <main class="jogoTudo">
         <nav class="menuEsquerda">
             <section class="imgJogo">
@@ -29,6 +29,17 @@ session_start();
                 <img src="./Imagens/Logo.png" />
                 <h1>CodeStruct</h1>
             </nav>
+            <main class="personagem">
+                <section class="loja">
+                    <button class="chapeu"><img src="./Imagens/chapeu.jpg"></button>
+                    <button class="camisa"><img src="./Imagens/camisa.png"></button>
+                    <button class="calca"><img src="./Imagens/calca.jpg"></button>
+                </section>
+                <section class="personagemImg"><img src="./Imagens/personagem.png"></section>
+                <section class="dinheiro">
+                    <h3>80</h3>
+                </section>
+            </main>
         </main>
     </main>
 </body>
