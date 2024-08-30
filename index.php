@@ -26,12 +26,12 @@ session_start();
             Conteúdos
           </a>
           <ul id="myDropdown" class="dropdown-content">
-            <li><a href="./tipoAbstratoDados.php">TAD</a></li>
-            <li><a href="./listasSimplesmenteEncadeadas.php">Listas Simplesmente Encadeadas</a></li>
-            <li><a href="./listasDuplamenteEncadeadas.php">Listas Duplamente Encadeadas</a></li>
-            <li><a href="./FilaFIFO.php">Fila FIFO</a></li>
-            <li><a href="./FilaDePrioridade.php">Fila de Prioridade</a></li>
-            <li><a href="./Pilha.php">Pilha</a></li>
+            <li><a href="./view/tipoAbstratoDados.php">TAD</a></li>
+            <li><a href="./view/listasSimplesmenteEncadeadas.php">Listas Simplesmente Encadeadas</a></li>
+            <li><a href="./view/listasDuplamenteEncadeadas.php">Listas Duplamente Encadeadas</a></li>
+            <li><a href="./view/FilaFIFO.php">Fila FIFO</a></li>
+            <li><a href="./view/FilaDePrioridade.php">Fila de Prioridade</a></li>
+            <li><a href="./view/Pilha.php">Pilha</a></li>
             
           </ul>
         </li>
