@@ -83,7 +83,7 @@
                         </ul>
                         <ul class="trilhaUL">
                             <button id="togglePil">Pilhas</button> <!-- Título clicável para abrir/fechar a lista -->
-                            <div id="trilhasPri" class="trilhas">
+                            <div id="trilhasPil" class="trilhas">
                                 <li>Trilha 1</li>
                                 <li>Trilha 2</li>
                                 <li>Trilha 3</li>
