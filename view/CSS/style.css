@@ -344,7 +344,7 @@ pre > .language-csharp {
   }
 }
 
-.jogoTudo{
+.jogoTudo {
   display: flex;
   flex-direction: row;
 }
@@ -393,18 +393,17 @@ pre > .language-csharp {
   }
 }
 
-
-.JogarBtn{
-  width: 250px!important;
+.JogarBtn {
+  width: 250px !important;
   height: 80px;
 }
 
-.jogoDireita{
+.jogoDireita {
   width: 85%;
   height: 100vh;
 }
 
-.cimaJogo{
+.cimaJogo {
   background-color: #5b5066;
   display: flex;
   flex-direction: row;
@@ -414,18 +413,18 @@ pre > .language-csharp {
   height: 10%;
 }
 
-.cimaJogo > img{
+.cimaJogo > img {
   width: 80px;
 }
 
-.personagem{
+.personagem {
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 90%;
 }
 
-.personagem > .loja{
+.personagem > .loja {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -434,31 +433,181 @@ pre > .language-csharp {
   box-shadow: 0 0 10px 0 #5b5066;
 }
 
-.personagem > .loja > button{
+#loja {
+  overflow: hidden; /* Esconde o conteúdo durante a transição */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transições suaves */
+}
+
+#loja.aberto {
+  opacity: 1; /* Totalmente visível */
+}
+
+.personagem > .loja > button {
   width: 100%;
 }
 
-.personagem > .loja > button > img{
+.personagem > .loja > button > img {
   width: 100%;
 }
 
-.personagemImg{
+.personagemImg {
   margin: 20px;
   width: auto;
   height: auto;
 }
 
-.personagemImg > img{
+.personagemImg > img {
   height: 100%;
-  border: 3px solid #5b5066
+  border: 3px solid #5b5066;
 }
 
-.dinheiro{
+.dinheiro {
   display: flex;
   margin: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.dinheiro > h3{
+.dinheiro > h3 {
   border: 3px solid #5b5066;
   font-size: 20px;
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  background-color: #8954bb;
+  padding: 10px;
+  color: #fff;
+  align-items: center;
+  justify-content: space-between;
+
+  & > p {
+    text-align: center;
+    width: 50px;
+  }
+
+  & > img {
+    width: 50px;
+  }
+}
+
+#toggleLoja {
+  background-color: #8954bb;
+  border: none;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 0 10px 0 #8954bb;
+  transition: 1s;
+  font-size: 20px;
+  width: 200px;
+}
+
+#toggleLoja:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+}
+
+#trilhasTAD {
+  overflow: hidden; /* Esconde conteúdo durante a transição */
+  max-height: 0; /* Altura inicial escondida */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transição suave */
+}
+#trilhasTAD.aberta {
+  max-height: 300px; /* Altura para mostrar a lista, ajuste conforme necessário */
+  opacity: 1; /* Totalmente visível */
+}
+
+#trilhasLSE {
+  overflow: hidden; /* Esconde conteúdo durante a transição */
+  max-height: 0; /* Altura inicial escondida */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transição suave */
+}
+#trilhasLSE.aberta {
+  max-height: 300px; /* Altura para mostrar a lista, ajuste conforme necessário */
+  opacity: 1; /* Totalmente visível */
+}
+
+#trilhasLDE {
+  overflow: hidden; /* Esconde conteúdo durante a transição */
+  max-height: 0; /* Altura inicial escondida */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transição suave */
+}
+#trilhasLDE.aberta {
+  max-height: 300px; /* Altura para mostrar a lista, ajuste conforme necessário */
+  opacity: 1; /* Totalmente visível */
+}
+
+#trilhasFIFO {
+  overflow: hidden; /* Esconde conteúdo durante a transição */
+  max-height: 0; /* Altura inicial escondida */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transição suave */
+}
+#trilhasFIFO.aberta {
+  max-height: 300px; /* Altura para mostrar a lista, ajuste conforme necessário */
+  opacity: 1; /* Totalmente visível */
+}
+
+#trilhasPri {
+  overflow: hidden; /* Esconde conteúdo durante a transição */
+  max-height: 0; /* Altura inicial escondida */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transição suave */
+}
+#trilhasPri.aberta {
+  max-height: 300px; /* Altura para mostrar a lista, ajuste conforme necessário */
+  opacity: 1; /* Totalmente visível */
+}
+
+#trilhasPil {
+  overflow: hidden; /* Esconde conteúdo durante a transição */
+  max-height: 0; /* Altura inicial escondida */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transição suave */
+}
+#trilhasPil.aberta {
+  max-height: 300px; /* Altura para mostrar a lista, ajuste conforme necessário */
+  opacity: 1; /* Totalmente visível */
+}
+
+.trilhaUL {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.trilhaUL > button {
+  background-color: #8954bb;
+  border: none;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 0 10px 0 #8954bb;
+  transition: 1s;
+  font-size: 20px;
+  width: 90%;
+}
+
+.trilhaUL > button:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+}
+
+.trilhasTudo {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }

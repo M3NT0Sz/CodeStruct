@@ -19,7 +19,7 @@ session_start();
                 <img src="./Imagens/MatheusMendes.jpeg">
             </section>
             <section class="configuracaoJogo">
-                <a href="../index.php"><button class="JogarBtn">Jogar</button></a>
+                <a href="./trilha.php"><button class="JogarBtn">Jogar</button></a>
                 <a href="../index.php"><button>Configurações</button></a>
                 <a href="../index.php"><button>Voltar</button></a>
             </section>
@@ -30,18 +30,27 @@ session_start();
                 <h1>CodeStruct</h1>
             </nav>
             <main class="personagem">
-                <section class="loja">
+                <section class="loja" id="loja">
                     <button class="chapeu"><img src="./Imagens/chapeu.jpg"></button>
                     <button class="camisa"><img src="./Imagens/camisa.png"></button>
                     <button class="calca"><img src="./Imagens/calca.jpg"></button>
                 </section>
-                <section class="personagemImg"><img src="./Imagens/personagem.png"></section>
+
+                <section class="personagemImg">
+                    <img src="./Imagens/personagem.png">
+                </section>
+
                 <section class="dinheiro">
-                    <h3>80</h3>
+                    <h3>
+                        <img src="./Imagens/Logo.png">
+                        <p>80</p>
+                    </h3>
+                    <button id="toggleLoja">Abrir Loja</button>
                 </section>
             </main>
         </main>
     </main>
+    <script src="./JS/script.js"></script>
 </body>
 
 </html>
