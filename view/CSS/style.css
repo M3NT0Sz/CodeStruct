@@ -585,13 +585,18 @@ pre > .language-csharp {
   width: 100%;
 }
 
+.buttonBloqueado:hover {
+  cursor: pointer;
+  background-color: #444 !important;
+  color: #9c9c9c !important;
+}
+
 .trilhaUL > button {
   background-color: #8954bb;
   border: none;
   padding: 20px;
   margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  /* margin-bottom: 10px; */
   color: #fff;
   box-shadow: 0 0 10px 0 #8954bb;
   transition: 1s;
@@ -600,6 +605,7 @@ pre > .language-csharp {
 }
 
 .trilhaUL > button:hover {
+  border-radius: 10px;
   cursor: pointer;
   background-color: #fff;
   color: #000;
@@ -610,4 +616,26 @@ pre > .language-csharp {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.trilhaUL > div {
+  width: 90%;
+  box-shadow: 0 0 10px 0 #8954bb;
+  background-image: url("../Imagens/Fundo1.gif");
+}
+
+.trilhaUL > div > li {
+  /* background-color: #8954bb; */
+  font-size: 20px;
+  padding: 10px;
+  color: #fff;
+  transition: 0.5s;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trilhaUL > div > li:hover {
+  background-color: #fff;
+  color: #8954bb;
+  cursor: pointer;
 }
