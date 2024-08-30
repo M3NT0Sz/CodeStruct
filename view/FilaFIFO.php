@@ -11,64 +11,68 @@
     <title>CodeStruct</title>
   </head>
   <body>
-    <header class="navbar">
-      <a href="./index.php">
-        <img src="Imagens/Logo.png" />
-        <h1>CodeStruct</h1>
-      </a>
+  <header class="navbar">
+    <a href="../index.php">
+      <img src="./Imagens/Logo.png" />
+      <h1>CodeStruct</h1>
+    </a>
 
-      <ul>
+    <ul>
       <h3>
-        <a href="./FilaFIFO.php">
-          <li>Fila FIFO</li>
-        </a>
+        <li onclick="toggleDropdown()" style="cursor: pointer;">
+          <a href="#">
+            Conteúdos
+          </a>
+          <ul id="myDropdown" class="dropdown-content">
+            <li><a href="./tipoAbstratoDados.php">TAD</a></li>
+            <li><a href="./listasSimplesmenteEncadeadas.php">Listas Simplesmente Encadeadas</a></li>
+            <li><a href="./listasDuplamenteEncadeadas.php">Listas Duplamente Encadeadas</a></li>
+            <li><a href="./FilaFIFO.php">Fila FIFO</a></li>
+            <li><a href="./FilaDePrioridade.php">Fila de Prioridade</a></li>
+            <li><a href="./Pilha.php">Pilha</a></li>
+            
+          </ul>
+        </li>
       </h3>
       <h3>
-        <a href="./FilaDePrioridade.php">       
-          <li>Fila de Prioridade</li>
-        </a>
-      </h3>
-      <h3>
-        <a href="./Pilha.php">
-          <li>Pilha</li>
-        </a>
+        <li>
+          <a href="./jornada.php">
+            Jornada
+          </a>
+        </li>
       </h3>
       <h3>
         <?php
         if (isset($_SESSION['logado']) != "") {
         ?>
-          <a href="./processamento/processamento.php">
-            <li>Sair</li>
-          </a>
+          <li>
+            <a href="./model/processamento.php">
+              Sair
+            </a>
+          </li>
         <?php
         } else {
         ?>
-          <a href="./login.php">
-            <li>Entrar</li>
-          </a>
+          <li>
+            <a href="./login.php">
+              Entrar
+            </a>
+          </li>
         <?php
         }
         ?>
       </h3>
     </ul>
 
-      <input type="checkbox" class="checkbox" id="chk" />
-      <label class="label" for="chk">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-        <div class="bola"></div>
-      </label>
-      <script src="./JS/script.js"></script>
-      <script
-        src="https://kit.fontawesome.com/5bcdea54fd.js"
-        crossorigin="anonymous"
-      ></script>
-    </header>
-    <section class="tela">
-      <section class="tela80">
-        <header class="pagNome">
-          <h1>Fila FIFO</h1>
-        </header>
+    <input type="checkbox" class="checkbox" id="chk" />
+    <label class="label" for="chk">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+      <div class="bola"></div>
+    </label>
+    <script src="./JS/script.js"></script>
+    <script src="https://kit.fontawesome.com/5bcdea54fd.js" crossorigin="anonymous"></script>
+  </header>
         <section class="video">
           <h2>Vídeo Explicativo</h2>
           <section>

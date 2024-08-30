@@ -13,41 +13,53 @@ session_start();
 </head>
 
 <body>
-  <header class="navbar">
-    <a href="./index.php">
-      <img src="Imagens/Logo.png" />
+<header class="navbar">
+    <a href="../index.php">
+      <img src="./Imagens/Logo.png" />
       <h1>CodeStruct</h1>
     </a>
 
     <ul>
       <h3>
-        <a href="./tipoAbstratoDados.php">
-          <li>Tipo Abstrato de Dados</li>
-        </a>
+        <li onclick="toggleDropdown()" style="cursor: pointer;">
+          <a href="#">
+            Conteúdos
+          </a>
+          <ul id="myDropdown" class="dropdown-content">
+            <li><a href="./tipoAbstratoDados.php">TAD</a></li>
+            <li><a href="./listasSimplesmenteEncadeadas.php">Listas Simplesmente Encadeadas</a></li>
+            <li><a href="./listasDuplamenteEncadeadas.php">Listas Duplamente Encadeadas</a></li>
+            <li><a href="./FilaFIFO.php">Fila FIFO</a></li>
+            <li><a href="./FilaDePrioridade.php">Fila de Prioridade</a></li>
+            <li><a href="./Pilha.php">Pilha</a></li>
+            
+          </ul>
+        </li>
       </h3>
       <h3>
-        <a href="./listasSimplesmenteEncadeadas.php">
-          <li>Listas Simplesmente Encadeadas</li>
-        </a>
-      </h3>
-      <h3>
-        <a href="./listasDuplamenteEncadeadas.php">
-          <li>Listas Duplamente Encadeadas</li>
-        </a>
+        <li>
+          <a href="./jornada.php">
+            Jornada
+          </a>
+        </li>
       </h3>
       <h3>
         <?php
         if (isset($_SESSION['logado']) != "") {
         ?>
-          <a href="./processamento/processamento.php">
-            <li>Sair</li>
-          </a>
+          <li>
+            <a href="./model/processamento.php">
+              Sair
+            </a>
+          </li>
         <?php
         } else {
         ?>
-          <a href="./login.php">
-            <li>Entrar</li>
-          </a>
+          <li>
+            <a href="./login.php">
+              Entrar
+            </a>
+          </li>
         <?php
         }
         ?>
