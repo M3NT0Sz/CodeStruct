@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/style.css" />
         <link rel="shortcut icon" href="./Imagens/Logo.png" type="image/x-icon" />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>CodeStruct - Jornada</title>
     </head>
 
@@ -35,14 +36,14 @@
                             <button id="toggleTAD">TAD</button> <!-- Título clicável para abrir/fechar a lista -->
                             <div id="trilhasTAD" class="trilhas">
                                 <li>Trilha 1</li>
-                                <li>Trilha 2</li>
-                                <li>Trilha 3</li>
-                                <li>Trilha 4</li>
-                                <li>Chefão</li>
+                                <li class="buttonBloqueado">Trilha 2 <i class='bx bx-lock-alt'></i></li>
+                                <li class="buttonBloqueado">Trilha 3 <i class='bx bx-lock-alt'></i></li>
+                                <li class="buttonBloqueado">Trilha 4 <i class='bx bx-lock-alt'></i></li>
+                                <li class="buttonBloqueado">Chefão <i class='bx bx-lock-alt'></i></li>
                             </div>
                         </ul>
                         <ul class="trilhaUL">
-                            <button id="toggleLSE">Listas Simplesmente Encadeadas</button> <!-- Título clicável para abrir/fechar a lista -->
+                            <button class="buttonBloqueado" id="toggleLSE">Listas Simplesmente Encadeadas <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
                             <div id="trilhasLSE" class="trilhas">
                                 <li>Trilha 1</li>
                                 <li>Trilha 2</li>
@@ -52,7 +53,7 @@
                             </div>
                         </ul>
                         <ul class="trilhaUL">
-                            <button id="toggleLDE">Listas Duplamente Encadeadas</button> <!-- Título clicável para abrir/fechar a lista -->
+                            <button class="buttonBloqueado" id="toggleLDE">Listas Duplamente Encadeadas <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
                             <div id="trilhasLDE" class="trilhas">
                                 <li>Trilha 1</li>
                                 <li>Trilha 2</li>
@@ -62,7 +63,7 @@
                             </div>
                         </ul>
                         <ul class="trilhaUL">
-                            <button id="toggleFIFO">Fila FIFO</button> <!-- Título clicável para abrir/fechar a lista -->
+                            <button class="buttonBloqueado" id="toggleFIFO">Fila FIFO <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
                             <div id="trilhasFIFO" class="trilhas">
                                 <li>Trilha 1</li>
                                 <li>Trilha 2</li>
@@ -72,7 +73,7 @@
                             </div>
                         </ul>
                         <ul class="trilhaUL">
-                            <button id="togglePri">Fila de Prioridades</button> <!-- Título clicável para abrir/fechar a lista -->
+                            <button class="buttonBloqueado" id="togglePri">Fila de Prioridades <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
                             <div id="trilhasPri" class="trilhas">
                                 <li>Trilha 1</li>
                                 <li>Trilha 2</li>
@@ -82,7 +83,7 @@
                             </div>
                         </ul>
                         <ul class="trilhaUL">
-                            <button id="togglePil">Pilhas</button> <!-- Título clicável para abrir/fechar a lista -->
+                            <button class="buttonBloqueado" id="togglePil">Pilhas <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
                             <div id="trilhasPil" class="trilhas">
                                 <li>Trilha 1</li>
                                 <li>Trilha 2</li>
@@ -95,6 +96,7 @@
                 </main>
             </main>
         </main>
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
         <script src="./JS/trilha.js"></script>
     </body>
 

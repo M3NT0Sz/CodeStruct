@@ -19,21 +19,31 @@ toggleTAD.addEventListener("click", function () {
 });
 toggleLSE.addEventListener("click", function () {
   // Alterna a classe 'aberta' no contêiner das trilhas
-  trilhasLSE.classList.toggle("aberta");
+  if (!toggleLSE.classList.contains("buttonBloqueado")) {
+    trilhasLSE.classList.toggle("aberta");
+  }
 });
 toggleLDE.addEventListener("click", function () {
   // Alterna a classe 'aberta' no contêiner das trilhas
-  trilhasLDE.classList.toggle("aberta");
+  if (!toggleLDE.classList.contains("buttonBloqueado")) {
+    trilhasLDE.classList.toggle("aberta");
+  }
 });
 toggleFIFO.addEventListener("click", function () {
   // Alterna a classe 'aberta' no contêiner das trilhas
-  trilhasFIFO.classList.toggle("aberta");
+  if (!toggleFIFO.classList.contains("buttonBloqueado")) {
+    trilhasFIFO.classList.toggle("aberta");
+  }
 });
 togglePri.addEventListener("click", function () {
   // Alterna a classe 'aberta' no contêiner das trilhas
-  trilhasPri.classList.toggle("aberta");
+  if (!togglePri.classList.contains("buttonBloqueado")) {
+    trilhasPri.classList.toggle("aberta");
+  }
 });
 togglePil.addEventListener("click", function () {
   // Alterna a classe 'aberta' no contêiner das trilhas
-  trilhasPil.classList.toggle("aberta");
+  if (!togglePil.classList.contains("buttonBloqueado")) {
+    trilhasPil.classList.toggle("aberta");
+  }
 });
