@@ -30,4 +30,19 @@ class Controller
     {
         $this->bancoDeDados->retornarCash($cod);
     }
+
+    public function puxarQuestoes($tipo)
+    {
+        $tipos = '';
+        $listaTipos = $this->bancoDeDados->retornarQuestoes($tipo);
+        while ($questao = mysqli_fetch_assoc($listaTipos)) {
+            $tipos .=
+                "<h2>" . $questao['pergunta'] . "</h2>" .
+                "<button>" . $questao["opcao_a"] . "</button>" .
+                "<button>" . $questao["opcao_b"] . "</button>" .
+                "<button>" . $questao["opcao_c"] . "</button>" .
+                "<button>" . $questao["opcao_d"] . "</button>";
+        }
+        return $tipos;
+    }
 }

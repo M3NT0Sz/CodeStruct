@@ -52,10 +52,19 @@ class BancoDeDados
 
     public function retornarCash($cod)
     {
-        $conexao = conectarBD();
+        $conexao = $this->conectarBD();
         $consulta = "SELECT jor_cash FROM jornada WHERE jor_cod = $cod";
         $resultado = mysqli_query($conexao, $consulta);
 
         return $resultado;
+    }
+
+    public function retornarQuestoes($tipo)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT * FROM perguntas WHERE per_tipo = '$tipo' ORDER BY RAND() LIMIT 1";
+        
+        $listaTipos = mysqli_query($conexao, $consulta);
+        return $listaTipos;
     }
 }

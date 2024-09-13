@@ -625,7 +625,17 @@ pre > .language-csharp {
   background-color: #8954bb;
 }
 
-.trilhaUL > div > li {
+.trilhaUL > div > form{
+  display: flex;
+  flex-direction: column;
+}
+
+.trilhaUL > div > form > button{
+  border: none;
+  background-color: transparent;
+}
+
+.trilhaUL > div > form > button > li {
   /* background-color: #8954bb; */
   font-size: 20px;
   padding: 10px;
@@ -635,7 +645,7 @@ pre > .language-csharp {
   justify-content: space-between;
 }
 
-.trilhaUL > div > li:hover {
+.trilhaUL > div > form > button > li:hover {
   background-color: #fff;
   color: #8954bb;
   cursor: pointer;

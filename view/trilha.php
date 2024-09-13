@@ -35,11 +35,23 @@
                         <ul class="trilhaUL">
                             <button id="toggleTAD">TAD</button> <!-- Título clicável para abrir/fechar a lista -->
                             <div id="trilhasTAD" class="trilhas">
-                                <li>Trilha 1</li>
-                                <li class="buttonBloqueado">Trilha 2 <i class='bx bx-lock-alt'></i></li>
-                                <li class="buttonBloqueado">Trilha 3 <i class='bx bx-lock-alt'></i></li>
-                                <li class="buttonBloqueado">Trilha 4 <i class='bx bx-lock-alt'></i></li>
-                                <li class="buttonBloqueado">Chefão <i class='bx bx-lock-alt'></i></li>
+                                <form action="questoes.php" method="post">
+                                    <button type="submit" name="trilha" value="Trilha 1">
+                                        <li>Trilha 1</li>
+                                    </button>
+                                    <button type="submit" name="trilha" value="Trilha 2" class="buttonBloqueado">
+                                        <li>Trilha 2 <i class='bx bx-lock-alt'></i></li>
+                                    </button>
+                                    <button type="submit" name="trilha" value="Trilha 3" class="buttonBloqueado">
+                                        <li>Trilha 3 <i class='bx bx-lock-alt'></i></li>
+                                    </button>
+                                    <button type="submit" name="trilha" value="Trilha 4" class="buttonBloqueado">
+                                        <li>Trilha 4 <i class='bx bx-lock-alt'></i></li>
+                                    </button>
+                                    <button type="submit" name="trilha" value="Chefão" class="buttonBloqueado">
+                                        <li>Chefão <i class='bx bx-lock-alt'></i></li>
+                                    </button>
+                                </form>
                             </div>
                         </ul>
                         <ul class="trilhaUL">
