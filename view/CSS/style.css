@@ -586,6 +586,7 @@ pre > .language-csharp {
 }
 
 .buttonBloqueado:hover {
+  opacity: 0.8;
   cursor: pointer;
   background-color: #444 !important;
   color: #9c9c9c !important;
@@ -621,7 +622,7 @@ pre > .language-csharp {
 .trilhaUL > div {
   width: 90%;
   box-shadow: 0 0 10px 0 #8954bb;
-  background-image: url("../Imagens/Fundo1.gif");
+  background-color: #8954bb;
 }
 
 .trilhaUL > div > li {

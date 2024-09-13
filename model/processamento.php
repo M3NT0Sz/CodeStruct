@@ -2,7 +2,9 @@
 
 session_start();
 
-require_once "funcoesBD.php";
+require "../controller/Controller.php";
+
+$controlador = new Controller();
 
 if (
     !empty($_POST['inputNome']) && !empty($_POST['inputEmail']) &&
@@ -12,10 +14,11 @@ if (
     $nome = $_POST['inputNome'];
     $email = $_POST['inputEmail'];
     $senha = $_POST['inputSenha'];
+    $img = addslashes(file_get_contents($_FILES['inputFile']['tmp_name']));
 
-    inserirUsuario($nome, $email, $senha);
+    $controlador->inserirUsuario($nome, $email, $senha, $img);
 
-    header("Location: ../login.php");
+    header("Location: ../view/login.php");
     die();
 }
 
@@ -25,19 +28,19 @@ if (
 ) {
     $email = $_POST['inputEmail'];
     $senha = $_POST['inputSenha'];
-    verificarUsuario($email, $senha);
 
-    if (isset($_SESSION['logado']) != "") {
-        header("Location: ../index.php");
+    if ($controlador->verificarUsuario($email, $senha)) {
+        $_SESSION['estaLogado'] = TRUE;
+        $_SESSION['logado'] = "Sim";
+        header('Location:../index.php');
     } else {
-        header("Location: ../login.php");
+        header('Location:../view/login.php');
     }
-
     die();
 }
 
 
-if(isset($_SESSION['logado']) == "Sim"){
+if (isset($_SESSION['logado']) == "Sim") {
     session_destroy();
     header("Location: ../index.php");
     die();
