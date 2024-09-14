@@ -1,16 +1,18 @@
 <?php
-  session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <link rel="shortcut icon" href="./Imagens/Logo.png" type="image/x-icon" />
-    <title>CodeStruct</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./CSS/style.css" />
+  <link rel="shortcut icon" href="./Imagens/Logo.png" type="image/x-icon" />
+  <title>CodeStruct</title>
+</head>
+
+<body>
   <header class="navbar">
     <a href="../index.php">
       <img src="./Imagens/Logo.png" />
@@ -30,7 +32,7 @@
             <li><a href="./FilaFIFO.php">Fila FIFO</a></li>
             <li><a href="./FilaDePrioridade.php">Fila de Prioridade</a></li>
             <li><a href="./Pilha.php">Pilha</a></li>
-            
+
           </ul>
         </li>
       </h3>
@@ -73,21 +75,23 @@
     <script src="./JS/script.js"></script>
     <script src="https://kit.fontawesome.com/5bcdea54fd.js" crossorigin="anonymous"></script>
   </header>
-    <section class="tela">
-        <section class="tela80">
-            <form action="./processamento/processamento.php" method="post" class="containerLogin">
-                <h3>Nome <input type="text" name="inputNome"></h3>
-                <h3>Email <input type="email" name="inputEmail"></h3>
-                <h3>Senha <input type="password" name="inputSenha"></h3>
-                <button>Cadastrar</button>
-            </form>
-        </section>
+  <section class="tela">
+    <section class="tela80">
+      <form action="../model/processamento.php" method="post" class="containerLogin" enctype="multipart/form-data">
+        <h3>Nome <input type="text" name="inputNome"></h3>
+        <h3>Email <input type="email" name="inputEmail"></h3>
+        <h3>Senha <input type="password" name="inputSenha"></h3>
+        <input type="file" name="inputFile" accept="image/*">
+        <button>Cadastrar</button>
+      </form>
     </section>
-    <footer class="rodape">
-      <p>
-        Desenvolvido por FATEC - Análise e Desenvolvimento de Sistemas - AMS
-      </p>
-      <p>Copyright &copy; 2024 - Todos os direitos reservados</p>
-    </footer>
-  </body>
+  </section>
+  <footer class="rodape">
+    <p>
+      Desenvolvido por FATEC - Análise e Desenvolvimento de Sistemas - AMS
+    </p>
+    <p>Copyright &copy; 2024 - Todos os direitos reservados</p>
+  </footer>
+</body>
+
 </html>

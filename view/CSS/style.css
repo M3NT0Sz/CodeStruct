@@ -586,6 +586,7 @@ pre > .language-csharp {
 }
 
 .buttonBloqueado:hover {
+  opacity: 0.8;
   cursor: pointer;
   background-color: #444 !important;
   color: #9c9c9c !important;
@@ -621,10 +622,20 @@ pre > .language-csharp {
 .trilhaUL > div {
   width: 90%;
   box-shadow: 0 0 10px 0 #8954bb;
-  background-image: url("../Imagens/Fundo1.gif");
+  background-color: #8954bb;
 }
 
-.trilhaUL > div > li {
+.trilhaUL > div > form{
+  display: flex;
+  flex-direction: column;
+}
+
+.trilhaUL > div > form > button{
+  border: none;
+  background-color: transparent;
+}
+
+.trilhaUL > div > form > button > li {
   /* background-color: #8954bb; */
   font-size: 20px;
   padding: 10px;
@@ -634,7 +645,7 @@ pre > .language-csharp {
   justify-content: space-between;
 }
 
-.trilhaUL > div > li:hover {
+.trilhaUL > div > form > button > li:hover {
   background-color: #fff;
   color: #8954bb;
   cursor: pointer;
