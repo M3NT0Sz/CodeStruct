@@ -79,7 +79,7 @@
   <section class="tela">
     <section class="tela80">
       <header class="pagNome">
-        <h1>Tipo Abstrato de Dados</h1>
+        <h1>Fila de Prioridade</h1>
       </header>
       <section class="video">
         <h2>Vídeo Explicativo</h2>
@@ -95,187 +95,145 @@
       <section class="textos">
         <h2>Introdução</h2>
         <p>
-          Os Tipos Abstrato de Dados (TAD) são conceitos fundamentais na
-          ciência da computação que definem estruturas de dados de maneira
-          abstrata, independentemente de implementações específicas. Um TAD
-          especifica um conjunto de valores possíveis e um conjunto de
-          operações que podem ser realizadas sobre esses valores, permitindo
-          que os desenvolvedores se concentrem em como usar a estrutura de
-          dados em vez de como ela é implementada.
+          Uma fila de prioridade é uma estrutura de dados que gerencia uma coleção de elementos, onde cada elemento 
+          tem uma "prioridade" associada. Ao contrário de uma fila comum (FIFO – First In, First Out), em uma fila 
+          de prioridade os elementos são removidos com base em sua prioridade, e não necessariamente na ordem de inserção. 
+          Elementos com prioridade mais alta são atendidos antes daqueles com prioridade mais baixa.
         </p>
       </section>
 
       <section class="textos">
         <h2>Importância</h2>
         <p>
-          Os TADs são cruciais para o desenvolvimento de software robusto e
-          eficiente, pois promovem a reutilização de código e a modularidade.
-          Eles permitem que programadores definam e utilizem estruturas de
-          dados sem se preocupar com os detalhes de implementação, facilitando
-          a manutenção e a evolução do software. Exemplos comuns de TADs
-          incluem listas, filas, pilhas, árvores e grafos.
-        </p>
-        <p>
-          Além disso, TADs ajudam na abstração dos dados e suas operações,
-          tornando o código mais legível e fácil de entender. Isso é
-          especialmente útil em grandes projetos de software onde várias
-          equipes podem trabalhar em diferentes partes do sistema.
+          A fila de prioridade é importante porque permite organizar e processar tarefas de acordo com sua urgência. 
+          Isso otimiza o uso de recursos, melhora o tempo de resposta em sistemas críticos, e é fundamental em 
+          algoritmos e aplicações como sistemas operacionais, roteamento de redes e atendimento de emergências. 
+          Ela garante que tarefas mais importantes sejam realizadas primeiro, melhorando a eficiência e a 
+          justiça no processamento de eventos.
         </p>
       </section>
 
       <section class="textos">
         <h2>Funcionamento</h2>
         <p>
-          Um TAD define uma interface clara para operações sobre uma estrutura
-          de dados. Por exemplo, um TAD para uma lista pode incluir operações
-          como adicionar um elemento, remover um elemento e acessar um
-          elemento em uma posição específica. A implementação concreta desses
-          métodos pode variar, mas a interface permanece consistente.
+          Uma fila de prioridade funciona gerenciando uma coleção de itens onde cada item possui uma prioridade associada. 
+          O funcionamento básico pode ser descrito em três etapas principais:
         </p>
-        <p>
-          Isso significa que você pode ter diferentes implementações do mesmo
-          TAD (por exemplo, uma lista pode ser implementada como uma lista
-          simplesmente encadeada ou uma lista duplamente encadeada), mas o
-          conjunto de operações que você pode realizar sobre a lista permanece
-          o mesmo.
-        </p>
-        <img style="width: 50%;" src="https://blog.pantuza.com/uploads/3c2f826b9b662f523fc857cc9eec0b42c73cd77e" alt="Exemplo de TAD com diferentes implementações" />
+        <ul>
+          <li><b>Inserção:</b> Quando um novo item é adicionado à fila, ele é inserido com uma prioridade específica. 
+          Dependendo da implementação, o item pode ser inserido em uma posição que mantém a ordem de prioridades.</li>
+
+          <li><b>Manutenção da ordem de prioridade:</b> Internamente, a fila mantém a ordem dos itens de acordo com suas prioridades. 
+          Se a prioridade é mais alta (ou menor número, dependendo da definição), o item é posicionado de forma que possa ser 
+          removido antes dos itens com prioridades mais baixas.</li>
+
+          <li><b>Remoção:</b> O item com a maior prioridade (ou a prioridade mais alta) é removido primeiro. 
+          Isso garante que os itens mais importantes sejam processados antes dos menos importantes.</li>
+      </ul>
+        <img 
+          style="width: 50%;" 
+          src="https://upload.wikimedia.org/wikipedia/commons/8/86/Priority.PNG"
+          alt="Estrutura de uma Fila de Prioridade" 
+        />
       </section>
 
       <section class="textos">
         <h2>Exemplo de Código em C#</h2>
         <p>
           Vamos examinar um exemplo de código em C# que demonstra como
-          implementar uma fila, que é um exemplo de TAD. Vamos dividir o
+          implementar uma Fila de Prioridade. Vamos dividir o
           código em partes para melhor compreensão.
         </p>
 
-        <h3>Definição do Nó</h3>
-        <p>O primeiro passo é definir a estrutura do nó da fila:</p>
+        <h3>Criação da Fila de Prioridade</h3>
+        <p>
+        </p>
         <section class="code-container">
           <pre><code class="language-csharp">
-public class No
+var filaDeChamados = new PriorityQueue<string, int>();
+              </code></pre>
+        </section>
+        <p>
+          Cria uma fila de prioridade para armazenar os chamados.
+        </p>
+
+        <h3>Adição de Chamados de Prioridade</h3>
+        <p>
+        </p>
+        <section class="code-container">
+          <pre><code class="language-csharp">
+filaDeChamados.Enqueue("Erro no servidor - Crítico", 1);   // Prioridade 1 (mais alta)
+filaDeChamados.Enqueue("Problema com a rede - Importante", 2);
+filaDeChamados.Enqueue("Solicitação de melhoria - Comum", 3);   // Prioridade 3 (mais baixa)
+              </code></pre>
+        </section>
+        <p>
+          Adiciona três chamados com diferentes níveis de prioridade.
+        </p>
+
+        <h3>Processamento dos Chamados</h3>
+        <p>
+        </p>
+        <section class="code-container">
+          <pre><code class="language-csharp">
+while (filaDeChamados.Count > 0)
 {
-  public string Valor; // Valor armazenado no nó
-  public No Proximo; // Ponteiro para o próximo nó
-  
-  public No(string valor)
-  {
-      Valor = valor;
-      Proximo = null;
-  }
+    var chamado = filaDeChamados.Dequeue(); // Remove e obtém o chamado com a maior prioridade
+    Console.WriteLine($"Atendendo chamado: {chamado}");
 }
               </code></pre>
         </section>
         <p>
-          Neste trecho, definimos a classe <code>No</code> que contém um valor
-          e um ponteiro para o próximo nó.
-        </p>
-
-        <h3>Definição da Fila</h3>
-        <p>
-          Em seguida, definimos a classe <code>Fila</code> que gerencia a
-          fila:
-        </p>
-        <section class="code-container">
-          <pre><code class="language-csharp">
-public class Fila
-{
-  private No head; // Ponteiro para o primeiro nó da fila
-  private No tail; // Ponteiro para o último nó da fila
-
-  public Fila()
-  {
-      head = null;
-      tail = null;
-  }
-}
-              </code></pre>
-        </section>
-        <p>
-          Aqui, estamos declarando os ponteiros <code>head</code> e
-          <code>tail</code> que apontam para o início e o fim da fila,
-          respectivamente.
-        </p>
-
-        <h3>Método para Enfileirar</h3>
-        <p>
-          O método <code>Enfileirar</code> adiciona um novo nó ao final da
-          fila:
-        </p>
-        <section class="code-container">
-          <pre><code class="language-csharp">
-public void Enfileirar(string valor)
-{
-  No novoNo = new No(valor);
-  if (tail != null) tail.Proximo = novoNo;
-  tail = novoNo;
-  if (head == null) head = novoNo;
-}
-              </code></pre>
-        </section>
-        <p>
-          Este método cria um novo nó e o adiciona ao final da fila. Se a fila
-          estiver vazia, o novo nó também se torna o <code>head</code>.
-        </p>
-
-        <h3>Método para Desenfileirar</h3>
-        <p>
-          O método <code>Desenfileirar</code> remove e retorna o nó do início
-          da fila:
-        </p>
-        <section class="code-container">
-          <pre><code class="language-csharp">
-public string Desenfileirar()
-{
-  if (head == null) throw new InvalidOperationException("A fila está vazia.");
-  string valor = head.Valor;
-  head = head.Proximo;
-  if (head == null) tail = null;
-  return valor;
-}
-              </code></pre>
-        </section>
-        <p>
-          Este método remove o nó do início da fila e retorna o valor
-          armazenado. Se a fila se tornar vazia após a remoção, o ponteiro
-          <code>tail</code> é atualizado para <code>null</code>.
+          O loop <b>while</b> continua executando enquanto a fila (filaDeChamados) não estiver vazia (Count > 0). 
+          O método Count retorna o número de itens na fila de prioridade.
+          Quando todos os chamados forem processados e a fila estiver vazia, o loop termina.
         </p>
 
         <h3>Exemplo de Uso</h3>
-        <p>Por fim, um exemplo de como usar a fila:</p>
+        <p>Por fim, um exemplo de como usar a Fila de Prioridade:</p>
         <section class="code-container">
           <pre><code class="language-csharp">
-// Exemplo de uso
-public class Program
+class SuporteTecnico
 {
-  public static void Main()
-  {
-      Fila fila = new Fila();
-      fila.Enfileirar("primeiro");
-      fila.Enfileirar("segundo");
-      Console.WriteLine(fila.Desenfileirar()); // Saída: primeiro
-      Console.WriteLine(fila.Desenfileirar()); // Saída: segundo
-  }
+    static void Main()
+    {
+        // Criação da fila de prioridade
+        var filaDeChamados = new PriorityQueue<string, int>();
+
+        // Adicionando chamados com suas prioridades
+        filaDeChamados.Enqueue("Erro no servidor - Crítico", 1);  // Prioridade 1 (mais alta)
+        filaDeChamados.Enqueue("Problema com a rede - Importante", 2);
+        filaDeChamados.Enqueue("Solicitação de melhoria - Comum", 3);    // Prioridade 3 (mais baixa)
+
+        // Processamento dos chamados de acordo com a prioridade
+        Console.WriteLine("Iniciando o atendimento dos chamados:\n");
+        
+        while (filaDeChamados.Count > 0)
+        {
+            var chamado = filaDeChamados.Dequeue(); // Remove e obtém o chamado com a maior prioridade
+            Console.WriteLine($"Atendendo chamado: {chamado}");
+        }
+    }
 }
               </code></pre>
         </section>
         <p>
-          Neste exemplo, criamos uma nova fila, enfileiramos dois elementos e
-          depois desenfileiramos e imprimimos esses elementos.
+          Neste exemplo, criamos um sistema de suporte técnico que adiciona chamados com diferentes prioridades
+          e processamos eles conforme a urgência.
         </p>
       </section>
 
-      <section>
+      <section class="textos">
         <h2>Conclusão</h2>
         <p>
-          Os tipos abstratos de dados são ferramentas poderosas na ciência da
-          computação, permitindo a criação de software mais organizado,
-          modular e fácil de manter. Ao focar na interface e nas operações
-          permitidas por uma estrutura de dados, os desenvolvedores podem
-          criar soluções flexíveis e eficientes, abstraindo os detalhes da
-          implementação e facilitando o desenvolvimento de aplicações
-          complexas.
+          A fila de prioridade é uma estrutura de dados essencial que organiza e processa elementos com base em suas prioridades, 
+          em vez da ordem de chegada. Ela permite que itens mais importantes sejam tratados antes dos menos importantes, 
+          otimizando a alocação de recursos e melhorando o tempo de resposta. Utilizada em diversas aplicações, desde sistemas 
+          operacionais até algoritmos de roteamento e suporte técnico, a fila de prioridade garante que a ordem de execução reflita 
+          a urgência e a importância dos itens. Suas diferentes implementações, como heaps binários ou listas ordenadas, oferecem 
+          eficiência e flexibilidade, tornando-a uma ferramenta crucial para gerenciar tarefas e eventos críticos de maneira eficaz.
+        </p>
+        <p>
         </p>
       </section>
     </section>

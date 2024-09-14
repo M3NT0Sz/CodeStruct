@@ -103,16 +103,20 @@ session_start();
       <h1 class="navbar-title">Desenvolvedores</h1>
       <section class="developer-container">
         <section class="developer">
-          <img src="./view/Imagens/Ian.jpeg" alt="Desenvolvedor 1" />
-          <section class="developer-name">Ian</section>
+          <img src="./view/Imagens/Ian.jpeg" alt="Desenvolvedor" />
+          <section class="developer-name">Ian Gabriel</section>
         </section>
         <section class="developer">
-          <img src="./view/Imagens/MatheusMendes.jpeg" alt="Desenvolvedor 2" />
+          <img src="./view/Imagens/MatheusMendes.jpeg" alt="Desenvolvedor" />
           <section class="developer-name">Matheus Mendes</section>
         </section>
         <section class="developer">
-          <img src="./view/Imagens/MatheusWilliam.jpeg" alt="Desenvolvedor 3" />
+          <img src="./view/Imagens/MatheusWilliam.jpeg" alt="Desenvolvedor" />
           <section class="developer-name">Matheus William</section>
+        </section>
+        <section class="developer">
+          <img src="./view/Imagens/PauloDinei.jpg" alt="Desenvolvedor" />
+          <section class="developer-name">Paulo Diney</section>
         </section>
       </section>
     </section>

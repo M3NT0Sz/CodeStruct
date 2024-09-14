@@ -92,168 +92,223 @@
       <section class="textos">
         <h2>Introdução</h2>
         <p>
-          Os Tipos Abstrato de Dados (TAD) são conceitos fundamentais na
-          ciência da computação que definem estruturas de dados de maneira
-          abstrata, independentemente de implementações específicas. Um TAD
-          especifica um conjunto de valores possíveis e um conjunto de
-          operações que podem ser realizadas sobre esses valores, permitindo
-          que os desenvolvedores se concentrem em como usar a estrutura de
-          dados em vez de como ela é implementada.
+          Uma pilha é uma estrutura de dados que segue o princípio LIFO (Last In, First Out - Último a Entrar, Primeiro a Sair). 
+          Isso significa que o último elemento adicionado à pilha será o primeiro a ser removido. É como o exemplo de uma pilha
+          de pratos, onde você adiciona novos pratos no topo e remove o prato do topo quando precisa.
         </p>
       </section>
 
       <section class="textos">
         <h2>Importância</h2>
         <p>
-          Os TADs são cruciais para o desenvolvimento de software robusto e
-          eficiente, pois promovem a reutilização de código e a modularidade.
-          Eles permitem que programadores definam e utilizem estruturas de
-          dados sem se preocupar com os detalhes de implementação, facilitando
-          a manutenção e a evolução do software. Exemplos comuns de TADs
-          incluem listas, filas, pilhas, árvores e grafos.
+          A pilha é uma estrutura de dados crucial na ciência da computação devido às suas 
+          características de último a entrar, primeiro a sair (LIFO). Aqui estão os principais pontos sobre sua importância:
         </p>
-        <p>
-          Além disso, TADs ajudam na abstração dos dados e suas operações,
-          tornando o código mais legível e fácil de entender. Isso é
-          especialmente útil em grandes projetos de software onde várias
-          equipes podem trabalhar em diferentes partes do sistema.
-        </p>
+        <ul>
+          <li><b>Gerenciamento de Chamadas de Função:</b> Utilizada para gerenciar a pilha de chamadas de funções e recursão.</li>
+          <li><b>Execução de Algoritmos:</b> Fundamental em algoritmos como busca em profundidade e alguns algoritmos de ordenação.</li>
+          <li><b>Desfazer e Refazer:</b> Implementa funcionalidades de desfazer e refazer em aplicativos.
+          <li><b>Avaliação de Expressões:</b> Auxilia na avaliação de expressões matemáticas em notação polonesa e pós-fixada.
+          <li><b>Backtracking:</b> Usada em problemas de backtracking, como resolução de labirintos.
+          <li><b>Gerenciamento de Recursos:</b> Ajuda a gerenciar alocações temporárias de memória e estados do sistema.
+        </ul>
       </section>
 
       <section class="textos">
         <h2>Funcionamento</h2>
         <p>
-          Um TAD define uma interface clara para operações sobre uma estrutura
-          de dados. Por exemplo, um TAD para uma lista pode incluir operações
-          como adicionar um elemento, remover um elemento e acessar um
-          elemento em uma posição específica. A implementação concreta desses
-          métodos pode variar, mas a interface permanece consistente.
+          Uma pilha é uma estrutura de dados que segue o princípio LIFO (Last In, First Out - Último a Entrar, Primeiro a Sair), 
+          onde o último elemento adicionado é o primeiro a ser removido. Ela suporta operações básicas como push 
+          (adicionar um item ao topo), pop (remover o item do topo), e peek (visualizar o item do topo sem removê-lo).
         </p>
         <p>
-          Isso significa que você pode ter diferentes implementações do mesmo
-          TAD (por exemplo, uma lista pode ser implementada como uma lista
-          simplesmente encadeada ou uma lista duplamente encadeada), mas o
-          conjunto de operações que você pode realizar sobre a lista permanece
-          o mesmo.
+          Além disso, uma pilha pode verificar se está vazia com a operação estaVazia. Geralmente, é implementada usando arrays 
+          ou listas encadeadas. Suas principais aplicações incluem o gerenciamento de chamadas de função e recursão, execução de 
+          algoritmos como busca em profundidade, e funcionalidades de desfazer e refazer em aplicativos. A pilha é fundamental 
+          por sua simplicidade e eficiência em organizar e controlar o fluxo de dados e operações.
         </p>
-        <img style="width: 50%;" src="https://blog.pantuza.com/uploads/3c2f826b9b662f523fc857cc9eec0b42c73cd77e" alt="Exemplo de TAD com diferentes implementações" />
+        <img 
+          style="width: 50%;" 
+          src="https://upload.wikimedia.org/wikipedia/commons/5/56/QUEUE_VS_STACK.svg" 
+          alt="Exemplo de TAD com diferentes implementações" />
+        <p>
+          Na imagem é apresentado a diferença entre Fila (Queue) e Pilha (Stack). No exemplo, o primeiro elemento 
+          da Fila FIFO a chegar é o primeiro a sair dela enquanto a Pilha que o último elemento a chegar é o primeiro elemento a sair.
+        </p>
       </section>
 
       <section class="textos">
         <h2>Exemplo de Código em C#</h2>
         <p>
           Vamos examinar um exemplo de código em C# que demonstra como
-          implementar uma fila, que é um exemplo de TAD. Vamos dividir o
+          implementar uma Pilha. Vamos dividir o
           código em partes para melhor compreensão.
         </p>
 
-        <h3>Definição do Nó</h3>
-        <p>O primeiro passo é definir a estrutura do nó da fila:</p>
+        <h3>Atributos</h3>
+        <p><li>Elementos</li></p>
         <section class="code-container">
           <pre><code class="language-csharp">
-public class No
+private int[] elementos;
+              </code></pre>
+        </section>
+        <p>
+          Um array de inteiros que armazena os elementos da pilha. O tamanho do array é definido quando a pilha é criada.
+        </p>
+
+        <p><li>Topo</li></p>
+        <section class="code-container">
+          <pre><code class="language-csharp">
+private int topo;
+              </code></pre>
+        </section>
+        <p>
+          Um índice que aponta para o último elemento inserido na pilha. Ele começa em -1, o que indica que a pilha está vazia.
+        </p>
+
+        <h3>Construtor</h3>
+        <p>
+        </p>
+        <section class="code-container">
+          <pre><code class="language-csharp">
+public Pilha(int tamanho)
 {
-  public string Valor; // Valor armazenado no nó
-  public No Proximo; // Ponteiro para o próximo nó
-  
-  public No(string valor)
-  {
-      Valor = valor;
-      Proximo = null;
-  }
+    elementos = new int[tamanho];
+    topo = -1;
 }
               </code></pre>
         </section>
         <p>
-          Neste trecho, definimos a classe <code>No</code> que contém um valor
-          e um ponteiro para o próximo nó.
+          O construtor inicializa o array com um tamanho definido pelo usuário e define topo como -1 (inicialmente vazio).
         </p>
 
-        <h3>Definição da Fila</h3>
-        <p>
-          Em seguida, definimos a classe <code>Fila</code> que gerencia a
-          fila:
-        </p>
+        <h3>Métodos</h3>
+        <p><li>Push</li></p>
         <section class="code-container">
           <pre><code class="language-csharp">
-public class Fila
+public void Push(int item)
 {
-  private No head; // Ponteiro para o primeiro nó da fila
-  private No tail; // Ponteiro para o último nó da fila
-
-  public Fila()
-  {
-      head = null;
-      tail = null;
-  }
+    if (topo == elementos.Length - 1)
+    {
+        throw new InvalidOperationException("A pilha está cheia.");
+    }
+    elementos[++topo] = item;
+    Console.WriteLine($"{item} foi empilhado.");
 }
               </code></pre>
         </section>
         <p>
-          Aqui, estamos declarando os ponteiros <code>head</code> e
-          <code>tail</code> que apontam para o início e o fim da fila,
-          respectivamente.
+          Este método adiciona um novo elemento no topo da pilha. Antes de adicionar o elemento, ele verifica 
+          se a pilha está cheia. Se estiver cheia, uma exceção é lançada. Caso contrário, o valor é armazenado 
+          no próximo índice da pilha, incrementando <b>topo</b>.
+        </p>
+        <p>
+          <b>++topo:</b> Primeiro incrementa topo, depois usa o valor incrementado para armazenar o item.
+        </p>
+        <p>
+          <b>Exceção:</b> InvalidOperationException é lançada se a pilha estiver cheia.
         </p>
 
-        <h3>Método para Enfileirar</h3>
-        <p>
-          O método <code>Enfileirar</code> adiciona um novo nó ao final da
-          fila:
-        </p>
+        <p><li>Pop</li></p>
         <section class="code-container">
           <pre><code class="language-csharp">
-public void Enfileirar(string valor)
+public int Pop()
 {
-  No novoNo = new No(valor);
-  if (tail != null) tail.Proximo = novoNo;
-  tail = novoNo;
-  if (head == null) head = novoNo;
+    if (EstaVazia())
+    {
+        throw new InvalidOperationException("A pilha está vazia.");
+    }
+    int item = elementos[topo--];
+    Console.WriteLine($"{item} foi desempilhado.");
+    return item;
 }
               </code></pre>
         </section>
         <p>
-          Este método cria um novo nó e o adiciona ao final da fila. Se a fila
-          estiver vazia, o novo nó também se torna o <code>head</code>.
+          Remove e retorna o elemento no topo da pilha. Se a pilha estiver vazia, ele lança uma exceção.
+        </p>
+        <p>
+          <b>topo--:</b> Primeiro armazena o valor no topo, depois decrementa <b>topo</b>.
+        </p>
+        <p>
+          <b>Exceção:</b> <b>InvalidOperationException</b> é lançada se a pilha estiver vazia.
         </p>
 
-        <h3>Método para Desenfileirar</h3>
-        <p>
-          O método <code>Desenfileirar</code> remove e retorna o nó do início
-          da fila:
-        </p>
+        <p><li>Peek</li></p>
         <section class="code-container">
           <pre><code class="language-csharp">
-public string Desenfileirar()
+public int Peek()
 {
-  if (head == null) throw new InvalidOperationException("A fila está vazia.");
-  string valor = head.Valor;
-  head = head.Proximo;
-  if (head == null) tail = null;
-  return valor;
+    if (EstaVazia())
+    {
+        throw new InvalidOperationException("A pilha está vazia.");
+    }
+    return elementos[topo];
 }
               </code></pre>
         </section>
         <p>
-          Este método remove o nó do início da fila e retorna o valor
-          armazenado. Se a fila se tornar vazia após a remoção, o ponteiro
-          <code>tail</code> é atualizado para <code>null</code>.
+          Retorna o elemento no topo da pilha sem removê-lo. Se a pilha estiver vazia, ele lança uma exceção.
+        </p>
+        <p>
+          <b>Exceção:</b> <b>InvalidOperationException</b> é lançada se a pilha estiver vazia.
+        </p>
+
+        <p><li>EstaVazia</li></p>
+        <section class="code-container">
+          <pre><code class="language-csharp">
+public bool EstaVazia() => topo == -1;
+              </code></pre>
+        </section>
+        <p>
+          Verifica se a pilha está vazia retornando <b>true</b> se o índice <b>topo</b> for -1.
+        </p>
+
+        <p><li>EstaVazia</li></p>
+        <section class="code-container">
+          <pre><code class="language-csharp">
+public int Tamanho() => topo + 1;
+              </code></pre>
+        </section>
+        <p>
+          Retorna o número de elementos presentes na pilha. Como o topo começa em -1, o número de elementos é <b>topo + 1</b>.
         </p>
 
         <h3>Exemplo de Uso</h3>
         <p>Por fim, um exemplo de como usar a fila:</p>
         <section class="code-container">
           <pre><code class="language-csharp">
-// Exemplo de uso
-public class Program
+using System;
+
+class Program
 {
-  public static void Main()
-  {
-      Fila fila = new Fila();
-      fila.Enfileirar("primeiro");
-      fila.Enfileirar("segundo");
-      Console.WriteLine(fila.Desenfileirar()); // Saída: primeiro
-      Console.WriteLine(fila.Desenfileirar()); // Saída: segundo
-  }
+    static void Main()
+    {
+        Pilha pilha = new Pilha(3);
+
+        try
+        {
+            pilha.Push(10);
+            pilha.Push(20);
+            pilha.Push(30);
+
+            Console.WriteLine($"Elemento no topo: {pilha.Peek()}");  // 30
+            Console.WriteLine($"Tamanho da pilha: {pilha.Tamanho()}"); // 3
+
+            pilha.Pop();
+            Console.WriteLine($"Elemento no topo após desempilhar: {pilha.Peek()}"); // 20
+
+            // Tentativa de adicionar mais elementos após atingir a capacidade
+            pilha.Push(40);  // Empilha 40
+
+            // Tentando empilhar em uma pilha cheia
+            pilha.Push(50);  // Lança uma exceção
+        }
+        catch (InvalidOperationException ex)
+        {
+            Console.WriteLine($"Erro: {ex.Message}");
+        }
+    }
 }
               </code></pre>
         </section>
@@ -263,16 +318,15 @@ public class Program
         </p>
       </section>
 
-      <section>
+      <section class="textos">
         <h2>Conclusão</h2>
         <p>
-          Os tipos abstratos de dados são ferramentas poderosas na ciência da
-          computação, permitindo a criação de software mais organizado,
-          modular e fácil de manter. Ao focar na interface e nas operações
-          permitidas por uma estrutura de dados, os desenvolvedores podem
-          criar soluções flexíveis e eficientes, abstraindo os detalhes da
-          implementação e facilitando o desenvolvimento de aplicações
-          complexas.
+          A pilha é uma estrutura de dados essencial que opera com base no princípio LIFO (Last In, First Out), 
+          onde o último elemento adicionado é o primeiro a ser removido. Com operações básicas como push (adicionar), 
+          pop (remover) e peek (visualizar o topo), além da verificação de vazio, a pilha é fundamental para o 
+          gerenciamento de chamadas de função, execução de algoritmos e implementação de funcionalidades de desfazer e refazer. 
+          Sua simplicidade e eficiência a tornam crucial para organizar e controlar dados temporários e estados em 
+          muitos contextos de programação e sistemas computacionais.
         </p>
       </section>
     </section>

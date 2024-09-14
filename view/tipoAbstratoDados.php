@@ -262,7 +262,7 @@ public class Program
         </p>
       </section>
 
-      <section>
+      <section class="textos">
         <h2>Conclusão</h2>
         <p>
           Os tipos abstratos de dados são ferramentas poderosas na ciência da
