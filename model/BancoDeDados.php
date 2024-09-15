@@ -63,8 +63,63 @@ class BancoDeDados
     {
         $conexao = $this->conectarBD();
         $consulta = "SELECT * FROM perguntas WHERE per_tipo = '$tipo' ORDER BY RAND() LIMIT 1";
-        
+
         $listaTipos = mysqli_query($conexao, $consulta);
         return $listaTipos;
+    }
+
+    public function retornarUsuarioId($email)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT use_cod FROM usuario WHERE use_email = '$email'";
+        $resultado = mysqli_query($conexao, $consulta);
+        $row = mysqli_fetch_assoc($resultado);
+        return $row['use_cod'];
+    }
+
+    public function pegarPontos($cod)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT jor_cash FROM jornada WHERE jor_codUser = " . $cod;
+        $resultado = mysqli_query($conexao, $consulta);
+        $row = mysqli_fetch_assoc($resultado);
+        return $row['jor_cash'];
+    }
+
+    public function pegarCodJornada($cod)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT jor_cod FROM jornada WHERE jor_codUser = " . $cod;
+        $resultado = mysqli_query($conexao, $consulta);
+        $row = mysqli_fetch_assoc($resultado);
+        return $row['jor_cod'];
+    }
+
+    public function pegarTrilha($cod)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT jor_fase FROM jornada WHERE jor_cod = " . $cod;
+        $resultado = mysqli_query($conexao, $consulta);
+        $row = mysqli_fetch_assoc($resultado);
+        $fase = $row['jor_fase'] + 1;
+        return $fase;
+    }
+
+    public function verificarResposta($resposta, $pergunta)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT * FROM perguntas WHERE resposta_correta = '$resposta'";
+        $resultado = mysqli_query($conexao, $consulta);
+
+        if (mysqli_num_rows($resultado) == 1) {
+            $_SESSION['resposta'] = "Resposta correta";
+            $_SESSION['trilha'] = "Trilha " . $this->pegarTrilha($_SESSION['usuario_id']) ?? 1;
+            $pontos = $this->pegarPontos($_SESSION['usuario_id']);
+            $jor_cod = $this->pegarCodJornada($_SESSION['usuario_id']);
+            $consultaUpdate = "UPDATE jornada SET jor_cash = jor_cash + '$pontos' WHERE jor_cod = '$jor_cod'";
+            mysqli_query($conexao, $consultaUpdate);
+        } else {
+            $_SESSION['resposta'] = "Resposta incorreta";
+        }
     }
 }

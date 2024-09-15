@@ -32,10 +32,18 @@ if (
     if ($controlador->verificarUsuario($email, $senha)) {
         $_SESSION['estaLogado'] = TRUE;
         $_SESSION['logado'] = "Sim";
+        $_SESSION['usuario_id'] = $controlador->obterUsuarioId($email);
         header('Location:../index.php');
     } else {
         header('Location:../view/login.php');
     }
+    die();
+}
+
+if ($_POST['resposta']) {
+    $resposta = $_POST['resposta'];
+    $controlador->verificarResposta($resposta);
+    header('Location:../view/questoes.php');
     die();
 }
 

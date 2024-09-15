@@ -37,7 +37,7 @@ session_start();
                 </section>
 
                 <section class="personagemImg">
-                    <img src="./Imagens/personagem.png">
+                    <img src="./Imagens/Personagem/1.jpeg">
                 </section>
 
                 <section class="dinheiro">

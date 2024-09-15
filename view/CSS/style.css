@@ -452,14 +452,16 @@ pre > .language-csharp {
 }
 
 .personagemImg {
+  display: flex;
+  justify-content: center;
   margin: 20px;
-  width: auto;
+  width: 50%;
   height: auto;
+  border: 3px solid #5b5066;
 }
 
 .personagemImg > img {
   height: 100%;
-  border: 3px solid #5b5066;
 }
 
 .dinheiro {

@@ -38,11 +38,21 @@ class Controller
         while ($questao = mysqli_fetch_assoc($listaTipos)) {
             $tipos .=
                 "<h2>" . $questao['pergunta'] . "</h2>" .
-                "<button>" . $questao["opcao_a"] . "</button>" .
-                "<button>" . $questao["opcao_b"] . "</button>" .
-                "<button>" . $questao["opcao_c"] . "</button>" .
-                "<button>" . $questao["opcao_d"] . "</button>";
+                "<button type='submit' name='resposta' value='" . $questao["opcao_a"] . "'>" . $questao["opcao_a"] . "</button>" .
+                "<button type='submit' name='resposta' value='" . $questao["opcao_b"] . "'>" . $questao["opcao_b"] . "</button>" .
+                "<button type='submit' name='resposta' value='" . $questao["opcao_c"] . "'>" . $questao["opcao_c"] . "</button>" .
+                "<button type='submit' name='resposta' value='" . $questao["opcao_d"] . "'>" . $questao["opcao_d"] . "</button>";
         }
         return $tipos;
+    }
+
+    public function obterUsuarioId($email)
+    {
+        return $this->bancoDeDados->retornarUsuarioId($email);
+    }
+
+    public function verificarResposta($resposta)
+    {
+        $this->bancoDeDados->verificarResposta($resposta);
     }
 }
