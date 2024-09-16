@@ -26,9 +26,14 @@ class Controller
         }
     }
 
+    public function verificarVida($cod)
+    {
+        return $this->bancoDeDados->pegarVida($cod);
+    }
+
     public function visualizarCash($cod)
     {
-        $this->bancoDeDados->retornarCash($cod);
+        return $this->bancoDeDados->pegarCash($cod);
     }
 
     public function puxarQuestoes($tipo)

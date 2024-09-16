@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once "../controller/Controller.php";
+$controlador = new Controller();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -43,7 +45,7 @@ session_start();
                 <section class="dinheiro">
                     <h3>
                         <img src="./Imagens/Logo.png">
-                        <p>80</p>
+                        <p><?php echo $controlador->visualizarCash($_SESSION['usuario_id']); ?></p>
                     </h3>
                     <button id="toggleLoja">Abrir Loja</button>
                 </section>

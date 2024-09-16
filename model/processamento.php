@@ -40,10 +40,17 @@ if (
     die();
 }
 
-if ($_POST['resposta']) {
+if (!empty($_POST['resposta'])) {
     $resposta = $_POST['resposta'];
     $controlador->verificarResposta($resposta);
-    header('Location:../view/questoes.php');
+    
+    if ($_SESSION['resposta'] == "Correta" || $_SESSION['resposta'] == "Errada") {
+        unset($_SESSION['resposta']);
+        header('Location:../view/questoes.php');
+    } else if ($_SESSION['resposta'] == "Incorreta") {
+        unset($_SESSION['resposta']);
+        header('Location:../view/jornada.php');
+    }
     die();
 }
 
