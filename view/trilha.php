@@ -38,6 +38,7 @@ $controlador = new Controller();
                         <button id="toggleTAD">TAD</button> <!-- Título clicável para abrir/fechar a lista -->
                         <div id="trilhasTAD" class="trilhas">
                             <form action="questoes.php" method="post">
+                                <input type="hidden" name="extra" value="aumentarVida">
                                 <button type="submit" name="trilha" value="Trilha 1">
                                     <li>Trilha 1</li>
                                 </button>

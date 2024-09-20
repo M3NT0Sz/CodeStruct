@@ -2,7 +2,10 @@
 session_start();
 require_once "../controller/Controller.php";
 $controlador = new Controller();
-$controlador->aumentarVida($_SESSION['usuario_id']);
+if ($_POST['extra'] === "aumentarVida") {
+    $controlador->aumentarVida($_SESSION['usuario_id']);
+    unset($_POST['aumentarVida']);
+}
 if ($_POST['trilha'] === 'Trilha 1' || $_SESSION['trilha'] === 'Trilha 1') {
     echo $controlador->verificarVida($_SESSION['usuario_id']);
 ?>
