@@ -50,6 +50,15 @@ class BancoDeDados
         }
     }
 
+    public function pegarImg($cod)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT use_img FROM usuario WHERE use_cod = $cod";
+        $resultado = mysqli_query($conexao, $consulta);
+
+        return $resultado;
+    }
+
     public function retornarCash($cod)
     {
         $conexao = $this->conectarBD();

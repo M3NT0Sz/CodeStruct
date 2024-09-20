@@ -26,6 +26,16 @@ class Controller
         }
     }
 
+    public function visualizarImg($cod){
+        $tipos = '';
+        $listaTipos = $this->bancoDeDados->pegarImg($cod);
+        while ($questao = mysqli_fetch_assoc($listaTipos)) {
+
+            $tipos .= "<img src='data:image/jpeg;base64," . base64_encode($questao['use_img']) . "'/>";
+        }
+        return $tipos;
+    }
+
     public function verificarVida($cod)
     {
         return $this->bancoDeDados->pegarVida($cod);
