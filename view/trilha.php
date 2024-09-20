@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once "../controller/Controller.php";
+$controlador = new Controller();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -17,7 +19,7 @@ session_start();
     <main class="jogoTudo">
         <nav class="menuEsquerda">
             <section class="imgJogo">
-                <img src="./Imagens/MatheusMendes.jpeg">
+                <?php echo $controlador->visualizarImg($_SESSION['usuario_id']); ?>
             </section>
             <section class="configuracaoJogo">
                 <a href="../index.php"><button class="JogarBtn">Jogar</button></a>
