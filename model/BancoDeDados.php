@@ -118,10 +118,17 @@ class BancoDeDados
         return $fase;
     }
 
+    public function aumentarVida($cod)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "UPDATE jornada SET jor_vida = 3 WHERE jor_codUser = " . $cod;
+        mysqli_query($conexao, $consulta);
+    }
+
     public function pegarVida($cod)
     {
         $conexao = $this->conectarBD();
-        $consulta = "SELECT jor_vida FROM jornada WHERE jor_cod = " . $cod;
+        $consulta = "SELECT jor_vida FROM jornada WHERE jor_codUser = " . $cod;
         $resultado = mysqli_query($conexao, $consulta);
         $row = mysqli_fetch_assoc($resultado);
         return $row['jor_vida'];

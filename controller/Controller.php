@@ -31,6 +31,11 @@ class Controller
         return $this->bancoDeDados->pegarVida($cod);
     }
 
+    public function aumentarVida($cod)
+    {
+        $this->bancoDeDados->aumentarVida($cod);
+    }
+
     public function visualizarCash($cod)
     {
         return $this->bancoDeDados->pegarCash($cod);
