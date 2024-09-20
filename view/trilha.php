@@ -72,7 +72,7 @@ $controlador = new Controller();
                     </ul>
                     <ul class="trilhaUL">
                         <button id="toggleLSE" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 5 ? '' : 'buttonBloqueado'; ?>">
-                            Listas Simplesmente Encadeadas 
+                            Listas Simplesmente Encadeadas
                             <?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 5 ? '' : "<i class='bx bx-lock-alt'></i>"; ?>
                         </button> <!-- Título clicável para abrir/fechar a lista -->
                         <div id="trilhasLSE" class="trilhas">
@@ -108,7 +108,10 @@ $controlador = new Controller();
                         </div>
                     </ul>
                     <ul class="trilhaUL">
-                        <button class="buttonBloqueado" id="toggleLDE">Listas Duplamente Encadeadas <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
+                        <button id="toggleLDE" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 10 ? '' : 'buttonBloqueado'; ?>">
+                            Listas Duplamente Encadeadas
+                            <?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 10 ? '' : "<i class='bx bx-lock-alt'></i>"; ?>
+                        </button> <!-- Título clicável para abrir/fechar a lista -->
                         <div id="trilhasLDE" class="trilhas">
                             <form action="questoes.php" method="post">
                                 <input type="hidden" name="extra" value="aumentarVida">
@@ -142,7 +145,10 @@ $controlador = new Controller();
                         </div>
                     </ul>
                     <ul class="trilhaUL">
-                        <button class="buttonBloqueado" id="toggleFIFO">Fila FIFO <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
+                        <button id="toggleFIFO" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 15 ? '' : 'buttonBloqueado'; ?>">
+                            Fila FIFO
+                            <?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 15 ? '' : "<i class='bx bx-lock-alt'></i>"; ?>
+                        </button> <!-- Título clicável para abrir/fechar a lista -->
                         <div id="trilhasFIFO" class="trilhas">
                             <form action="questoes.php" method="post">
                                 <input type="hidden" name="extra" value="aumentarVida">
@@ -176,7 +182,10 @@ $controlador = new Controller();
                         </div>
                     </ul>
                     <ul class="trilhaUL">
-                        <button class="buttonBloqueado" id="togglePri">Fila de Prioridades <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
+                        <button id="togglePri" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 20 ? '' : 'buttonBloqueado'; ?>">
+                            Fila de Prioridades
+                            <?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 20 ? '' : "<i class='bx bx-lock-alt'></i>"; ?>
+                        </button>
                         <div id="trilhasPri" class="trilhas">
                             <form action="questoes.php" method="post">
                                 <input type="hidden" name="extra" value="aumentarVida">
@@ -210,7 +219,10 @@ $controlador = new Controller();
                         </div>
                     </ul>
                     <ul class="trilhaUL">
-                        <button class="buttonBloqueado" id="togglePil">Pilhas <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
+                        <button id="togglePil" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 20 ? '' : 'buttonBloqueado'; ?>">
+                            Pilhas
+                            <?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 20 ? '' : "<i class='bx bx-lock-alt'></i>"; ?>
+                        </button>
                         <div id="trilhasPil" class="trilhas">
                             <form action="questoes.php" method="post">
                                 <input type="hidden" name="extra" value="aumentarVida">
