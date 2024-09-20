@@ -1,3 +1,8 @@
+<?php
+error_reporting(0);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +15,8 @@
 </head>
 
 <body>
-    <section class="questoes">
+    <section class="tudoQuest">
+        <section class="questoes">
         <section class="question-box">
             <?php
             session_start();
@@ -21,8 +27,8 @@
                 $controlador->voltarQuestao($_SESSION['usuario_id']);
                 unset($_POST['aumentarVida']);
             }
-            echo $controlador->verificarVida($_SESSION['usuario_id']);
-            echo $controlador->visualizarPergunta($_SESSION['usuario_id']) . "/5";
+            echo "<section style='font-size: 20px;'>" . $controlador->verificarVida($_SESSION['usuario_id']) . "</section>";
+            echo "<section style='font-size: 20px;'>" . $controlador->visualizarPergunta($_SESSION['usuario_id']) . "/5</section>";
             if ($_POST['trilha'] === 'Trilha 1' || $_SESSION['trilha'] === 'Trilha 1') {
             ?>
                 <form action="../model/processamento.php" method="post">
@@ -74,6 +80,9 @@
             ?>
             </scetion>
         </section>
+        <img src="./Imagens/Personagem/1.png" alt="" style="position: fixed; bottom: 0; left: 0;">
+    </section>
+    
 
 </body>
 

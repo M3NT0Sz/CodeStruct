@@ -67,10 +67,12 @@ class Controller
         while ($questao = mysqli_fetch_assoc($listaTipos)) {
             $tipos .=
                 "<h2>" . $questao['pergunta'] . "</h2>" .
+                "<section class='alternativas'>" .
                 "<button type='submit' name='resposta' value='" . $questao["opcao_a"] . "'>" . $questao["opcao_a"] . "</button>" .
                 "<button type='submit' name='resposta' value='" . $questao["opcao_b"] . "'>" . $questao["opcao_b"] . "</button>" .
                 "<button type='submit' name='resposta' value='" . $questao["opcao_c"] . "'>" . $questao["opcao_c"] . "</button>" .
-                "<button type='submit' name='resposta' value='" . $questao["opcao_d"] . "'>" . $questao["opcao_d"] . "</button>";
+                "<button type='submit' name='resposta' value='" . $questao["opcao_d"] . "'>" . $questao["opcao_d"] . "</button>". 
+                "</section>";
         }
         return $tipos;
     }

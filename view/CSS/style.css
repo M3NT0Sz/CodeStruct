@@ -653,7 +653,10 @@ pre > .language-csharp {
   cursor: pointer;
 }
 
-
+.tudoQuest{
+  width: 100%;
+  height: 100%;
+}
 
 .questoes{
   
@@ -678,4 +681,38 @@ pre > .language-csharp {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+
+.alternativas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.alternativas button {
+  background-color: #8954bb;
+  border: none;
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  flex: 1 1 calc(50% - 40px); /* Adjust width to fit two buttons per row */
+  max-width: calc(50% - 40px); /* Ensure max width is half of the container */
+}
+
+.alternativas button:hover {
+  background-color: #fff;
+  color: #8954bb;
+  transform: scale(1.05);
+}
+
+.alternativas button:active {
+  background-color: #6a0dad;
+  color: #fff;
+  transform: scale(0.95);
 }
