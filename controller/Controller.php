@@ -26,7 +26,8 @@ class Controller
         }
     }
 
-    public function visualizarImg($cod){
+    public function visualizarImg($cod)
+    {
         $tipos = '';
         $listaTipos = $this->bancoDeDados->pegarImg($cod);
         while ($questao = mysqli_fetch_assoc($listaTipos)) {
