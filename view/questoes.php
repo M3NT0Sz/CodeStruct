@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +20,12 @@
                     unset($_POST['aumentarVida']);
                 }
                 if ($_POST['trilha'] === 'Trilha 1' || $_SESSION['trilha'] === 'Trilha 1') {
+                    echo "<div style='font-size: 24px;'>";
                     echo $controlador->verificarVida($_SESSION['usuario_id']);
+                    echo "</div>";
+                    echo "<div style='font-size: 24px;'>";
                     echo $controlador->visualizarPergunta($_SESSION['usuario_id']). "/5";
+                    echo "</div>";
                 ?>
                     <form action="../model/processamento.php" method="post">
                         <?php
