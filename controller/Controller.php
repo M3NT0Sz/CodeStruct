@@ -37,6 +37,10 @@ class Controller
         return $tipos;
     }
 
+    public function verificarTrilha($cod){
+        return $this->bancoDeDados->pegarTrilha($cod);
+    }
+
     public function verificarVida($cod)
     {
         return $this->bancoDeDados->pegarVida($cod);
@@ -70,6 +74,10 @@ class Controller
     public function obterUsuarioId($email)
     {
         return $this->bancoDeDados->retornarUsuarioId($email);
+    }
+
+    public function visualizarPergunta($cod){
+        return $this->bancoDeDados->pegarPergunta($cod);
     }
 
     public function verificarResposta($resposta)

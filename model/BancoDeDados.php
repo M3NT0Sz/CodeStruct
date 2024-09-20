@@ -143,6 +143,14 @@ class BancoDeDados
         return $row['jor_vida'];
     }
 
+    public function pegarPergunta($cod){
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT jor_pergunta FROM jornada WHERE jor_codUser = " . $cod;
+        $resultado = mysqli_query($conexao, $consulta);
+        $row = mysqli_fetch_assoc($resultado);
+        return $row['jor_pergunta'];
+    }
+
     public function verificarResposta($resposta)
     {
         $conexao = $this->conectarBD();
