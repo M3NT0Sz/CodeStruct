@@ -55,7 +55,7 @@ $controlador = new Controller();
                                     $nivel = $trilha[1];
                                     $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
                                     $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
-                                    
+
                                     if ($classe === "buttonBloqueado") {
                                         echo "<button type='button' class='$classe' disabled>
                                                 <li>$nome $icone</li>
@@ -71,53 +71,176 @@ $controlador = new Controller();
                         </div>
                     </ul>
                     <ul class="trilhaUL">
-                        <button class="buttonBloqueado" id="toggleLSE">Listas Simplesmente Encadeadas <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
+                        <button id="toggleLSE" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 5 ? '' : 'buttonBloqueado'; ?>">
+                            Listas Simplesmente Encadeadas 
+                            <?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 5 ? '' : "<i class='bx bx-lock-alt'></i>"; ?>
+                        </button> <!-- Título clicável para abrir/fechar a lista -->
                         <div id="trilhasLSE" class="trilhas">
-                            <li>Trilha 1</li>
-                            <li>Trilha 2</li>
-                            <li>Trilha 3</li>
-                            <li>Trilha 4</li>
-                            <li>Chefão</li>
+                            <form action="questoes.php" method="post">
+                                <input type="hidden" name="extra" value="aumentarVida">
+                                <?php
+                                $trilhas = [
+                                    ["Trilha 1", 5],
+                                    ["Trilha 2", 6],
+                                    ["Trilha 3", 7],
+                                    ["Trilha 4", 8],
+                                    ["Chefão", 9]
+                                ];
+
+                                foreach ($trilhas as $trilha) {
+                                    $nome = $trilha[0];
+                                    $nivel = $trilha[1];
+                                    $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
+                                    $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
+
+                                    if ($classe === "buttonBloqueado") {
+                                        echo "<button type='button' class='$classe' disabled>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    } else {
+                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    }
+                                }
+                                ?>
+                            </form>
                         </div>
                     </ul>
                     <ul class="trilhaUL">
                         <button class="buttonBloqueado" id="toggleLDE">Listas Duplamente Encadeadas <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
                         <div id="trilhasLDE" class="trilhas">
-                            <li>Trilha 1</li>
-                            <li>Trilha 2</li>
-                            <li>Trilha 3</li>
-                            <li>Trilha 4</li>
-                            <li>Chefão</li>
+                            <form action="questoes.php" method="post">
+                                <input type="hidden" name="extra" value="aumentarVida">
+                                <?php
+                                $trilhas = [
+                                    ["Trilha 1", 10],
+                                    ["Trilha 2", 11],
+                                    ["Trilha 3", 12],
+                                    ["Trilha 4", 13],
+                                    ["Chefão", 14]
+                                ];
+
+                                foreach ($trilhas as $trilha) {
+                                    $nome = $trilha[0];
+                                    $nivel = $trilha[1];
+                                    $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
+                                    $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
+
+                                    if ($classe === "buttonBloqueado") {
+                                        echo "<button type='button' class='$classe' disabled>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    } else {
+                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    }
+                                }
+                                ?>
+                            </form>
                         </div>
                     </ul>
                     <ul class="trilhaUL">
                         <button class="buttonBloqueado" id="toggleFIFO">Fila FIFO <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
                         <div id="trilhasFIFO" class="trilhas">
-                            <li>Trilha 1</li>
-                            <li>Trilha 2</li>
-                            <li>Trilha 3</li>
-                            <li>Trilha 4</li>
-                            <li>Chefão</li>
+                            <form action="questoes.php" method="post">
+                                <input type="hidden" name="extra" value="aumentarVida">
+                                <?php
+                                $trilhas = [
+                                    ["Trilha 1", 15],
+                                    ["Trilha 2", 16],
+                                    ["Trilha 3", 17],
+                                    ["Trilha 4", 18],
+                                    ["Chefão", 19]
+                                ];
+
+                                foreach ($trilhas as $trilha) {
+                                    $nome = $trilha[0];
+                                    $nivel = $trilha[1];
+                                    $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
+                                    $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
+
+                                    if ($classe === "buttonBloqueado") {
+                                        echo "<button type='button' class='$classe' disabled>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    } else {
+                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    }
+                                }
+                                ?>
+                            </form>
                         </div>
                     </ul>
                     <ul class="trilhaUL">
                         <button class="buttonBloqueado" id="togglePri">Fila de Prioridades <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
                         <div id="trilhasPri" class="trilhas">
-                            <li>Trilha 1</li>
-                            <li>Trilha 2</li>
-                            <li>Trilha 3</li>
-                            <li>Trilha 4</li>
-                            <li>Chefão</li>
+                            <form action="questoes.php" method="post">
+                                <input type="hidden" name="extra" value="aumentarVida">
+                                <?php
+                                $trilhas = [
+                                    ["Trilha 1", 20],
+                                    ["Trilha 2", 21],
+                                    ["Trilha 3", 22],
+                                    ["Trilha 4", 23],
+                                    ["Chefão", 24]
+                                ];
+
+                                foreach ($trilhas as $trilha) {
+                                    $nome = $trilha[0];
+                                    $nivel = $trilha[1];
+                                    $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
+                                    $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
+
+                                    if ($classe === "buttonBloqueado") {
+                                        echo "<button type='button' class='$classe' disabled>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    } else {
+                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    }
+                                }
+                                ?>
+                            </form>
                         </div>
                     </ul>
                     <ul class="trilhaUL">
                         <button class="buttonBloqueado" id="togglePil">Pilhas <i class='bx bx-lock-alt'></i></button> <!-- Título clicável para abrir/fechar a lista -->
                         <div id="trilhasPil" class="trilhas">
-                            <li>Trilha 1</li>
-                            <li>Trilha 2</li>
-                            <li>Trilha 3</li>
-                            <li>Trilha 4</li>
-                            <li>Chefão</li>
+                            <form action="questoes.php" method="post">
+                                <input type="hidden" name="extra" value="aumentarVida">
+                                <?php
+                                $trilhas = [
+                                    ["Trilha 1", 25],
+                                    ["Trilha 2", 26],
+                                    ["Trilha 3", 27],
+                                    ["Trilha 4", 28],
+                                    ["Chefão", 29]
+                                ];
+
+                                foreach ($trilhas as $trilha) {
+                                    $nome = $trilha[0];
+                                    $nivel = $trilha[1];
+                                    $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
+                                    $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
+
+                                    if ($classe === "buttonBloqueado") {
+                                        echo "<button type='button' class='$classe' disabled>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    } else {
+                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    }
+                                }
+                                ?>
+                            </form>
                         </div>
                     </ul>
                 </section>
