@@ -39,7 +39,7 @@ $controlador = new Controller();
                 </section>
 
                 <section class="personagemImg">
-                    <img src="./Imagens/Personagem/1.jpeg">
+                    <img src="./Imagens/Personagem/1.png">
                 </section>
 
                 <section class="dinheiro">
