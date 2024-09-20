@@ -18,7 +18,7 @@ $controlador = new Controller();
     <main class="jogoTudo">
         <nav class="menuEsquerda">
             <section class="imgJogo">
-                <img src="./Imagens/MatheusMendes.jpeg">
+               <?php echo $controlador->visualizarImg($_SESSION['usuario_id']); ?>
             </section>
             <section class="configuracaoJogo">
                 <a href="./trilha.php"><button class="JogarBtn">Jogar</button></a>
