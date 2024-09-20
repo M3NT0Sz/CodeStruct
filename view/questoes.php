@@ -20,6 +20,7 @@
                 }
                 if ($_POST['trilha'] === 'Trilha 1' || $_SESSION['trilha'] === 'Trilha 1') {
                     echo $controlador->verificarVida($_SESSION['usuario_id']);
+                    echo $controlador->visualizarPergunta($_SESSION['usuario_id']). "/5";
                 ?>
                     <form action="../model/processamento.php" method="post">
                         <?php

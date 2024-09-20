@@ -23,7 +23,7 @@ $controlador = new Controller();
             </section>
             <section class="configuracaoJogo">
                 <a href="../index.php"><button class="JogarBtn">Jogar</button></a>
-                
+
                 <a href="../index.php"><button>Voltar</button></a>
             </section>
         </nav>
@@ -42,7 +42,8 @@ $controlador = new Controller();
                                 <button type="submit" name="trilha" value="Trilha 1">
                                     <li>Trilha 1</li>
                                 </button>
-                                <button type="submit" name="trilha" value="Trilha 2" class="buttonBloqueado">
+                                <button type="submit" name="trilha" value="Trilha 2" class="<?php if ($controlador->verificarTrilha($_SESSION['usuario_id']) == 1) {
+                                                                                            } else { ?>buttonBloqueado<?php } ?>">
                                     <li>Trilha 2 <i class='bx bx-lock-alt'></i></li>
                                 </button>
                                 <button type="submit" name="trilha" value="Trilha 3" class="buttonBloqueado">
