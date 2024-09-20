@@ -23,7 +23,7 @@ $controlador = new Controller();
             </section>
             <section class="configuracaoJogo">
                 <a href="../index.php"><button class="JogarBtn">Jogar</button></a>
-                <a href="../index.php"><button>Configurações</button></a>
+                
                 <a href="../index.php"><button>Voltar</button></a>
             </section>
         </nav>
