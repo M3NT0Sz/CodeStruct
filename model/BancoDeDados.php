@@ -120,10 +120,20 @@ class BancoDeDados
     public function pegarTrilha($cod)
     {
         $conexao = $this->conectarBD();
-        $consulta = "SELECT jor_fase FROM jornada WHERE jor_cod = " . $cod;
+        $consulta = "SELECT jor_fase FROM jornada WHERE jor_codUser = " . $cod;
         $resultado = mysqli_query($conexao, $consulta);
         $row = mysqli_fetch_assoc($resultado);
         $fase = $row['jor_fase'] + 1;
+        return $fase;
+    }
+
+    public function pegarTrilha2($cod)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT jor_fase FROM jornada WHERE jor_codUser = " . $cod;
+        $resultado = mysqli_query($conexao, $consulta);
+        $row = mysqli_fetch_assoc($resultado);
+        $fase = $row['jor_fase'];
         return $fase;
     }
 
@@ -143,12 +153,20 @@ class BancoDeDados
         return $row['jor_vida'];
     }
 
-    public function pegarPergunta($cod){
+    public function pegarPergunta($cod)
+    {
         $conexao = $this->conectarBD();
         $consulta = "SELECT jor_pergunta FROM jornada WHERE jor_codUser = " . $cod;
         $resultado = mysqli_query($conexao, $consulta);
         $row = mysqli_fetch_assoc($resultado);
         return $row['jor_pergunta'];
+    }
+
+    public function voltarQuestao($cod)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "UPDATE jornada SET jor_pergunta = 1 WHERE jor_codUser = " . $cod;
+        mysqli_query($conexao, $consulta);
     }
 
     public function verificarResposta($resposta)
@@ -158,12 +176,24 @@ class BancoDeDados
         $resultado = mysqli_query($conexao, $consulta);
 
         if (mysqli_num_rows($resultado) == 1) {
-            $_SESSION['resposta'] = "Correta";
-            $_SESSION['trilha'] = "Trilha " . $this->pegarTrilha($_SESSION['usuario_id']) ?? 1;
-            $pontos = $this->pegarPontos($resposta);
-            $jor_cod = $this->pegarCodJornada($_SESSION['usuario_id']);
-            $consultaUpdate = "UPDATE jornada SET jor_cash = jor_cash + '$pontos' WHERE jor_cod = '$jor_cod'";
-            mysqli_query($conexao, $consultaUpdate);
+            if ($this->pegarPergunta($_SESSION['usuario_id']) >= 5) {
+                $consultaUpdate = "UPDATE jornada SET jor_fase = jor_fase + 1 WHERE jor_cod = " . $this->pegarCodJornada($_SESSION['usuario_id']);
+                mysqli_query($conexao, $consultaUpdate);
+                $_SESSION['acabou'] = "Acabou";
+                $pontos = $this->pegarPontos($resposta);
+                $jor_cod = $this->pegarCodJornada($_SESSION['usuario_id']);
+                $consultaUpdate = "UPDATE jornada SET jor_cash = jor_cash + '$pontos' WHERE jor_cod = '$jor_cod'";
+                mysqli_query($conexao, $consultaUpdate);
+            } else {
+                $_SESSION['resposta'] = "Correta";
+                $_SESSION['trilha'] = "Trilha " . $this->pegarTrilha($_SESSION['usuario_id']) ?? 1;
+                $pontos = $this->pegarPontos($resposta);
+                $jor_cod = $this->pegarCodJornada($_SESSION['usuario_id']);
+                $consultaUpdate = "UPDATE jornada SET jor_cash = jor_cash + '$pontos' WHERE jor_cod = '$jor_cod'";
+                mysqli_query($conexao, $consultaUpdate);
+                $consultaUpdate = "UPDATE jornada SET jor_pergunta = jor_pergunta + 1 WHERE jor_cod = '$jor_cod'";
+                mysqli_query($conexao, $consultaUpdate);
+            }
         } else {
             $jor_cod = $this->pegarCodJornada($_SESSION['usuario_id']);
             $consultaUpdate = "UPDATE jornada SET jor_vida = jor_vida - 1 WHERE jor_cod = '$jor_cod'";

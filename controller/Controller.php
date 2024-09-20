@@ -40,6 +40,10 @@ class Controller
     public function verificarTrilha($cod){
         return $this->bancoDeDados->pegarTrilha($cod);
     }
+    
+    public function verificarTrilha2($cod){
+        return $this->bancoDeDados->pegarTrilha2($cod);
+    }
 
     public function verificarVida($cod)
     {
@@ -78,6 +82,11 @@ class Controller
 
     public function visualizarPergunta($cod){
         return $this->bancoDeDados->pegarPergunta($cod);
+    }
+
+    public function voltarQuestao($cod)
+    {
+        $this->bancoDeDados->voltarQuestao($cod);
     }
 
     public function verificarResposta($resposta)

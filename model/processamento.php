@@ -43,12 +43,15 @@ if (
 if (!empty($_POST['resposta'])) {
     $resposta = $_POST['resposta'];
     $controlador->verificarResposta($resposta);
-    
+
     if ($_SESSION['resposta'] == "Correta" || $_SESSION['resposta'] == "Errada") {
         unset($_SESSION['resposta']);
         header('Location:../view/questoes.php');
     } else if ($_SESSION['resposta'] == "Incorreta") {
         unset($_SESSION['resposta']);
+        header('Location:../view/jornada.php');
+    } else if ($_SESSION['acabou'] == "Acabou") {
+        unset($_SESSION['acabou']);
         header('Location:../view/jornada.php');
     }
     die();

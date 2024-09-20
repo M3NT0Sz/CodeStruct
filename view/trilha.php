@@ -42,19 +42,31 @@ $controlador = new Controller();
                                 <button type="submit" name="trilha" value="Trilha 1">
                                     <li>Trilha 1</li>
                                 </button>
-                                <button type="submit" name="trilha" value="Trilha 2" class="<?php if ($controlador->verificarTrilha($_SESSION['usuario_id']) == 1) {
-                                                                                            } else { ?>buttonBloqueado<?php } ?>">
-                                    <li>Trilha 2 <i class='bx bx-lock-alt'></i></li>
-                                </button>
-                                <button type="submit" name="trilha" value="Trilha 3" class="buttonBloqueado">
-                                    <li>Trilha 3 <i class='bx bx-lock-alt'></i></li>
-                                </button>
-                                <button type="submit" name="trilha" value="Trilha 4" class="buttonBloqueado">
-                                    <li>Trilha 4 <i class='bx bx-lock-alt'></i></li>
-                                </button>
-                                <button type="submit" name="trilha" value="Chefão" class="buttonBloqueado">
-                                    <li>Chefão <i class='bx bx-lock-alt'></i></li>
-                                </button>
+                                <?php
+                                $trilhas = [
+                                    ["Trilha 2", 1],
+                                    ["Trilha 3", 2],
+                                    ["Trilha 4", 3],
+                                    ["Chefão", 4]
+                                ];
+
+                                foreach ($trilhas as $trilha) {
+                                    $nome = $trilha[0];
+                                    $nivel = $trilha[1];
+                                    $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
+                                    $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
+                                    
+                                    if ($classe === "buttonBloqueado") {
+                                        echo "<button type='button' class='$classe' disabled>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    } else {
+                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                                <li>$nome $icone</li>
+                                              </button>";
+                                    }
+                                }
+                                ?>
                             </form>
                         </div>
                     </ul>
