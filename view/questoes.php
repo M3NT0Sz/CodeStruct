@@ -33,60 +33,79 @@ error_reporting(0);
                 echo  $controlador->visualizarPergunta($_SESSION['usuario_id']) . "/5";
                 echo "<section>";
                 echo "</section>";
-                if ($_POST['trilha'] === 'Trilha 1' || $_SESSION['trilha'] === 'Trilha 1') {
-                    $_SESSION['trilhas'] = 0;
+                for ($i = 1; $i <= 30; $i++) {
+                    if ($_POST['trilha'] === 'Trilha ' . $i || $_SESSION['trilha'] === 'Trilha ' . $i) {
+                        $_SESSION['trilhas'] = $i - 1;
+                        $tipo = '';
+                        if ($i <= 5) {
+                            if ($i <= 2) {
+                                $nivel = 1;
+                            } elseif ($i <= 4) {
+                                $nivel = 2;
+                            } elseif ($i == 5) {
+                                $nivel = 3;
+                            }
+                            $tipo = 'TAD';
+                        } elseif ($i <= 10) {
+                            if ($i <= 7) {
+                                $nivel = 1;
+                            } elseif ($i <= 9) {
+                                $nivel = 2;
+                            } elseif ($i == 10) {
+                                $nivel = 3;
+                            }
+                            $tipo = 'Lista Simplesmente Encadeada';
+                        } elseif ($i <= 15) {
+                            if ($i <= 12) {
+                                $nivel = 1;
+                            } elseif ($i <= 14) {
+                                $nivel = 2;
+                            } elseif ($i == 15) {
+                                $nivel = 3;
+                            }
+                            $tipo = 'Lista Duplamente Encadeada';
+                        } elseif ($i <= 20) {
+                            if ($i <= 17) {
+                                $nivel = 1;
+                            } elseif ($i <= 19) {
+                                $nivel = 2;
+                            } elseif ($i == 20) {
+                                $nivel = 3;
+                            }
+                            $tipo = 'Fila FIFO';
+                        } elseif ($i <= 25) {
+                            if ($i <= 22) {
+                                $nivel = 1;
+                            } elseif ($i <= 24) {
+                                $nivel = 2;
+                            } elseif ($i == 25) {
+                                $nivel = 3;
+                            }
+                            $tipo = 'Fila de Prioridade';
+                        } else {
+                            if ($i <= 27) {
+                                $nivel = 1;
+                            } elseif ($i <= 29) {
+                                $nivel = 2;
+                            } elseif ($i == 30) {
+                                $nivel = 3;
+                            }
+                            $tipo = 'Pilha';
+                        }
                 ?>
-                    <form action="../model/processamento.php" method="post">
-                        <?php
-                        echo $controlador->puxarQuestoes('TAD');
-                        ?>
-                    </form>
+                        <form action="../model/processamento.php" method="post">
+                            <?php
+                            echo $controlador->puxarQuestoes($tipo, $nivel);
+                            ?>
+                        </form>
                 <?php
-                    unset($_SESSION['trilha']);
-                } elseif ($_POST['trilha'] === 'Trilha 2' || $_SESSION['trilha'] === 'Trilha 2') {
-                    $_SESSION['trilhas'] = 1;
-                ?>
-                    <form action="../model/processamento.php" method="post">
-                        <?php
-                        echo $controlador->puxarQuestoes('TAD');
-                        ?>
-                    </form>
-                <?php
-                    unset($_SESSION['trilha']);
-                } elseif ($_POST['trilha'] === 'Trilha 3' || $_SESSION['trilha'] === 'Trilha 3') {
-                    $_SESSION['trilhas'] = 2;
-                ?>
-                    <form action="../model/processamento.php" method="post">
-                        <?php
-                        echo $controlador->puxarQuestoes('TAD');
-                        ?>
-                    </form>
-                <?php
-                    unset($_SESSION['trilha']);
-                } elseif ($_POST['trilha'] === 'Trilha 4' || $_SESSION['trilha'] === 'Trilha 4') {
-                    $_SESSION['trilhas'] = 3;
-                ?>
-                    <form action="../model/processamento.php" method="post">
-                        <?php
-                        echo $controlador->puxarQuestoes('TAD');
-                        ?>
-                    </form>
-                <?php
-                    unset($_SESSION['trilha']);
-                } elseif ($_POST['trilha'] === 'Trilha 5' || $_SESSION['trilha'] === 'Trilha 5') {
-                    $_SESSION['trilhas'] = 4;
-                ?>
-                    <form action="../model/processamento.php" method="post">
-                        <?php
-                        echo $controlador->puxarQuestoes('TAD');
-                        ?>
-                    </form>
-                <?php
-                    unset($_SESSION['trilha']);
-                } else {
+                        unset($_SESSION['trilha']);
+                        break;
+                    }
+                }
+                if ($i > 30) {
                     echo "Trilha não encontrada.";
                 }
-                echo $_SESSION['trilhas'];
                 ?>
                 </scetion>
             </section>

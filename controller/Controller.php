@@ -60,10 +60,10 @@ class Controller
         return $this->bancoDeDados->pegarCash($cod);
     }
 
-    public function puxarQuestoes($tipo)
+    public function puxarQuestoes($tipo, $nivel)
     {
         $tipos = '';
-        $listaTipos = $this->bancoDeDados->retornarQuestoes($tipo);
+        $listaTipos = $this->bancoDeDados->retornarQuestoes($tipo, $nivel);
         while ($questao = mysqli_fetch_assoc($listaTipos)) {
             $tipos .=
                 "<h2>" . $questao['pergunta'] . "</h2>" .

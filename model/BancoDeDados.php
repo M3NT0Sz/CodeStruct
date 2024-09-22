@@ -67,10 +67,10 @@ class BancoDeDados
         return $resultado;
     }
 
-    public function retornarQuestoes($tipo)
+    public function retornarQuestoes($tipo, $nivel)
     {
         $conexao = $this->conectarBD();
-        $consulta = "SELECT * FROM perguntas WHERE per_tipo = '$tipo' ORDER BY RAND() LIMIT 1";
+        $consulta = "SELECT * FROM perguntas WHERE per_tipo = '$tipo' AND per_nivel = '$nivel' ORDER BY RAND() LIMIT 1";
 
         $listaTipos = mysqli_query($conexao, $consulta);
         return $listaTipos;

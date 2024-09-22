@@ -99,12 +99,26 @@ $controlador = new Controller();
                                     $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
                                     $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
 
+                                    if ($nome === "Trilha 1") {
+                                        $valor = "Trilha 6";
+                                    } elseif ($nome === "Trilha 2") {
+                                        $valor = "Trilha 7";
+                                    } elseif ($nome === "Trilha 3") {
+                                        $valor = "Trilha 8";
+                                    } elseif ($nome === "Trilha 4") {
+                                        $valor = "Trilha 9";
+                                    } elseif ($nome === "Chefão") {
+                                        $valor = "Trilha 10";
+                                    } else {
+                                        $valor = $nome;
+                                    }
+
                                     if ($classe === "buttonBloqueado") {
                                         echo "<button type='button' class='$classe' disabled>
                                                 <li>$nome $icone</li>
                                               </button>";
                                     } else {
-                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                        echo "<button type='submit' name='trilha' value='$valor' class='$classe'>
                                                 <li>$nome $icone</li>
                                               </button>";
                                     }
@@ -136,12 +150,26 @@ $controlador = new Controller();
                                     $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
                                     $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
 
+                                    if ($nome === "Trilha 1") {
+                                        $valor = "Trilha 11";
+                                    } elseif ($nome === "Trilha 2") {
+                                        $valor = "Trilha 12";
+                                    } elseif ($nome === "Trilha 3") {
+                                        $valor = "Trilha 13";
+                                    } elseif ($nome === "Trilha 4") {
+                                        $valor = "Trilha 14";
+                                    } elseif ($nome === "Chefão") {
+                                        $valor = "Trilha 15";
+                                    } else {
+                                        $valor = $nome;
+                                    }
+
                                     if ($classe === "buttonBloqueado") {
                                         echo "<button type='button' class='$classe' disabled>
                                                 <li>$nome $icone</li>
                                               </button>";
                                     } else {
-                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                        echo "<button type='submit' name='trilha' value='$valor' class='$classe'>
                                                 <li>$nome $icone</li>
                                               </button>";
                                     }
@@ -173,12 +201,26 @@ $controlador = new Controller();
                                     $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
                                     $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
 
+                                    if ($nome === "Trilha 1") {
+                                        $valor = "Trilha 16";
+                                    } elseif ($nome === "Trilha 2") {
+                                        $valor = "Trilha 17";
+                                    } elseif ($nome === "Trilha 3") {
+                                        $valor = "Trilha 18";
+                                    } elseif ($nome === "Trilha 4") {
+                                        $valor = "Trilha 19";
+                                    } elseif ($nome === "Chefão") {
+                                        $valor = "Trilha 20";
+                                    } else {
+                                        $valor = $nome;
+                                    }
+
                                     if ($classe === "buttonBloqueado") {
                                         echo "<button type='button' class='$classe' disabled>
                                                 <li>$nome $icone</li>
                                               </button>";
                                     } else {
-                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                        echo "<button type='submit' name='trilha' value='$valor' class='$classe'>
                                                 <li>$nome $icone</li>
                                               </button>";
                                     }
@@ -210,12 +252,26 @@ $controlador = new Controller();
                                     $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
                                     $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
 
+                                    if ($nome === "Trilha 1") {
+                                        $valor = "Trilha 21";
+                                    } elseif ($nome === "Trilha 2") {
+                                        $valor = "Trilha 22";
+                                    } elseif ($nome === "Trilha 3") {
+                                        $valor = "Trilha 23";
+                                    } elseif ($nome === "Trilha 4") {
+                                        $valor = "Trilha 24";
+                                    } elseif ($nome === "Chefão") {
+                                        $valor = "Trilha 25";
+                                    } else {
+                                        $valor = $nome;
+                                    }
+
                                     if ($classe === "buttonBloqueado") {
                                         echo "<button type='button' class='$classe' disabled>
                                                 <li>$nome $icone</li>
                                               </button>";
                                     } else {
-                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                        echo "<button type='submit' name='trilha' value='$valor' class='$classe'>
                                                 <li>$nome $icone</li>
                                               </button>";
                                     }
@@ -247,12 +303,26 @@ $controlador = new Controller();
                                     $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
                                     $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
 
+                                    if ($nome === "Trilha 1") {
+                                        $valor = "Trilha 26";
+                                    } elseif ($nome === "Trilha 2") {
+                                        $valor = "Trilha 27";
+                                    } elseif ($nome === "Trilha 3") {
+                                        $valor = "Trilha 28";
+                                    } elseif ($nome === "Trilha 4") {
+                                        $valor = "Trilha 29";
+                                    } elseif ($nome === "Chefão") {
+                                        $valor = "Trilha 30";
+                                    } else {
+                                        $valor = $nome;
+                                    }
+
                                     if ($classe === "buttonBloqueado") {
                                         echo "<button type='button' class='$classe' disabled>
                                                 <li>$nome $icone</li>
                                               </button>";
                                     } else {
-                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                        echo "<button type='submit' name='trilha' value='$valor' class='$classe'>
                                                 <li>$nome $icone</li>
                                               </button>";
                                     }
