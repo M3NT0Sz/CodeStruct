@@ -30,6 +30,7 @@ error_reporting(0);
             echo "<section style='font-size: 20px;'>" . $controlador->verificarVida($_SESSION['usuario_id']) . "</section>";
             echo "<section style='font-size: 20px;'>" . $controlador->visualizarPergunta($_SESSION['usuario_id']) . "/5</section>";
             if ($_POST['trilha'] === 'Trilha 1' || $_SESSION['trilha'] === 'Trilha 1') {
+                $_SESSION['trilhas'] = '0';
             ?>
                 <form action="../model/processamento.php" method="post">
                     <?php
@@ -39,6 +40,7 @@ error_reporting(0);
             <?php
                 unset($_SESSION['trilha']);
             } elseif ($_POST['trilha'] === 'Trilha 2' || $_SESSION['trilha'] === 'Trilha 2') {
+                $_SESSION['trilhas'] = '1';
             ?>
                 <form action="../model/processamento.php" method="post">
                     <?php
@@ -48,6 +50,7 @@ error_reporting(0);
             <?php
                 unset($_SESSION['trilha']);
             } elseif ($_POST['trilha'] === 'Trilha 3' || $_SESSION['trilha'] === 'Trilha 3') {
+                $_SESSION['trilhas'] = '2';
             ?>
                 <form action="../model/processamento.php" method="post">
                     <?php
@@ -57,6 +60,7 @@ error_reporting(0);
             <?php
                 unset($_SESSION['trilha']);
             } elseif ($_POST['trilha'] === 'Trilha 4' || $_SESSION['trilha'] === 'Trilha 4') {
+                $_SESSION['trilhas'] = '3';
             ?>
                 <form action="../model/processamento.php" method="post">
                     <?php
@@ -66,6 +70,7 @@ error_reporting(0);
             <?php
                 unset($_SESSION['trilha']);
             } elseif ($_POST['trilha'] === 'Trilha 5' || $_SESSION['trilha'] === 'Trilha 5') {
+                $_SESSION['trilhas'] = '4';
             ?>
                 <form action="../model/processamento.php" method="post">
                     <?php

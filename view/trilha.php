@@ -56,6 +56,12 @@ $controlador = new Controller();
                                     $classe = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "buttonBloqueado";
                                     $icone = $controlador->verificarTrilha2($_SESSION['usuario_id']) >= $nivel ? "" : "<i class='bx bx-lock-alt'></i>";
 
+                                    if ($nome === "Chefão") {
+                                        $valor = "Trilha 5";
+                                    } else {
+                                        $valor = $nome;
+                                    }
+
                                     if ($classe === "buttonBloqueado") {
                                         echo "<button type='button' class='$classe' disabled>
                                                 <li>$nome $icone</li>
