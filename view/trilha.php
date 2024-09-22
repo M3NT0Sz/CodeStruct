@@ -67,7 +67,7 @@ $controlador = new Controller();
                                                 <li>$nome $icone</li>
                                               </button>";
                                     } else {
-                                        echo "<button type='submit' name='trilha' value='$nome' class='$classe'>
+                                        echo "<button type='submit' name='trilha' value='$valor' class='$classe'>
                                                 <li>$nome $icone</li>
                                               </button>";
                                     }

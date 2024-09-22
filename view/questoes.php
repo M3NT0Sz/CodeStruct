@@ -17,81 +17,82 @@ error_reporting(0);
 <body>
     <section class="tudoQuest">
         <section class="questoes">
-        <section class="question-box">
-            <?php
-            session_start();
-            require_once "../controller/Controller.php";
-            $controlador = new Controller();
-            if ($_POST['extra'] === "aumentarVida") {
-                $controlador->aumentarVida($_SESSION['usuario_id']);
-                $controlador->voltarQuestao($_SESSION['usuario_id']);
-                unset($_POST['aumentarVida']);
-            }
-            echo "<section class='posiVida>";
+            <section class="question-box">
+                <?php
+                session_start();
+                require_once "../controller/Controller.php";
+                $controlador = new Controller();
+                if ($_POST['extra'] === "aumentarVida") {
+                    $controlador->aumentarVida($_SESSION['usuario_id']);
+                    $controlador->voltarQuestao($_SESSION['usuario_id']);
+                    unset($_POST['aumentarVida']);
+                }
+                echo "<section class='posiVida>";
                 echo "<section>";
-                    echo "img src='./Imagens/poteVida.png'" . $controlador->verificarVida($_SESSION['usuario_id']);
-                    echo  $controlador->visualizarPergunta($_SESSION['usuario_id']) . "/5";
+                echo "img src='./Imagens/poteVida.png'" . $controlador->verificarVida($_SESSION['usuario_id']);
+                echo  $controlador->visualizarPergunta($_SESSION['usuario_id']) . "/5";
                 echo "<section>";
-            echo "</section>";
-            if ($_POST['trilha'] === 'Trilha 1' || $_SESSION['trilha'] === 'Trilha 1') {
-                $_SESSION['trilhas'] = '0';
-            ?>
-                <form action="../model/processamento.php" method="post">
-                    <?php
-                    echo $controlador->puxarQuestoes('TAD');
-                    ?>
-                </form>
-            <?php
-                unset($_SESSION['trilha']);
-            } elseif ($_POST['trilha'] === 'Trilha 2' || $_SESSION['trilha'] === 'Trilha 2') {
-                $_SESSION['trilhas'] = '1';
-            ?>
-                <form action="../model/processamento.php" method="post">
-                    <?php
-                    echo $controlador->puxarQuestoes('TAD');
-                    ?>
-                </form>
-            <?php
-                unset($_SESSION['trilha']);
-            } elseif ($_POST['trilha'] === 'Trilha 3' || $_SESSION['trilha'] === 'Trilha 3') {
-                $_SESSION['trilhas'] = '2';
-            ?>
-                <form action="../model/processamento.php" method="post">
-                    <?php
-                    echo $controlador->puxarQuestoes('TAD');
-                    ?>
-                </form>
-            <?php
-                unset($_SESSION['trilha']);
-            } elseif ($_POST['trilha'] === 'Trilha 4' || $_SESSION['trilha'] === 'Trilha 4') {
-                $_SESSION['trilhas'] = '3';
-            ?>
-                <form action="../model/processamento.php" method="post">
-                    <?php
-                    echo $controlador->puxarQuestoes('TAD');
-                    ?>
-                </form>
-            <?php
-                unset($_SESSION['trilha']);
-            } elseif ($_POST['trilha'] === 'Trilha 5' || $_SESSION['trilha'] === 'Trilha 5') {
-                $_SESSION['trilhas'] = '4';
-            ?>
-                <form action="../model/processamento.php" method="post">
-                    <?php
-                    echo $controlador->puxarQuestoes('TAD');
-                    ?>
-                </form>
-            <?php
-                unset($_SESSION['trilha']);
-            } else {
-                echo "Trilha não encontrada.";
-            }
-            ?>
-            </scetion>
+                echo "</section>";
+                if ($_POST['trilha'] === 'Trilha 1' || $_SESSION['trilha'] === 'Trilha 1') {
+                    $_SESSION['trilhas'] = 0;
+                ?>
+                    <form action="../model/processamento.php" method="post">
+                        <?php
+                        echo $controlador->puxarQuestoes('TAD');
+                        ?>
+                    </form>
+                <?php
+                    unset($_SESSION['trilha']);
+                } elseif ($_POST['trilha'] === 'Trilha 2' || $_SESSION['trilha'] === 'Trilha 2') {
+                    $_SESSION['trilhas'] = 1;
+                ?>
+                    <form action="../model/processamento.php" method="post">
+                        <?php
+                        echo $controlador->puxarQuestoes('TAD');
+                        ?>
+                    </form>
+                <?php
+                    unset($_SESSION['trilha']);
+                } elseif ($_POST['trilha'] === 'Trilha 3' || $_SESSION['trilha'] === 'Trilha 3') {
+                    $_SESSION['trilhas'] = 2;
+                ?>
+                    <form action="../model/processamento.php" method="post">
+                        <?php
+                        echo $controlador->puxarQuestoes('TAD');
+                        ?>
+                    </form>
+                <?php
+                    unset($_SESSION['trilha']);
+                } elseif ($_POST['trilha'] === 'Trilha 4' || $_SESSION['trilha'] === 'Trilha 4') {
+                    $_SESSION['trilhas'] = 3;
+                ?>
+                    <form action="../model/processamento.php" method="post">
+                        <?php
+                        echo $controlador->puxarQuestoes('TAD');
+                        ?>
+                    </form>
+                <?php
+                    unset($_SESSION['trilha']);
+                } elseif ($_POST['trilha'] === 'Trilha 5' || $_SESSION['trilha'] === 'Trilha 5') {
+                    $_SESSION['trilhas'] = 4;
+                ?>
+                    <form action="../model/processamento.php" method="post">
+                        <?php
+                        echo $controlador->puxarQuestoes('TAD');
+                        ?>
+                    </form>
+                <?php
+                    unset($_SESSION['trilha']);
+                } else {
+                    echo "Trilha não encontrada.";
+                }
+                echo $_SESSION['trilhas'];
+                ?>
+                </scetion>
+            </section>
+            <img src="./Imagens/Personagem/1.png" alt="" style="position: fixed; bottom: 0; left: 0;">
         </section>
-        <img src="./Imagens/Personagem/1.png" alt="" style="position: fixed; bottom: 0; left: 0;">
-    </section>
-    
+
 
 </body>
 
