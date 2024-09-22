@@ -27,8 +27,12 @@ error_reporting(0);
                 $controlador->voltarQuestao($_SESSION['usuario_id']);
                 unset($_POST['aumentarVida']);
             }
-            echo "<section style='font-size: 20px;'>" . $controlador->verificarVida($_SESSION['usuario_id']) . "</section>";
-            echo "<section style='font-size: 20px;'>" . $controlador->visualizarPergunta($_SESSION['usuario_id']) . "/5</section>";
+            echo "<section class='posiVida>";
+                echo "<section>";
+                    echo "img src='./Imagens/poteVida.png'" . $controlador->verificarVida($_SESSION['usuario_id']);
+                    echo  $controlador->visualizarPergunta($_SESSION['usuario_id']) . "/5";
+                echo "<section>";
+            echo "</section>";
             if ($_POST['trilha'] === 'Trilha 1' || $_SESSION['trilha'] === 'Trilha 1') {
                 $_SESSION['trilhas'] = '0';
             ?>
