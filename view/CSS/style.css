@@ -705,6 +705,8 @@ pre > .language-csharp {
   max-width: calc(50% - 40px); /* Ensure max width is half of the container */
 }
 
+
+
 .alternativas button:hover {
   background-color: #fff;
   color: #8954bb;
@@ -718,27 +720,5 @@ pre > .language-csharp {
 }
 
 
-.posiVida {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-}
 
-.posiVida img {
-  width: 50px; /* Adjust size as needed */
-  height: auto;
-}
 
-.posiVida .vidas {
-  display: flex;
-  align-items: center;
-  font-size: 20px;
-  color: #8954bb;
-}
-
-.posiVida .perguntas {
-  font-size: 20px;
-  color: #8954bb;
-}
