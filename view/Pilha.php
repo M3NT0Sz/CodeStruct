@@ -1,5 +1,6 @@
 <?php
-  session_start();
+session_start();
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,7 +14,7 @@
 </head>
 
 <body>
-<header class="navbar">
+  <header class="navbar">
     <a href="../index.php">
       <img src="./Imagens/Logo.png" />
       <h1>CodeStruct</h1>
@@ -32,15 +33,27 @@
             <li><a href="./FilaFIFO.php">Fila FIFO</a></li>
             <li><a href="./FilaDePrioridade.php">Fila de Prioridade</a></li>
             <li><a href="./Pilha.php">Pilha</a></li>
-            
+
           </ul>
         </li>
       </h3>
       <h3>
         <li>
-          <a href="./jornada.php">
-            Jornada
-          </a>
+          <?php
+          if ($_SESSION['logado'] != null) {
+          ?>
+            <a href="./jornada.php">
+              Jornada
+            </a>
+          <?php
+          } else {
+          ?>
+            <a href="./login.php">
+              Jornada
+            </a>
+          <?php
+          }
+          ?>
         </li>
       </h3>
       <h3>
@@ -82,17 +95,17 @@
         <h1>Pilha</h1>
       </header>
       <section class="video">
-          <h2>Vídeo Explicativo</h2>
-          <section>
-            <iframe
-              src="https://www.youtube.com/embed/nHF_pgep9qE?si=3pCoFkR9hapfcsGP" frameborder="0" allowfullscreen></iframe>
-          </section>
+        <h2>Vídeo Explicativo</h2>
+        <section>
+          <iframe
+            src="https://www.youtube.com/embed/nHF_pgep9qE?si=3pCoFkR9hapfcsGP" frameborder="0" allowfullscreen></iframe>
         </section>
+      </section>
 
       <section class="textos">
         <h2>Introdução</h2>
         <p>
-          Uma pilha é uma estrutura de dados que segue o princípio LIFO (Last In, First Out - Último a Entrar, Primeiro a Sair). 
+          Uma pilha é uma estrutura de dados que segue o princípio LIFO (Last In, First Out - Último a Entrar, Primeiro a Sair).
           Isso significa que o último elemento adicionado à pilha será o primeiro a ser removido. É como o exemplo de uma pilha
           de pratos, onde você adiciona novos pratos no topo e remove o prato do topo quando precisa.
         </p>
@@ -101,7 +114,7 @@
       <section class="textos">
         <h2>Importância</h2>
         <p>
-          A pilha é uma estrutura de dados crucial na ciência da computação devido às suas 
+          A pilha é uma estrutura de dados crucial na ciência da computação devido às suas
           características de último a entrar, primeiro a sair (LIFO). Aqui estão os principais pontos sobre sua importância:
         </p>
         <ul>
@@ -117,22 +130,22 @@
       <section class="textos">
         <h2>Funcionamento</h2>
         <p>
-          Uma pilha é uma estrutura de dados que segue o princípio LIFO (Last In, First Out - Último a Entrar, Primeiro a Sair), 
-          onde o último elemento adicionado é o primeiro a ser removido. Ela suporta operações básicas como push 
+          Uma pilha é uma estrutura de dados que segue o princípio LIFO (Last In, First Out - Último a Entrar, Primeiro a Sair),
+          onde o último elemento adicionado é o primeiro a ser removido. Ela suporta operações básicas como push
           (adicionar um item ao topo), pop (remover o item do topo), e peek (visualizar o item do topo sem removê-lo).
         </p>
         <p>
-          Além disso, uma pilha pode verificar se está vazia com a operação estaVazia. Geralmente, é implementada usando arrays 
-          ou listas encadeadas. Suas principais aplicações incluem o gerenciamento de chamadas de função e recursão, execução de 
-          algoritmos como busca em profundidade, e funcionalidades de desfazer e refazer em aplicativos. A pilha é fundamental 
+          Além disso, uma pilha pode verificar se está vazia com a operação estaVazia. Geralmente, é implementada usando arrays
+          ou listas encadeadas. Suas principais aplicações incluem o gerenciamento de chamadas de função e recursão, execução de
+          algoritmos como busca em profundidade, e funcionalidades de desfazer e refazer em aplicativos. A pilha é fundamental
           por sua simplicidade e eficiência em organizar e controlar o fluxo de dados e operações.
         </p>
-        <img 
-          style="width: 50%;" 
-          src="https://upload.wikimedia.org/wikipedia/commons/5/56/QUEUE_VS_STACK.svg" 
+        <img
+          style="width: 50%;"
+          src="https://upload.wikimedia.org/wikipedia/commons/5/56/QUEUE_VS_STACK.svg"
           alt="Exemplo de TAD com diferentes implementações" />
         <p>
-          Na imagem é apresentado a diferença entre Fila (Queue) e Pilha (Stack). No exemplo, o primeiro elemento 
+          Na imagem é apresentado a diferença entre Fila (Queue) e Pilha (Stack). No exemplo, o primeiro elemento
           da Fila FIFO a chegar é o primeiro a sair dela enquanto a Pilha que o último elemento a chegar é o primeiro elemento a sair.
         </p>
       </section>
@@ -146,7 +159,9 @@
         </p>
 
         <h3>Atributos</h3>
-        <p><li>Elementos</li></p>
+        <p>
+          <li>Elementos</li>
+        </p>
         <section class="code-container">
           <pre><code class="language-csharp">
 private int[] elementos;
@@ -156,7 +171,9 @@ private int[] elementos;
           Um array de inteiros que armazena os elementos da pilha. O tamanho do array é definido quando a pilha é criada.
         </p>
 
-        <p><li>Topo</li></p>
+        <p>
+          <li>Topo</li>
+        </p>
         <section class="code-container">
           <pre><code class="language-csharp">
 private int topo;
@@ -183,7 +200,9 @@ public Pilha(int tamanho)
         </p>
 
         <h3>Métodos</h3>
-        <p><li>Push</li></p>
+        <p>
+          <li>Push</li>
+        </p>
         <section class="code-container">
           <pre><code class="language-csharp">
 public void Push(int item)
@@ -198,8 +217,8 @@ public void Push(int item)
               </code></pre>
         </section>
         <p>
-          Este método adiciona um novo elemento no topo da pilha. Antes de adicionar o elemento, ele verifica 
-          se a pilha está cheia. Se estiver cheia, uma exceção é lançada. Caso contrário, o valor é armazenado 
+          Este método adiciona um novo elemento no topo da pilha. Antes de adicionar o elemento, ele verifica
+          se a pilha está cheia. Se estiver cheia, uma exceção é lançada. Caso contrário, o valor é armazenado
           no próximo índice da pilha, incrementando <b>topo</b>.
         </p>
         <p>
@@ -209,7 +228,9 @@ public void Push(int item)
           <b>Exceção:</b> InvalidOperationException é lançada se a pilha estiver cheia.
         </p>
 
-        <p><li>Pop</li></p>
+        <p>
+          <li>Pop</li>
+        </p>
         <section class="code-container">
           <pre><code class="language-csharp">
 public int Pop()
@@ -234,7 +255,9 @@ public int Pop()
           <b>Exceção:</b> <b>InvalidOperationException</b> é lançada se a pilha estiver vazia.
         </p>
 
-        <p><li>Peek</li></p>
+        <p>
+          <li>Peek</li>
+        </p>
         <section class="code-container">
           <pre><code class="language-csharp">
 public int Peek()
@@ -254,7 +277,9 @@ public int Peek()
           <b>Exceção:</b> <b>InvalidOperationException</b> é lançada se a pilha estiver vazia.
         </p>
 
-        <p><li>EstaVazia</li></p>
+        <p>
+          <li>EstaVazia</li>
+        </p>
         <section class="code-container">
           <pre><code class="language-csharp">
 public bool EstaVazia() => topo == -1;
@@ -264,7 +289,9 @@ public bool EstaVazia() => topo == -1;
           Verifica se a pilha está vazia retornando <b>true</b> se o índice <b>topo</b> for -1.
         </p>
 
-        <p><li>EstaVazia</li></p>
+        <p>
+          <li>EstaVazia</li>
+        </p>
         <section class="code-container">
           <pre><code class="language-csharp">
 public int Tamanho() => topo + 1;
@@ -321,11 +348,11 @@ class Program
       <section class="textos">
         <h2>Conclusão</h2>
         <p>
-          A pilha é uma estrutura de dados essencial que opera com base no princípio LIFO (Last In, First Out), 
-          onde o último elemento adicionado é o primeiro a ser removido. Com operações básicas como push (adicionar), 
-          pop (remover) e peek (visualizar o topo), além da verificação de vazio, a pilha é fundamental para o 
-          gerenciamento de chamadas de função, execução de algoritmos e implementação de funcionalidades de desfazer e refazer. 
-          Sua simplicidade e eficiência a tornam crucial para organizar e controlar dados temporários e estados em 
+          A pilha é uma estrutura de dados essencial que opera com base no princípio LIFO (Last In, First Out),
+          onde o último elemento adicionado é o primeiro a ser removido. Com operações básicas como push (adicionar),
+          pop (remover) e peek (visualizar o topo), além da verificação de vazio, a pilha é fundamental para o
+          gerenciamento de chamadas de função, execução de algoritmos e implementação de funcionalidades de desfazer e refazer.
+          Sua simplicidade e eficiência a tornam crucial para organizar e controlar dados temporários e estados em
           muitos contextos de programação e sistemas computacionais.
         </p>
       </section>

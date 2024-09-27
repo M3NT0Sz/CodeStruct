@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -32,15 +33,27 @@ session_start();
             <li><a href="./view/FilaFIFO.php">Fila FIFO</a></li>
             <li><a href="./view/FilaDePrioridade.php">Fila de Prioridade</a></li>
             <li><a href="./view/Pilha.php">Pilha</a></li>
-            
+
           </ul>
         </li>
       </h3>
       <h3>
         <li>
-          <a href="./view/jornada.php">
-            Jornada
-          </a>
+          <?php
+          if ($_SESSION['logado'] != null) {
+          ?>
+            <a href="./view/jornada.php">
+              Jornada
+            </a>
+          <?php
+          } else {
+          ?>
+            <a href="./view/login.php">
+              Jornada
+            </a>
+          <?php
+          }
+          ?>
         </li>
       </h3>
       <h3>

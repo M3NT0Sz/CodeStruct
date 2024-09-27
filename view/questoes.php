@@ -27,10 +27,10 @@ error_reporting(0);
                     $controlador->voltarQuestao($_SESSION['usuario_id']);
                     unset($_POST['aumentarVida']);
                 }
-                
+
                 $vida = $controlador->verificarVida($_SESSION['usuario_id']);
                 echo "<section style='display: flex; justify-content: space-between; align-items: center;'>";
-                
+
                 for ($i = 0; $i < 3; $i++) {
                     if ($i < $vida) {
                         echo "<img src='./Imagens/poteVida.png' alt='Pote de Vida' style='width: 50px; height: 50px;'>";
@@ -42,7 +42,7 @@ error_reporting(0);
                 echo "</section>";
                 echo $controlador->visualizarPergunta($_SESSION['usuario_id']) . "/5";
                 echo "<div>";
-     
+
                 for ($i = 1; $i <= 30; $i++) {
                     if ($_POST['trilha'] === 'Trilha ' . $i || $_SESSION['trilha'] === 'Trilha ' . $i) {
                         $_SESSION['trilhas'] = $i - 1;
@@ -126,4 +126,5 @@ error_reporting(0);
 </body>
 
 <script src="./JS/cutCine.js"></script>
+
 </html>

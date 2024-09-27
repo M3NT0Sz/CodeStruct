@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,7 +14,7 @@ session_start();
 </head>
 
 <body>
-<header class="navbar">
+  <header class="navbar">
     <a href="../index.php">
       <img src="./Imagens/Logo.png" />
       <h1>CodeStruct</h1>
@@ -32,15 +33,27 @@ session_start();
             <li><a href="./FilaFIFO.php">Fila FIFO</a></li>
             <li><a href="./FilaDePrioridade.php">Fila de Prioridade</a></li>
             <li><a href="./Pilha.php">Pilha</a></li>
-            
+
           </ul>
         </li>
       </h3>
       <h3>
         <li>
-          <a href="./jornada.php">
-            Jornada
-          </a>
+          <?php
+          if ($_SESSION['logado'] != null) {
+          ?>
+            <a href="./jornada.php">
+              Jornada
+            </a>
+          <?php
+          } else {
+          ?>
+            <a href="./login.php">
+              Jornada
+            </a>
+          <?php
+          }
+          ?>
         </li>
       </h3>
       <h3>
@@ -75,7 +88,7 @@ session_start();
     <script src="./JS/script.js"></script>
     <script src="https://kit.fontawesome.com/5bcdea54fd.js" crossorigin="anonymous"></script>
   </header>
-  <section class="tela">
+  <section class="tela" style="height: 90vh;">
     <section class="tela80">
       <form action="../model/processamento.php" method="post" class="containerLogin">
         <h3>Email <input type="email" name="inputEmail"></h3>

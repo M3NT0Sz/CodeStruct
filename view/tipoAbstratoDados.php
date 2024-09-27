@@ -1,5 +1,6 @@
 <?php
-  session_start();
+session_start();
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,7 +14,7 @@
 </head>
 
 <body>
-<header class="navbar">
+  <header class="navbar">
     <a href="../index.php">
       <img src="./Imagens/Logo.png" />
       <h1>CodeStruct</h1>
@@ -32,15 +33,27 @@
             <li><a href="./FilaFIFO.php">Fila FIFO</a></li>
             <li><a href="./FilaDePrioridade.php">Fila de Prioridade</a></li>
             <li><a href="./Pilha.php">Pilha</a></li>
-            
+
           </ul>
         </li>
       </h3>
       <h3>
         <li>
-          <a href="./jornada.php">
-            Jornada
-          </a>
+          <?php
+          if ($_SESSION['logado'] != null) {
+          ?>
+            <a href="./jornada.php">
+              Jornada
+            </a>
+          <?php
+          } else {
+          ?>
+            <a href="./login.php">
+              Jornada
+            </a>
+          <?php
+          }
+          ?>
         </li>
       </h3>
       <h3>

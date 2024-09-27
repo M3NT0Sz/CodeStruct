@@ -20,6 +20,9 @@ if (
 
     header("Location: ../view/login.php");
     die();
+} else {
+    header('Location:../index.php');
+    die();
 }
 
 if (
@@ -38,6 +41,9 @@ if (
         header('Location:../view/login.php');
     }
     die();
+} else {
+    header('Location:../index.php');
+    die();
 }
 
 if (!empty($_POST['resposta'])) {
@@ -55,11 +61,17 @@ if (!empty($_POST['resposta'])) {
         header('Location:../view/jornada.php');
     }
     die();
+} else {
+    header('Location:../index.php');
+    die();
 }
 
 
 if (isset($_SESSION['logado']) == "Sim") {
     session_destroy();
     header("Location: ../index.php");
+    die();
+} else {
+    header('Location:../index.php');
     die();
 }

@@ -1,5 +1,6 @@
 <?php
-  session_start();
+session_start();
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,7 +14,7 @@
 </head>
 
 <body>
-<header class="navbar">
+  <header class="navbar">
     <a href="../index.php">
       <img src="./Imagens/Logo.png" />
       <h1>CodeStruct</h1>
@@ -32,15 +33,27 @@
             <li><a href="./FilaFIFO.php">Fila FIFO</a></li>
             <li><a href="./FilaDePrioridade.php">Fila de Prioridade</a></li>
             <li><a href="./Pilha.php">Pilha</a></li>
-            
+
           </ul>
         </li>
       </h3>
       <h3>
         <li>
-          <a href="./jornada.php">
-            Jornada
-          </a>
+          <?php
+          if ($_SESSION['logado'] != null) {
+          ?>
+            <a href="./jornada.php">
+              Jornada
+            </a>
+          <?php
+          } else {
+          ?>
+            <a href="./login.php">
+              Jornada
+            </a>
+          <?php
+          }
+          ?>
         </li>
       </h3>
       <h3>
@@ -93,7 +106,7 @@
         <p>
           FIFO, que significa "First In, First Out" (Primeiro a Entrar, Primeiro a Sair), é um conceito amplamente
           utilizado em ciência da computação, estruturas de dados e sistemas de filas. Em uma fila FIFO, os elementos
-          são inseridos em uma extremidade (normalmente chamada de "cauda" ou "fundo") e removidos da outra extremidade 
+          são inseridos em uma extremidade (normalmente chamada de "cauda" ou "fundo") e removidos da outra extremidade
           (chamada de "cabeça" ou "frente"). Isso significa que o primeiro elemento a ser inserido na fila será
           o primeiro a ser removido, seguindo uma ordem cronológica de chegada.
         </p>
@@ -106,21 +119,21 @@
         </p>
         <ul>
           <li><b>Manutenção da Ordem:</b> Assegura que os elementos sejam processados na ordem em que foram inseridos,
-              o que é crucial em sistemas onde a sequência de chegada deve ser preservada, como em filas de impressão ou
-              gerenciamento de tarefas.</li>
+            o que é crucial em sistemas onde a sequência de chegada deve ser preservada, como em filas de impressão ou
+            gerenciamento de tarefas.</li>
 
           <li><b>Simplicidade e Eficiência:</b> A estrutura FIFO é fácil de entender e implementar, o que a torna ideal para
-              organizar dados e processos de maneira eficiente e sem complexidade adicional.</li>
+            organizar dados e processos de maneira eficiente e sem complexidade adicional.</li>
 
           <li><b>Gerenciamento em Redes:</b> Em redes de computadores, filas FIFO são usadas para organizar pacotes de dados,
-              garantindo que sejam processados na ordem correta, o que é essencial para a integridade das comunicações
-              e a sincronização dos dados.</li>
+            garantindo que sejam processados na ordem correta, o que é essencial para a integridade das comunicações
+            e a sincronização dos dados.</li>
 
           <li><b>Distribuição Justa de Recursos:</b> Em sistemas operacionais, a FIFO ajuda a gerenciar recursos limitados,
-              como tempo de CPU ou acesso a dispositivos, de forma que todos os processos tenham uma chance justa de serem executados.
+            como tempo de CPU ou acesso a dispositivos, de forma que todos os processos tenham uma chance justa de serem executados.
 
           <li><b>Previsibilidade:</b> Fornece um comportamento previsível no processamento de tarefas, o que é importante para aplicações
-              em tempo real e sistemas críticos, onde é necessário garantir que as tarefas sejam executadas na ordem correta.</li>
+            em tempo real e sistemas críticos, onde é necessário garantir que as tarefas sejam executadas na ordem correta.</li>
         </ul>
       </section>
 
@@ -130,15 +143,14 @@
           O funcionamento da fila FIFO (First In, First Out) é baseado em duas operações principais:
         </p>
         <ul>
-          <li><b>Enqueue:</b> Esta operação adiciona um novo elemento à fila. O elemento é inserido na cauda ou fundo da fila. 
-              O novo item se torna o último na fila.</li>
-          <li><b>Dequeue:</b> Esta operação remove um elemento da fila. O elemento removido é sempre o que está na 
-              cabeça ou frente da fila, ou seja, o primeiro a ter sido adicionado.</li>
+          <li><b>Enqueue:</b> Esta operação adiciona um novo elemento à fila. O elemento é inserido na cauda ou fundo da fila.
+            O novo item se torna o último na fila.</li>
+          <li><b>Dequeue:</b> Esta operação remove um elemento da fila. O elemento removido é sempre o que está na
+            cabeça ou frente da fila, ou seja, o primeiro a ter sido adicionado.</li>
         </ul>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Fifo_queue.png"
-          alt="Estrutura de uma Fila FIFO"
-        />
+          alt="Estrutura de uma Fila FIFO" />
       </section>
 
       <section class="textos">
@@ -263,7 +275,7 @@ public int Dequeue()
           armazenado. Se a fila se tornar vazia após a remoção, o ponteiro
           <code>tail</code> é atualizado para <code>null</code>.
         </p>
-        
+
         <h3>isEmpty</h3>
         <p>
           Verifica se a fila está vazia:
@@ -316,7 +328,7 @@ public int Peek()
               </code></pre>
         </section>
         <p>
-          O método Peek permite que você veja o valor do primeiro nó na fila, sem removê-lo. 
+          O método Peek permite que você veja o valor do primeiro nó na fila, sem removê-lo.
           Se a fila estiver vazia, ele lança uma exceção.
         </p>
 
@@ -355,8 +367,8 @@ public class Program
       <section class="textos">
         <h2>Conclusão</h2>
         <p>
-          A fila FIFO é uma solução ideal para problemas que requerem a preservação da ordem de processamento dos elementos. 
-          Sua simplicidade e eficiência tornam-na uma das estruturas de dados mais úteis em computação, sendo indispensável 
+          A fila FIFO é uma solução ideal para problemas que requerem a preservação da ordem de processamento dos elementos.
+          Sua simplicidade e eficiência tornam-na uma das estruturas de dados mais úteis em computação, sendo indispensável
           em cenários onde a ordem de entrada precisa ser respeitada.
         </p>
       </section>
