@@ -20,17 +20,12 @@ if (
 
     header("Location: ../view/login.php");
     die();
-} else {
-    header('Location:../index.php');
-    die();
-}
-
-if (
-    !empty($_POST['inputEmail']) &&
-    !empty($_POST['inputSenha'])
+} else if (
+    !empty($_POST['inputEmailLogin']) &&
+    !empty($_POST['inputSenhaLogin'])
 ) {
-    $email = $_POST['inputEmail'];
-    $senha = $_POST['inputSenha'];
+    $email = $_POST['inputEmailLogin'];
+    $senha = $_POST['inputSenhaLogin'];
 
     if ($controlador->verificarUsuario($email, $senha)) {
         $_SESSION['estaLogado'] = TRUE;
@@ -41,12 +36,7 @@ if (
         header('Location:../view/login.php');
     }
     die();
-} else {
-    header('Location:../index.php');
-    die();
-}
-
-if (!empty($_POST['resposta'])) {
+} else if (!empty($_POST['resposta'])) {
     $resposta = $_POST['resposta'];
     $controlador->verificarResposta($resposta);
 
@@ -61,13 +51,7 @@ if (!empty($_POST['resposta'])) {
         header('Location:../view/jornada.php');
     }
     die();
-} else {
-    header('Location:../index.php');
-    die();
-}
-
-
-if (isset($_SESSION['logado']) == "Sim") {
+} else if (isset($_SESSION['logado']) == "Sim") {
     session_destroy();
     header("Location: ../index.php");
     die();

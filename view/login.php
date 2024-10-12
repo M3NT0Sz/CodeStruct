@@ -91,8 +91,8 @@ error_reporting(0);
   <section class="tela" style="height: 90vh;">
     <section class="tela80">
       <form action="../model/processamento.php" method="post" class="containerLogin">
-        <h3>Email <input type="email" name="inputEmail"></h3>
-        <h3>Senha <input type="password" name="inputSenha"></h3>
+        <h3>Email <input type="email" name="inputEmailLogin"></h3>
+        <h3>Senha <input type="password" name="inputSenhaLogin"></h3>
         <button>Entrar</button>
         <h3><a href="./cadastrar.php">Cadastrar</a></h3>
         <h3 class="cadastro">

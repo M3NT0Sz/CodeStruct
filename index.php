@@ -40,7 +40,7 @@ error_reporting(0);
       <h3>
         <li>
           <?php
-          if ($_SESSION['logado'] != null) {
+          if ($_SESSION['logado'] != '') {
           ?>
             <a href="./view/jornada.php">
               Jornada
