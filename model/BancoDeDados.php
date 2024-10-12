@@ -35,6 +35,28 @@ class BancoDeDados
         mysqli_query($conexao, $consultaJornada);
     }
 
+    public function retornarEditar($cod)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT * FROM usuario WHERE use_cod = $cod";
+        $resultado = mysqli_query($conexao, $consulta);
+
+        return $resultado;
+    }
+
+    public function editarUsuario($nome, $email, $cod)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "UPDATE usuario SET use_name = '$nome', use_email = '$email' WHERE use_cod = $cod";
+        mysqli_query($conexao, $consulta);
+    }
+
+    public function editarUsuarioImage($cod, $img)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "UPDATE usuario SET use_img = '$img' WHERE use_cod = $cod";
+        mysqli_query($conexao, $consulta);
+    }
 
     public function verificarUsuario($email, $senha)
     {

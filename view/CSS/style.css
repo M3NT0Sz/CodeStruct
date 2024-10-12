@@ -93,6 +93,12 @@ body.dark pre > code.language-csharp {
   color: white;
 }
 
+.editar{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .containerLogin {
   width: 35%;
   height: 40vh;

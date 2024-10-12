@@ -18,7 +18,7 @@ $controlador = new Controller();
     <main class="jogoTudo">
         <nav class="menuEsquerda">
             <section class="imgJogo">
-               <?php echo $controlador->visualizarImg($_SESSION['usuario_id']); ?>
+                <?php echo $controlador->visualizarImg($_SESSION['usuario_id']); ?>
             </section>
             <section class="configuracaoJogo">
                 <a href="./trilha.php"><button class="JogarBtn">Jogar</button></a>
@@ -32,28 +32,24 @@ $controlador = new Controller();
                 <h1>CodeStruct</h1>
             </nav>
             <main class="personagem">
-                <section class="loja" id="loja">
-                    <button class="chapeu"><img src="./Imagens/chapeu.jpg"></button>
-                    <button class="camisa"><img src="./Imagens/camisa.png"></button>
-                    <button class="calca"><img src="./Imagens/calca.jpg"></button>
-                </section>
-
-                <section class="personagemImg">
-                    <img src="./Imagens/Personagem/1.png">
-                </section>
-
-                <section class="dinheiro">
-                    <h3>
-                        <img src="./Imagens/Logo.png">
-                        <p><?php echo $controlador->visualizarCash($_SESSION['usuario_id']); ?></p>
-                    </h3>
-                    <button id="toggleLoja">Abrir Loja</button>
+                <section class="editar">
+                    <form class="containerLogin" action="../model/processamento.php" method="post">
+                        <h1>Editar</h1>
+                        <?php
+                        echo $controlador->puxarEditar();
+                        ?>
+                        <button>Editar</button>
+                    </form>
+                    <form class="containerLogin" action="../model/processamento.php" method="post" enctype="multipart/form-data">
+                        <h1>Editar Imagem</h1>
+                        <input type="file" name="inputImageEditar" id="img" accept="image/*">
+                        <button>Editar</button>
+                    </form>
                 </section>
             </main>
         </main>
     </main>
     <script src="./JS/script.js"></script>
-    <script src="./JS/loja.js"></script>
 </body>
 
 </html>

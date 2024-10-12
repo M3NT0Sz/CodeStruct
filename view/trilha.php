@@ -22,8 +22,8 @@ $controlador = new Controller();
                 <?php echo $controlador->visualizarImg($_SESSION['usuario_id']); ?>
             </section>
             <section class="configuracaoJogo">
-                <a href="../index.php"><button class="JogarBtn">Jogar</button></a>
-
+                <a href="./trilha.php"><button class="JogarBtn">Jogar</button></a>
+                <a href="./configuracoes.php"><button>Configurações</button></a>
                 <a href="../index.php"><button>Voltar</button></a>
             </section>
         </nav>

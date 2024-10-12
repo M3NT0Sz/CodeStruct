@@ -37,11 +37,13 @@ class Controller
         return $tipos;
     }
 
-    public function verificarTrilha($cod){
+    public function verificarTrilha($cod)
+    {
         return $this->bancoDeDados->pegarTrilha($cod);
     }
-    
-    public function verificarTrilha2($cod){
+
+    public function verificarTrilha2($cod)
+    {
         return $this->bancoDeDados->pegarTrilha2($cod);
     }
 
@@ -71,10 +73,32 @@ class Controller
                 "<button type='submit' name='resposta' value='" . $questao["opcao_a"] . "'>" . $questao["opcao_a"] . "</button>" .
                 "<button type='submit' name='resposta' value='" . $questao["opcao_b"] . "'>" . $questao["opcao_b"] . "</button>" .
                 "<button type='submit' name='resposta' value='" . $questao["opcao_c"] . "'>" . $questao["opcao_c"] . "</button>" .
-                "<button type='submit' name='resposta' value='" . $questao["opcao_d"] . "'>" . $questao["opcao_d"] . "</button>". 
+                "<button type='submit' name='resposta' value='" . $questao["opcao_d"] . "'>" . $questao["opcao_d"] . "</button>" .
                 "</section>";
         }
         return $tipos;
+    }
+
+    public function puxarEditar()
+    {
+        $tipos = '';
+        $listaTipos = $this->bancoDeDados->retornarEditar($_SESSION['usuario_id']);
+        while ($editar = mysqli_fetch_assoc($listaTipos)) {
+            $tipos .=
+                "<h3>Nome: <input type='text' name='inputNomeEditar' value='" . $editar['use_name'] . "'></h3>" .
+                "<h3>Email: <input type='email' name='inputEmailEditar' value='" . $editar['use_email'] . "'></h3>";
+        }
+        return $tipos;
+    }
+
+    public function editarUsuario($nome, $email)
+    {
+        $this->bancoDeDados->editarUsuario($nome, $email, $_SESSION['usuario_id']);
+    }
+
+    public function editarUsuarioImage($cod, $img)
+    {
+        $this->bancoDeDados->editarUsuarioImage($cod, $img);
     }
 
     public function obterUsuarioId($email)
@@ -82,7 +106,8 @@ class Controller
         return $this->bancoDeDados->retornarUsuarioId($email);
     }
 
-    public function visualizarPergunta($cod){
+    public function visualizarPergunta($cod)
+    {
         return $this->bancoDeDados->pegarPergunta($cod);
     }
 
