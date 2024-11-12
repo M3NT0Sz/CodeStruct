@@ -33,7 +33,11 @@ error_reporting(0);
             <li><a href="./FilaFIFO.php">Fila FIFO</a></li>
             <li><a href="./FilaDePrioridade.php">Fila de Prioridade</a></li>
             <li><a href="./Pilha.php">Pilha</a></li>
-
+            <li><a href="./ArvoreBinaria.php">Árvore Binária</a></li>
+            <li><a href="./ArvoreB.php">Árvore B</a></li>
+            <li><a href="./ArvoreTrie.php">Árvore Trie</a></li>
+            <li><a href="./ArvoreAVL.php">Árvore AVL</a></li>
+            <li><a href="./ArvoreRubroNegra.php">Árvore Rubro-Negra</a></li>
           </ul>
         </li>
       </h3>
@@ -88,6 +92,7 @@ error_reporting(0);
     <script src="./JS/script.js"></script>
     <script src="https://kit.fontawesome.com/5bcdea54fd.js" crossorigin="anonymous"></script>
   </header>
+
   <section class="tela">
     <section class="tela80">
       <header class="pagNome">

@@ -33,7 +33,11 @@ error_reporting(0);
             <li><a href="./FilaFIFO.php">Fila FIFO</a></li>
             <li><a href="./FilaDePrioridade.php">Fila de Prioridade</a></li>
             <li><a href="./Pilha.php">Pilha</a></li>
-
+            <li><a href="./ArvoreBinaria.php">Árvore Binária</a></li>
+            <li><a href="./ArvoreB.php">Árvore B</a></li>
+            <li><a href="./ArvoreTrie.php">Árvore Trie</a></li>
+            <li><a href="./ArvoreAVL.php">Árvore AVL</a></li>
+            <li><a href="./ArvoreRubroNegra.php">Árvore Rubro-Negra</a></li>
           </ul>
         </li>
       </h3>
