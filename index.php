@@ -112,7 +112,12 @@ error_reporting(0);
           - Lista Duplamente Encadeadas<br />
           - Fila FIFO<br />
           - Fila de Prioridades<br />
-          - Pilha<br /><br />
+          - Pilha<br />
+          - Árvore Binária<br />
+          - Árvore B<br />
+          - Árvore Trie<br />
+          - Árvore AVL<br />
+          - Árvore Rubro-Negra<br /><br />
         </p>
       </section>
     </section>
