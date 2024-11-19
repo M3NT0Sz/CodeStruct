@@ -101,194 +101,170 @@ error_reporting(0);
       <section class="video">
         <h2>Vídeo Explicativo</h2>
         <section class="video-container">
-          <iframe src="https://www.youtube.com/embed/06PJrmeG784?si=foy7GeAu2oTJ1cae" frameborder="0" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/l8IBdCb2BWA?si=F9ppA13PnL6HPLmv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
       </section>
 
       <section class="textos">
         <h2>Introdução</h2>
         <p>
-          Os Tipos Abstrato de Dados (TAD) são conceitos fundamentais na
-          ciência da computação que definem estruturas de dados de maneira
-          abstrata, independentemente de implementações específicas. Um TAD
-          especifica um conjunto de valores possíveis e um conjunto de
-          operações que podem ser realizadas sobre esses valores, permitindo
-          que os desenvolvedores se concentrem em como usar a estrutura de
-          dados em vez de como ela é implementada.
+          A Árvore AVL é um tipo de árvore binária de busca auto-balanceada, onde a diferença de altura entre as subárvores esquerda e direita de qualquer nó é no máximo 1. Isso garante que as operações de inserção, exclusão e busca sejam realizadas em tempo logarítmico.
         </p>
       </section>
 
       <section class="textos">
         <h2>Importância</h2>
         <p>
-          Os TADs são cruciais para o desenvolvimento de software robusto e
-          eficiente, pois promovem a reutilização de código e a modularidade.
-          Eles permitem que programadores definam e utilizem estruturas de
-          dados sem se preocupar com os detalhes de implementação, facilitando
-          a manutenção e a evolução do software. Exemplos comuns de TADs
-          incluem listas, filas, pilhas, árvores e grafos.
-        </p>
-        <p>
-          Além disso, TADs ajudam na abstração dos dados e suas operações,
-          tornando o código mais legível e fácil de entender. Isso é
-          especialmente útil em grandes projetos de software onde várias
-          equipes podem trabalhar em diferentes partes do sistema.
+          As Árvores AVL são importantes porque mantêm a árvore balanceada, garantindo uma performance eficiente para operações de busca, inserção e exclusão. Elas são usadas em aplicações onde a performance de busca é crítica, como em bancos de dados e sistemas de arquivos.
         </p>
       </section>
 
       <section class="textos">
         <h2>Funcionamento</h2>
         <p>
-          Um TAD define uma interface clara para operações sobre uma estrutura
-          de dados. Por exemplo, um TAD para uma lista pode incluir operações
-          como adicionar um elemento, remover um elemento e acessar um
-          elemento em uma posição específica. A implementação concreta desses
-          métodos pode variar, mas a interface permanece consistente.
+          Cada nó em uma Árvore AVL armazena uma chave e dois ponteiros para seus filhos esquerdo e direito. Além disso, cada nó mantém um valor de balanceamento que é a diferença entre as alturas das subárvores esquerda e direita. Se a diferença de altura for maior que 1, a árvore precisa ser re-balanceada.
         </p>
         <p>
-          Isso significa que você pode ter diferentes implementações do mesmo
-          TAD (por exemplo, uma lista pode ser implementada como uma lista
-          simplesmente encadeada ou uma lista duplamente encadeada), mas o
-          conjunto de operações que você pode realizar sobre a lista permanece
-          o mesmo.
+          O re-balanceamento é feito através de rotações, que podem ser simples ou duplas. Existem quatro tipos de rotações: rotação à esquerda, rotação à direita, rotação à esquerda-direita e rotação à direita-esquerda.
         </p>
-        <img style="width: 50%;" src="https://blog.pantuza.com/uploads/3c2f826b9b662f523fc857cc9eec0b42c73cd77e" alt="Exemplo de TAD com diferentes implementações" />
+        <img style="width: 25%;" src="https://media.geeksforgeeks.org/wp-content/uploads/20221229121830/avl.png" alt="Exemplo de Árvore AVL" />
       </section>
 
       <section class="textos">
-        <h2>Exemplo de Código em C#</h2>
+        <h2>Exemplo de Código em PHP</h2>
         <p>
-          Vamos examinar um exemplo de código em C# que demonstra como
-          implementar uma fila, que é um exemplo de TAD. Vamos dividir o
-          código em partes para melhor compreensão.
+          Vamos examinar um exemplo de código em PHP que demonstra como implementar uma Árvore AVL. Vamos dividir o código em partes para melhor compreensão.
         </p>
 
         <h3>Definição do Nó</h3>
-        <p>O primeiro passo é definir a estrutura do nó da fila:</p>
+        <p>O primeiro passo é definir a estrutura do nó da árvore:</p>
         <section class="code-container">
           <pre><code class="language-csharp">
-public class No
-{
-  public string Valor; // Valor armazenado no nó
-  public No Proximo; // Ponteiro para o próximo nó
-  
-  public No(string valor)
-  {
-      Valor = valor;
-      Proximo = null;
+class Node {
+  public $key;
+  public $left;
+  public $right;
+  public $height;
+
+  public function __construct($key) {
+    $this->key = $key;
+    $this->left = null;
+    $this->right = null;
+    $this->height = 1;
   }
 }
               </code></pre>
         </section>
         <p>
-          Neste trecho, definimos a classe <code>No</code> que contém um valor
-          e um ponteiro para o próximo nó.
+          Neste trecho, definimos a classe <code>Node</code> que contém uma chave, ponteiros para os filhos esquerdo e direito, e a altura do nó.
         </p>
 
-        <h3>Definição da Fila</h3>
+        <h3>Definição da Árvore AVL</h3>
         <p>
-          Em seguida, definimos a classe <code>Fila</code> que gerencia a
-          fila:
+          Em seguida, definimos a classe <code>AVLTree</code> que gerencia a árvore:
         </p>
         <section class="code-container">
           <pre><code class="language-csharp">
-public class Fila
-{
-  private No head; // Ponteiro para o primeiro nó da fila
-  private No tail; // Ponteiro para o último nó da fila
+class AVLTree {
+  private $root;
 
-  public Fila()
-  {
-      head = null;
-      tail = null;
+  public function __construct() {
+    $this->root = null;
   }
+
+  // Funções para inserção, exclusão e balanceamento da árvore
 }
               </code></pre>
         </section>
         <p>
-          Aqui, estamos declarando os ponteiros <code>head</code> e
-          <code>tail</code> que apontam para o início e o fim da fila,
-          respectivamente.
+          Aqui, estamos declarando a raiz da árvore e preparando a estrutura para as funções de inserção, exclusão e balanceamento.
         </p>
 
-        <h3>Método para Enfileirar</h3>
+        <h3>Método para Inserir</h3>
         <p>
-          O método <code>Enfileirar</code> adiciona um novo nó ao final da
-          fila:
+          O método <code>insert</code> adiciona um novo nó à árvore:
         </p>
         <section class="code-container">
           <pre><code class="language-csharp">
-public void Enfileirar(string valor)
-{
-  No novoNo = new No(valor);
-  if (tail != null) tail.Proximo = novoNo;
-  tail = novoNo;
-  if (head == null) head = novoNo;
+public function insert($key) {
+  $this->root = $this->insertNode($this->root, $key);
+}
+
+private function insertNode($node, $key) {
+  if ($node == null) {
+    return new Node($key);
+  }
+
+  if ($key < $node->key) {
+    $node->left = $this->insertNode($node->left, $key);
+  } else if ($key > $node->key) {
+    $node->right = $this->insertNode($node->right, $key);
+  } else {
+    return $node;
+  }
+
+  $node->height = 1 + max($this->getHeight($node->left), $this->getHeight($node->right));
+  return $this->balance($node);
 }
               </code></pre>
         </section>
         <p>
-          Este método cria um novo nó e o adiciona ao final da fila. Se a fila
-          estiver vazia, o novo nó também se torna o <code>head</code>.
+          Este método insere um novo nó na árvore e atualiza a altura dos nós. Se necessário, a árvore é balanceada.
         </p>
 
-        <h3>Método para Desenfileirar</h3>
+        <h3>Método para Balancear</h3>
         <p>
-          O método <code>Desenfileirar</code> remove e retorna o nó do início
-          da fila:
+          O método <code>balance</code> re-balanceia a árvore se necessário:
         </p>
         <section class="code-container">
           <pre><code class="language-csharp">
-public string Desenfileirar()
-{
-  if (head == null) throw new InvalidOperationException("A fila está vazia.");
-  string valor = head.Valor;
-  head = head.Proximo;
-  if (head == null) tail = null;
-  return valor;
+private function balance($node) {
+  $balanceFactor = $this->getBalanceFactor($node);
+
+  if ($balanceFactor > 1) {
+    if ($this->getBalanceFactor($node->left) < 0) {
+      $node->left = $this->rotateLeft($node->left);
+    }
+    return $this->rotateRight($node);
+  }
+
+  if ($balanceFactor < -1) {
+    if ($this->getBalanceFactor($node->right) > 0) {
+      $node->right = $this->rotateRight($node->right);
+    }
+    return $this->rotateLeft($node);
+  }
+
+  return $node;
 }
               </code></pre>
         </section>
         <p>
-          Este método remove o nó do início da fila e retorna o valor
-          armazenado. Se a fila se tornar vazia após a remoção, o ponteiro
-          <code>tail</code> é atualizado para <code>null</code>.
+          Este método verifica o fator de balanceamento do nó e realiza as rotações necessárias para manter a árvore balanceada.
         </p>
 
         <h3>Exemplo de Uso</h3>
-        <p>Por fim, um exemplo de como usar a fila:</p>
+        <p>Por fim, um exemplo de como usar a árvore AVL:</p>
         <section class="code-container">
           <pre><code class="language-csharp">
-// Exemplo de uso
-public class Program
-{
-  public static void Main()
-  {
-      Fila fila = new Fila();
-      fila.Enfileirar("primeiro");
-      fila.Enfileirar("segundo");
-      Console.WriteLine(fila.Desenfileirar()); // Saída: primeiro
-      Console.WriteLine(fila.Desenfileirar()); // Saída: segundo
-  }
-}
+$avl = new AVLTree();
+$avl->insert(10);
+$avl->insert(20);
+$avl->insert(30);
+$avl->insert(40);
+$avl->insert(50);
+$avl->insert(25);
               </code></pre>
         </section>
         <p>
-          Neste exemplo, criamos uma nova fila, enfileiramos dois elementos e
-          depois desenfileiramos e imprimimos esses elementos.
+          Neste exemplo, criamos uma nova árvore AVL e inserimos alguns elementos.
         </p>
       </section>
 
       <section class="textos">
         <h2>Conclusão</h2>
         <p>
-          Os tipos abstratos de dados são ferramentas poderosas na ciência da
-          computação, permitindo a criação de software mais organizado,
-          modular e fácil de manter. Ao focar na interface e nas operações
-          permitidas por uma estrutura de dados, os desenvolvedores podem
-          criar soluções flexíveis e eficientes, abstraindo os detalhes da
-          implementação e facilitando o desenvolvimento de aplicações
-          complexas.
+          As Árvores AVL são estruturas de dados poderosas que garantem operações eficientes de busca, inserção e exclusão. Elas são essenciais para aplicações que requerem alta performance e são amplamente utilizadas em sistemas de banco de dados e sistemas de arquivos.
         </p>
       </section>
     </section>
