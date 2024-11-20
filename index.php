@@ -33,7 +33,11 @@ error_reporting(0);
             <li><a href="./view/FilaFIFO.php">Fila FIFO</a></li>
             <li><a href="./view/FilaDePrioridade.php">Fila de Prioridade</a></li>
             <li><a href="./view/Pilha.php">Pilha</a></li>
-
+            <li><a href="./view/ArvoreBinaria.php">Árvore Binária</a></li>
+            <li><a href="./view/ArvoreB.php">Árvore B</a></li>
+            <li><a href="./view/ArvoreTrie.php">Árvore Trie</a></li>
+            <li><a href="./view/ArvoreAVL.php">Árvore AVL</a></li>
+            <li><a href="./view/ArvoreRubroNegra.php">Árvore Rubro-Negra</a></li>
           </ul>
         </li>
       </h3>
@@ -108,7 +112,12 @@ error_reporting(0);
           - Lista Duplamente Encadeadas<br />
           - Fila FIFO<br />
           - Fila de Prioridades<br />
-          - Pilha<br /><br />
+          - Pilha<br />
+          - Árvore Binária<br />
+          - Árvore B<br />
+          - Árvore Trie<br />
+          - Árvore AVL<br />
+          - Árvore Rubro-Negra<br /><br />
         </p>
       </section>
     </section>

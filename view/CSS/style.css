@@ -93,6 +93,12 @@ body.dark pre > code.language-csharp {
   color: white;
 }
 
+.editar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .containerLogin {
   width: 35%;
   height: 40vh;
@@ -195,6 +201,38 @@ body.dark pre > code.language-csharp {
     }
   }
 }
+
+#ulLoja {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  opacity: 0;
+  transition: 1s;
+}
+
+#ulLoja.aberto {
+  opacity: 1;
+}
+
+#liLoja {
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: 1s;
+  padding: 3px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+#liLoja:hover {
+  cursor: pointer;
+  background-color: #8954bb;
+  color: #fff;
+}
+
 
 .tela {
   display: flex;
@@ -372,6 +410,26 @@ pre > .language-csharp {
   justify-content: center;
   align-items: center;
 
+  & > form > button {
+    background-color: #8954bb;
+    border: none;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 0 10px 0 #8954bb;
+    transition: 1s;
+    font-size: 20px;
+    width: 200px;
+  }
+
+  & > form > button:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+  }
+
   & > a > button {
     background-color: #8954bb;
     border: none;
@@ -431,6 +489,20 @@ pre > .language-csharp {
   padding: 20px;
   width: 10%;
   box-shadow: 0 0 10px 0 #5b5066;
+
+  & > .cosmeticos {
+    border: none;
+    background-color: transparent;
+    transition: 1s;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  & > .cosmeticos:hover {
+    cursor: pointer;
+    background-color: #9712f7;
+  }
 }
 
 #loja {
@@ -580,6 +652,59 @@ pre > .language-csharp {
   opacity: 1; /* Totalmente visível */
 }
 
+#trilhasArBi {
+  overflow: hidden; /* Esconde conteúdo durante a transição */
+  max-height: 0; /* Altura inicial escondida */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transição suave */
+}
+#trilhasArBi.aberta {
+  max-height: 300px; /* Altura para mostrar a lista, ajuste conforme necessário */
+  opacity: 1; /* Totalmente visível */
+}
+
+#trilhasArB {
+  overflow: hidden; /* Esconde conteúdo durante a transição */
+  max-height: 0; /* Altura inicial escondida */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transição suave */
+}
+#trilhasArB.aberta {
+  max-height: 300px; /* Altura para mostrar a lista, ajuste conforme necessário */
+  opacity: 1; /* Totalmente visível */
+}
+
+#trilhasArTrie {
+  overflow: hidden; /* Esconde conteúdo durante a transição */
+  max-height: 0; /* Altura inicial escondida */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transição suave */
+}
+#trilhasArTrie.aberta {
+  max-height: 300px; /* Altura para mostrar a lista, ajuste conforme necessário */
+  opacity: 1; /* Totalmente visível */
+}
+#trilhasArAVL {
+  overflow: hidden; /* Esconde conteúdo durante a transição */
+  max-height: 0; /* Altura inicial escondida */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transição suave */
+}
+#trilhasArAVL.aberta {
+  max-height: 300px; /* Altura para mostrar a lista, ajuste conforme necessário */
+  opacity: 1; /* Totalmente visível */
+}
+#trilhasArRubro {
+  overflow: hidden; /* Esconde conteúdo durante a transição */
+  max-height: 0; /* Altura inicial escondida */
+  opacity: 0; /* Transparência inicial */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transição suave */
+}
+#trilhasArRubro.aberta {
+  max-height: 300px; /* Altura para mostrar a lista, ajuste conforme necessário */
+  opacity: 1; /* Totalmente visível */
+}
+
 .trilhaUL {
   display: flex;
   align-items: center;
@@ -627,12 +752,12 @@ pre > .language-csharp {
   background-color: #8954bb;
 }
 
-.trilhaUL > div > form{
+.trilhaUL > div > form {
   display: flex;
   flex-direction: column;
 }
 
-.trilhaUL > div > form > button{
+.trilhaUL > div > form > button {
   border: none;
   background-color: transparent;
 }
@@ -653,19 +778,18 @@ pre > .language-csharp {
   cursor: pointer;
 }
 
-.tudoQuest{
+.tudoQuest {
   width: 100%;
   height: 100%;
 }
 
-.questoes{
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+.questoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
 }
 
 .question-box {
@@ -682,7 +806,6 @@ pre > .language-csharp {
   align-items: center;
   flex-direction: column;
 }
-
 
 .alternativas {
   display: flex;
@@ -705,8 +828,6 @@ pre > .language-csharp {
   max-width: calc(50% - 40px); /* Ensure max width is half of the container */
 }
 
-
-
 .alternativas button:hover {
   background-color: #fff;
   color: #8954bb;
@@ -718,7 +839,3 @@ pre > .language-csharp {
   color: #fff;
   transform: scale(0.95);
 }
-
-
-
-

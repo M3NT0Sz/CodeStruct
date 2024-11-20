@@ -6,7 +6,19 @@ require "../controller/Controller.php";
 
 $controlador = new Controller();
 
-if (
+if (!empty($_POST['inputNomeEditar']) && !empty($_POST['inputEmailEditar'])) {
+    $nome = $_POST['inputNomeEditar'];
+    $email = $_POST['inputEmailEditar'];
+
+    $controlador->editarUsuario($nome, $email);
+
+    header("Location: ../view/jornada.php");
+    die();
+} else if (!empty($_FILES['inputImageEditar'])) {
+    $image = addslashes(file_get_contents($_FILES['inputImageEditar']['tmp_name']));
+    $controlador->editarUsuarioImage($_SESSION['usuario_id'], $image);
+    header("location: ../view/jornada.php");
+} else if (
     !empty($_POST['inputNome']) && !empty($_POST['inputEmail']) &&
     !empty($_POST['inputSenha'])
 ) {
@@ -50,6 +62,21 @@ if (
         unset($_SESSION['acabou']);
         header('Location:../view/jornada.php');
     }
+    die();
+} else if ($_POST['1']) {
+    $imagem = $_POST['imagem'];
+    $controlador->comprarItem($_SESSION['usuario_id'], 200, $imagem, 1);
+    header('Location:../view/jornada.php');
+    die();
+} else if ($_POST['2']) {
+    $imagem = $_POST['imagem'];
+    $controlador->comprarItem($_SESSION['usuario_id'], 400, $imagem, 2);
+    header('Location:../view/jornada.php');
+    die();
+} else if ($_POST['3']) {
+    $imagem = $_POST['imagem'];
+    $controlador->comprarItem($_SESSION['usuario_id'], 500, $imagem, 3);
+    header('Location:../view/jornada.php');
     die();
 } else if (isset($_SESSION['logado']) == "Sim") {
     session_destroy();
