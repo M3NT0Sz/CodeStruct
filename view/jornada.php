@@ -18,10 +18,14 @@ $controlador = new Controller();
     <main class="jogoTudo">
         <nav class="menuEsquerda">
             <section class="imgJogo">
-               <?php echo $controlador->visualizarImg($_SESSION['usuario_id']); ?>
+                <?php echo $controlador->visualizarImg($_SESSION['usuario_id']); ?>
             </section>
             <section class="configuracaoJogo">
-                <a href="./trilha.php"><button class="JogarBtn">Jogar</button></a>
+                <a href="./trilha.php"><button class="JogarBtn">Jogar Modo Historia</button></a>
+                <form method="post" action="./normal.php">
+                    <input type="hidden" name="extra" value="aumentarVida">
+                    <button class="JogarBtn">Jogar Modo Normal</button>
+                </form>
                 <a href="./configuracoes.php"><button>Configurações</button></a>
                 <a href="../index.php"><button>Voltar</button></a>
             </section>
