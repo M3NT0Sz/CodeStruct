@@ -6,18 +6,51 @@ require_once "../controller/Controller.php";
 $controlador = new Controller();
 
 if ($_POST['extra'] === "aumentarVida") {
-    $controlador->aumentarVida($_SESSION['usuario_id']);
-    $controlador->voltarQuestao($_SESSION['usuario_id']);
+    $vida = 3;
+    $pergunta = 1;
+
+    if($_SESSION['Imagem1'] == 2){
+        $pergunta = $pergunta + 1;
+    }
+    if($_SESSION['Imagem2'] == 2){
+        $pergunta = $pergunta + 1;
+    }
+    if($_SESSION['Imagem3'] == 2){
+        $pergunta = $pergunta + 1;
+    }
+
+    if ($_SESSION['Imagem1'] == 1) {
+        $vida = $vida + 1;
+    }
+    if ($_SESSION['Imagem2'] == 1) {
+        $vida = $vida + 1;
+    }
+    if ($_SESSION['Imagem3'] == 1) {
+        $vida = $vida + 1;
+    }
+    $controlador->aumentarVida($_SESSION['usuario_id'], $vida);
+    $controlador->aumentarPergunta($_SESSION['usuario_id'], $pergunta);
+    // $controlador->voltarQuestao($_SESSION['usuario_id']);
     unset($_POST['aumentarVida']);
 }
 
 $vida = $controlador->verificarVida($_SESSION['usuario_id']);
 $trilha = $_POST['trilha'] ?? $_SESSION['trilha'] ?? null;
 
-function getTipoENivel($i) {
+function getTipoENivel($i)
+{
     $tipos = [
-        'TAD', 'Lista Simplesmente Encadeada', 'Lista Duplamente Encadeada', 'Fila FIFO', 'Fila de Prioridade',
-        'Pilha', 'Árvore Binária', 'Árvore B', 'Árvore Trie', 'Árvore AVL', 'Árvore Rubro-Negra'
+        'TAD',
+        'Lista Simplesmente Encadeada',
+        'Lista Duplamente Encadeada',
+        'Fila FIFO',
+        'Fila de Prioridade',
+        'Pilha',
+        'Árvore Binária',
+        'Árvore B',
+        'Árvore Trie',
+        'Árvore AVL',
+        'Árvore Rubro-Negra'
     ];
     $tipoIndex = intdiv($i - 1, 5);
     $nivel = ($i - 1) % 5 < 2 ? 1 : (($i - 1) % 5 < 4 ? 2 : 3);
@@ -40,8 +73,8 @@ function getTipoENivel($i) {
     <section class="tudoQuest">
         <section class="questoes">
             <section class="question-box">
-                <section style='display: flex; justify-content: space-between; align-items: center;'>
-                    <?php for ($i = 0; $i < 3; $i++): ?>
+                <section style="display: flex; justify-content: space-between; align-items: center;">
+                    <?php for ($i = 0; $i < $controlador->pegarVida($_SESSION['usuario_id']); $i++): ?>
                         <img src='./Imagens/<?= $i < $vida ? "poteVida" : "poteVazio" ?>.png' alt='Pote de Vida' style='width: 50px; height: 50px;'>
                     <?php endfor; ?>
                 </section>

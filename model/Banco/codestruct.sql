@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/11/2024 às 02:44
+-- Tempo de geração: 20/11/2024 às 19:21
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -41,7 +41,7 @@ CREATE TABLE `jornada` (
 --
 
 INSERT INTO `jornada` (`jor_cod`, `jor_codUser`, `jor_fase`, `jor_cash`, `jor_vida`, `jor_pergunta`) VALUES
-(4, 5, 40, 265, 0, 2),
+(4, 5, 55, 20, 0, 3),
 (5, 6, 0, 0, 0, 0);
 
 -- --------------------------------------------------------

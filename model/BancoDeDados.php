@@ -158,10 +158,10 @@ class BancoDeDados
         return $fase;
     }
 
-    public function aumentarVida($cod)
+    public function aumentarVida($cod, $vida)
     {
         $conexao = $this->conectarBD();
-        $consulta = "UPDATE jornada SET jor_vida = 3 WHERE jor_codUser = " . $cod;
+        $consulta = "UPDATE jornada SET jor_vida = $vida WHERE jor_codUser = " . $cod;
         mysqli_query($conexao, $consulta);
     }
 
@@ -203,6 +203,21 @@ class BancoDeDados
                     mysqli_query($conexao, $consultaUpdate);
                     $_SESSION['acabou'] = "Acabou";
                     $pontos = $this->pegarPontos($resposta);
+                    $multiplicador = 1;
+                    $imagens = [$_SESSION['Imagem1'], $_SESSION['Imagem2'], $_SESSION['Imagem3']];
+                    $count = count(array_filter($imagens, function ($img) {
+                        return $img == 3;
+                    }));
+
+                    if ($count == 1) {
+                        $multiplicador = 2;
+                    } elseif ($count == 2) {
+                        $multiplicador = 3;
+                    } elseif ($count == 3) {
+                        $multiplicador = 4;
+                    }
+
+                    $pontos *= $multiplicador;
                     $jor_cod = $this->pegarCodJornada($_SESSION['usuario_id']);
                     $consultaUpdate = "UPDATE jornada SET jor_cash = jor_cash + '$pontos' WHERE jor_cod = '$jor_cod'";
                     mysqli_query($conexao, $consultaUpdate);
@@ -221,6 +236,21 @@ class BancoDeDados
                 if ($this->pegarPergunta($_SESSION['usuario_id']) >= 5) {
                     $_SESSION['acabou'] = "Acabou";
                     $pontos = $this->pegarPontos($resposta);
+                    $multiplicador = 1;
+                    $imagens = [$_SESSION['Imagem1'], $_SESSION['Imagem2'], $_SESSION['Imagem3']];
+                    $count = count(array_filter($imagens, function ($img) {
+                        return $img == 3;
+                    }));
+
+                    if ($count == 1) {
+                        $multiplicador = 2;
+                    } elseif ($count == 2) {
+                        $multiplicador = 3;
+                    } elseif ($count == 3) {
+                        $multiplicador = 4;
+                    }
+
+                    $pontos *= $multiplicador;
                     $jor_cod = $this->pegarCodJornada($_SESSION['usuario_id']);
                     $consultaUpdate = "UPDATE jornada SET jor_cash = jor_cash + '$pontos' WHERE jor_cod = '$jor_cod'";
                     mysqli_query($conexao, $consultaUpdate);
@@ -228,6 +258,21 @@ class BancoDeDados
                     $_SESSION['resposta'] = "Correta";
                     $_SESSION['trilha'] = "Trilha " . ($_SESSION['trilhas'] + 1);
                     $pontos = $this->pegarPontos($resposta);
+                    $multiplicador = 1;
+                    $imagens = [$_SESSION['Imagem1'], $_SESSION['Imagem2'], $_SESSION['Imagem3']];
+                    $count = count(array_filter($imagens, function ($img) {
+                        return $img == 3;
+                    }));
+
+                    if ($count == 1) {
+                        $multiplicador = 2;
+                    } elseif ($count == 2) {
+                        $multiplicador = 3;
+                    } elseif ($count == 3) {
+                        $multiplicador = 4;
+                    }
+
+                    $pontos *= $multiplicador;
                     $jor_cod = $this->pegarCodJornada($_SESSION['usuario_id']);
                     $consultaUpdate = "UPDATE jornada SET jor_cash = jor_cash + '$pontos' WHERE jor_cod = '$jor_cod'";
                     mysqli_query($conexao, $consultaUpdate);
@@ -259,5 +304,19 @@ class BancoDeDados
             }
             unset($_SESSION['trilhas']);
         }
+    }
+
+    public function comprarItem($cod, $cash)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "UPDATE jornada SET jor_cash = jor_cash - $cash WHERE jor_codUser = $cod";
+        mysqli_query($conexao, $consulta);
+    }
+
+    public function aumentarPergunta($cod, $pergunta)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "UPDATE jornada SET jor_pergunta = $pergunta WHERE jor_codUser = $cod";
+        mysqli_query($conexao, $consulta);
     }
 }

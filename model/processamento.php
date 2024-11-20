@@ -63,6 +63,21 @@ if (!empty($_POST['inputNomeEditar']) && !empty($_POST['inputEmailEditar'])) {
         header('Location:../view/jornada.php');
     }
     die();
+} else if ($_POST['1']) {
+    $imagem = $_POST['imagem'];
+    $controlador->comprarItem($_SESSION['usuario_id'], 200, $imagem, 1);
+    header('Location:../view/jornada.php');
+    die();
+} else if ($_POST['2']) {
+    $imagem = $_POST['imagem'];
+    $controlador->comprarItem($_SESSION['usuario_id'], 400, $imagem, 2);
+    header('Location:../view/jornada.php');
+    die();
+} else if ($_POST['3']) {
+    $imagem = $_POST['imagem'];
+    $controlador->comprarItem($_SESSION['usuario_id'], 500, $imagem, 3);
+    header('Location:../view/jornada.php');
+    die();
 } else if (isset($_SESSION['logado']) == "Sim") {
     session_destroy();
     header("Location: ../index.php");

@@ -52,9 +52,9 @@ class Controller
         return $this->bancoDeDados->pegarVida($cod);
     }
 
-    public function aumentarVida($cod)
+    public function aumentarVida($cod, $vida)
     {
-        $this->bancoDeDados->aumentarVida($cod);
+        $this->bancoDeDados->aumentarVida($cod, $vida);
     }
 
     public function visualizarCash($cod)
@@ -119,5 +119,25 @@ class Controller
     public function verificarResposta($resposta)
     {
         $this->bancoDeDados->verificarResposta($resposta);
+    }
+
+    public function comprarItem($cod, $cash, $imagem, $tipo)
+    {
+        if ($this->bancoDeDados->pegarCash($cod) >= $cash) {
+            $_SESSION['Imagem' . $imagem] = $tipo;
+            $this->bancoDeDados->comprarItem($cod, $cash);
+        } else {
+            echo "<script>alert('Você não tem dinheiro suficiente!');</script>";
+        }
+    }
+
+    public function pegarVida($cod)
+    {
+        return $this->bancoDeDados->pegarVida($cod);
+    }
+
+    public function aumentarPergunta($cod, $pergunta)
+    {
+        $this->bancoDeDados->aumentarPergunta($cod, $pergunta);
     }
 }
