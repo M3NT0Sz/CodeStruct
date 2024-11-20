@@ -44,7 +44,7 @@ error_reporting(0);
                 echo "<div>";
 
                 for ($i = 1; $i <= 30; $i++) {
-                    if ($_POST['trilha'] === 'Trilha ' . $i || $_SESSION['trilha'] === 'Trilha ' . $i) {
+                    if ($_POST['trilha'] === "Trilha $i" || $_SESSION['trilha'] === "Trilha $i") {
                         $_SESSION['trilhas'] = $i - 1;
                         $tipo = '';
                         if ($i <= 5) {
@@ -117,7 +117,7 @@ error_reporting(0);
                     echo "Trilha não encontrada.";
                 }
                 ?>
-                </scetion>
+                </section>
             </section>
             <img src="./Imagens/Personagem/1.png" alt="" style="position: fixed; bottom: 0; left: 0; width: 40%px; height:40%">
         </section>
@@ -125,6 +125,6 @@ error_reporting(0);
 
 </body>
 
-<script src="./JS/cutCine.js"></script>
+
 
 </html>
