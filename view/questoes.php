@@ -73,7 +73,6 @@ function getTipoENivel($i)
     <section class="tudoQuest">
         <section class="questoes">
             <section class="question-box">
-<<<<<<< HEAD
                 <?php
                 session_start();
                 require_once "../controller/Controller.php";
@@ -159,20 +158,6 @@ function getTipoENivel($i)
                             $tipo = 'Pilha';
                         }
                 ?>
-=======
-                <section style="display: flex; justify-content: space-between; align-items: center;">
-                    <?php for ($i = 0; $i < $controlador->pegarVida($_SESSION['usuario_id']); $i++): ?>
-                        <img src='./Imagens/<?= $i < $vida ? "poteVida" : "poteVazio" ?>.png' alt='Pote de Vida' style='width: 50px; height: 50px;'>
-                    <?php endfor; ?>
-                </section>
-                <?= $controlador->visualizarPergunta($_SESSION['usuario_id']) . "/5" ?>
-                <div>
-                    <?php
-                    if ($trilha) {
-                        $_SESSION['trilhas'] = intval(substr($trilha, 7)) - 1;
-                        list($tipo, $nivel) = getTipoENivel($_SESSION['trilhas'] + 1);
-                    ?>
->>>>>>> 38678553a02f5b7f0e596ec05dc477c629adb41a
                         <form action="../model/processamento.php" method="post">
                             <?= $controlador->puxarQuestoes($tipo, $nivel) ?>
                         </form>
@@ -181,17 +166,12 @@ function getTipoENivel($i)
                     } else {
                         echo "Trilha não encontrada.";
                     }
-<<<<<<< HEAD
                 }
                 if ($i > 30) {
                     echo "Trilha não encontrada.";
                 }
                 ?>
                 </section>
-=======
-                    ?>
-                </div>
->>>>>>> 38678553a02f5b7f0e596ec05dc477c629adb41a
             </section>
             <img src="./Imagens/Personagem/1.png" alt="" style="position: fixed; bottom: 0; left: 0; width: 40%; height: 40%;">
         </section>
