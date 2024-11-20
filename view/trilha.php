@@ -39,7 +39,9 @@ $controlador = new Controller();
             <main class="personagem">
                 <section class="trilhasTudo">
                     <ul class="trilhaUL">
+                        <button id="sla">Capitulo 1</button>
                         <button id="toggleTAD">TAD</button> <!-- Título clicável para abrir/fechar a lista -->
+                        
                         <div id="trilhasTAD" class="trilhas">
                             <form action="questoes.php" method="post">
                                 <input type="hidden" name="extra" value="aumentarVida">
@@ -80,6 +82,7 @@ $controlador = new Controller();
                             </form>
                         </div>
                     </ul>
+                    
                     <ul class="trilhaUL">
                         <button id="toggleLSE" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 5 ? '' : 'buttonBloqueado'; ?>">
                             Listas Simplesmente Encadeadas
@@ -179,9 +182,11 @@ $controlador = new Controller();
                                     }
                                 }
                                 ?>
+                               
                             </form>
                         </div>
                     </ul>
+                    
                     <ul class="trilhaUL">
                         <button id="toggleFIFO" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 15 ? '' : 'buttonBloqueado'; ?>">
                             Fila FIFO
@@ -596,7 +601,7 @@ $controlador = new Controller();
     </main>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="./JS/trilha.js"></script>
-    <script src-="./JS/cutCine.js"></script>
+    <script src-="./JS/cut.js"></script>
 </body>
 
 </html>
