@@ -36,11 +36,17 @@ $controlador = new Controller();
                 <h1>CodeStruct</h1>
             </nav>
             <main class="personagem">
-                <section class="loja" id="loja">
-                    <button class="chapeu"><img src="./Imagens/chapeu.jpg"></button>
-                    <button class="camisa"><img src="./Imagens/camisa.png"></button>
-                    <button class="calca"><img src="./Imagens/calca.jpg"></button>
-                </section>
+                <form method="post" action="../model/processamento.php" class="loja" id="loja">
+                    <input type="hidden" name="imagem" id="imagem">
+                    <button type="button" id="cosmeticos" class="cosmeticos cosmeticos1"><img src="./Imagens/Loja/1.png"></button>
+                    <button type="button" id="cosmeticos" class="cosmeticos cosmeticos2"><img src="./Imagens/Loja/2.png"></button>
+                    <button type="button" id="cosmeticos" class="cosmeticos cosmeticos3"><img src="./Imagens/Loja/3.png"></button>
+                    <ul id="ulLoja">
+                        <button id="liLoja" class="liLoja" name="1"><img src="./Imagens/Loja/1.png" style="height: 3vw;">200 moedas</button>
+                        <button id="liLoja" class="liLoja" name="2"><img src="./Imagens/Loja/2.png" style="height: 3vw;">400 moedas</button>
+                        <button id="liLoja" class="liLoja" name="3"><img src="./Imagens/Loja/3.png" style="height: 3vw;">500 moedas</button>
+                    </ul>
+                </form>
 
                 <section class="personagemImg">
                     <img src="./Imagens/Personagem/1.png">

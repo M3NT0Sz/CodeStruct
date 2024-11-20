@@ -202,6 +202,38 @@ body.dark pre > code.language-csharp {
   }
 }
 
+#ulLoja {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  opacity: 0;
+  transition: 1s;
+}
+
+#ulLoja.aberto {
+  opacity: 1;
+}
+
+#liLoja {
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: 1s;
+  padding: 3px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+#liLoja:hover {
+  cursor: pointer;
+  background-color: #8954bb;
+  color: #fff;
+}
+
+
 .tela {
   display: flex;
   justify-content: center;
@@ -457,6 +489,20 @@ pre > .language-csharp {
   padding: 20px;
   width: 10%;
   box-shadow: 0 0 10px 0 #5b5066;
+
+  & > .cosmeticos {
+    border: none;
+    background-color: transparent;
+    transition: 1s;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  & > .cosmeticos:hover {
+    cursor: pointer;
+    background-color: #9712f7;
+  }
 }
 
 #loja {

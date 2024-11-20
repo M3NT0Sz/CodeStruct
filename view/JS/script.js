@@ -1,5 +1,3 @@
-const lojaSection = document.getElementById("loja");
-
 const chk = document.getElementById("chk");
 chk.addEventListener("change", () => {
   document.body.classList.toggle("dark");
