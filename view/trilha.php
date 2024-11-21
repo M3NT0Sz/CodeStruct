@@ -38,12 +38,15 @@ $controlador = new Controller();
             </nav>
             <main class="personagem">
                 <section class="trilhasTudo">
-                    <h1>Capitulo 1 (Ver Video)</h1>
-                    <hr>
+                    <section class="letrasTrilha">
+                        <a href="./capitulo1.php">Capitulo 1 (Ver Video)</a>
+                        <hr>
+                    </section>
                     <ul class="trilhaUL">
-                        <button id="sla">Capitulo 1</button>
-                        <button id="toggleTAD">TAD</button> <!-- Título clicável para abrir/fechar a lista -->
-                        
+                        <button id="toggleTAD" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 5 ? '' : 'buttonBloqueado'; ?>">
+                            Tipo Abstrato de Dados
+                            <?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 5 ? '' : "<i class='bx bx-lock-alt'></i>"; ?>
+                        </button> <!-- Título clicável para abrir/fechar a lista -->
                         <div id="trilhasTAD" class="trilhas">
                             <form action="questoes.php" method="post">
                                 <input type="hidden" name="extra" value="aumentarVida">
@@ -84,7 +87,7 @@ $controlador = new Controller();
                             </form>
                         </div>
                     </ul>
-                    
+
                     <ul class="trilhaUL">
                         <button id="toggleLSE" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 5 ? '' : 'buttonBloqueado'; ?>">
                             Listas Simplesmente Encadeadas
@@ -184,12 +187,19 @@ $controlador = new Controller();
                                     }
                                 }
                                 ?>
-                               
+
                             </form>
                         </div>
                     </ul>
-                    <h1>Capitulo 2 (Ver Video)</h1>
-                    <hr>
+                    <section class="letrasTrilha">
+                        <?php if ($controlador->verificarTrilha2($_SESSION['usuario_id']) >= 15): ?>
+                            <a href="./capitulo2.php">Capitulo 2 (Ver Video)</a>
+                            <hr>
+                        <?php else: ?>
+                            <a>Capitulo 2</a>
+                            <hr>
+                        <?php endif; ?>
+                    </section>
                     <ul class="trilhaUL">
                         <button id="toggleFIFO" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 15 ? '' : 'buttonBloqueado'; ?>">
                             Fila FIFO
@@ -343,8 +353,15 @@ $controlador = new Controller();
                             </form>
                         </div>
                     </ul>
-                    <h1>Capitulo 3 (Ver Video)</h1>
-                    <hr>
+                    <section class="letrasTrilha">
+                        <?php if ($controlador->verificarTrilha2($_SESSION['usuario_id']) >= 30): ?>
+                            <a href="./capitulo3.php">Capitulo 3 (Ver Video)</a>
+                            <hr>
+                        <?php else: ?>
+                            <a>Capitulo 3</a>
+                            <hr>
+                        <?php endif; ?>
+                    </section>
                     <ul class="trilhaUL">
                         <button id="toggleArBi" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 30 ? '' : 'buttonBloqueado'; ?>">
                             Árvore Binária
@@ -600,6 +617,12 @@ $controlador = new Controller();
                             </form>
                         </div>
                     </ul>
+                    <section class="letrasTrilha">
+                        <?php if ($controlador->verificarTrilha2($_SESSION['usuario_id']) >= 55): ?>
+                            <a href="./final.php">Final (Ver Video)</a>
+                            <hr>
+                        <?php endif; ?>
+                    </section>
                 </section>
             </main>
         </main>
