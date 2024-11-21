@@ -38,6 +38,8 @@ $controlador = new Controller();
             </nav>
             <main class="personagem">
                 <section class="trilhasTudo">
+                    <h1>Capitulo 1 (Ver Video)</h1>
+                    <hr>
                     <ul class="trilhaUL">
                         <button id="toggleTAD">TAD</button> <!-- Título clicável para abrir/fechar a lista -->
                         <div id="trilhasTAD" class="trilhas">
@@ -182,6 +184,8 @@ $controlador = new Controller();
                             </form>
                         </div>
                     </ul>
+                    <h1>Capitulo 2 (Ver Video)</h1>
+                    <hr>
                     <ul class="trilhaUL">
                         <button id="toggleFIFO" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 15 ? '' : 'buttonBloqueado'; ?>">
                             Fila FIFO
@@ -335,6 +339,8 @@ $controlador = new Controller();
                             </form>
                         </div>
                     </ul>
+                    <h1>Capitulo 3 (Ver Video)</h1>
+                    <hr>
                     <ul class="trilhaUL">
                         <button id="toggleArBi" class="<?php echo $controlador->verificarTrilha2($_SESSION['usuario_id']) >= 30 ? '' : 'buttonBloqueado'; ?>">
                             Árvore Binária

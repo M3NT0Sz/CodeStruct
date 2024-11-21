@@ -96,7 +96,7 @@ function getTipoENivel($i)
                     ?>
                 </div>
             </section>
-            <img src="./Imagens/Personagem/1.png" alt="" style="position: fixed; bottom: 0; left: 0; width: 40%; height: 40%;">
+            <img src="./Imagens/Personagem/1.png" alt="" style="position: fixed; bottom: 0; left: 0; width: 10%; height: 30%;">
         </section>
     </section>
 </body>
