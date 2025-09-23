@@ -39,7 +39,7 @@ $controlador = new Controller();
             <main class="personagem">
                 <section class="trilhasTudo">
                     <section class="letrasTrilha">
-                        <a href="./capitulo1.php">Capitulo 1 (Ver Video)</a>
+                        <a href="conteudo.php?pagina=tipoAbstratoDados">Capitulo 1 (Ver Video)</a>
                         <hr>
                     </section>
                     <ul class="trilhaUL">
@@ -193,7 +193,7 @@ $controlador = new Controller();
                     </ul>
                     <section class="letrasTrilha">
                         <?php if ($controlador->verificarTrilha2($_SESSION['usuario_id']) >= 15): ?>
-                            <a href="./capitulo2.php">Capitulo 2 (Ver Video)</a>
+                            <a href="conteudo.php?pagina=listasSimplesmenteEncadeadas">Capitulo 2 (Ver Video)</a>
                             <hr>
                         <?php else: ?>
                             <a>Capitulo 2</a>
@@ -355,7 +355,7 @@ $controlador = new Controller();
                     </ul>
                     <section class="letrasTrilha">
                         <?php if ($controlador->verificarTrilha2($_SESSION['usuario_id']) >= 30): ?>
-                            <a href="./capitulo3.php">Capitulo 3 (Ver Video)</a>
+                            <a href="conteudo.php?pagina=FilaFIFO">Capitulo 3 (Ver Video)</a>
                             <hr>
                         <?php else: ?>
                             <a>Capitulo 3</a>
@@ -619,7 +619,7 @@ $controlador = new Controller();
                     </ul>
                     <section class="letrasTrilha">
                         <?php if ($controlador->verificarTrilha2($_SESSION['usuario_id']) >= 55): ?>
-                            <a href="./final.php">Final (Ver Video)</a>
+                            <a href="conteudo.php?pagina=ArvoreRubroNegra">Final (Ver Video)</a>
                             <hr>
                         <?php endif; ?>
                     </section>

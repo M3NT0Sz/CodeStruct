@@ -15,6 +15,7 @@ $controlador = new Controller();
     <title>CodeStruct - Jornada</title>
 </head>
 
+
 <body class="bodyJogo">
     <main class="jogoTudo">
         <nav class="menuEsquerda">

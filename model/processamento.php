@@ -52,15 +52,31 @@ if (!empty($_POST['inputNomeEditar']) && !empty($_POST['inputEmailEditar'])) {
     $resposta = $_POST['resposta'];
     $controlador->verificarResposta($resposta);
 
+    // Detecta se veio do modo normal ou modo história
+    $referer = $_SERVER['HTTP_REFERER'] ?? '';
+    $isNormal = strpos($referer, 'normal.php') !== false;
+
     if ($_SESSION['resposta'] == "Correta" || $_SESSION['resposta'] == "Errada") {
         unset($_SESSION['resposta']);
-        header('Location:../view/questoes.php');
+        if ($isNormal) {
+            header('Location:../view/normal.php');
+        } else {
+            header('Location:../view/questoes.php');
+        }
     } else if ($_SESSION['resposta'] == "Incorreta") {
         unset($_SESSION['resposta']);
-        header('Location:../view/jornada.php');
+        if ($isNormal) {
+            header('Location:../view/normal.php');
+        } else {
+            header('Location:../view/jornada.php');
+        }
     } else if ($_SESSION['acabou'] == "Acabou") {
         unset($_SESSION['acabou']);
-        header('Location:../view/jornada.php');
+        if ($isNormal) {
+            header('Location:../view/normal.php');
+        } else {
+            header('Location:../view/jornada.php');
+        }
     }
     die();
 } else if ($_POST['1']) {

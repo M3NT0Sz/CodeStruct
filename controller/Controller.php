@@ -67,14 +67,21 @@ class Controller
         $tipos = '';
         $listaTipos = $this->bancoDeDados->retornarQuestoes($tipo, $nivel);
         while ($questao = mysqli_fetch_assoc($listaTipos)) {
+            $alternativas = [
+                $questao["opcao_a"],
+                $questao["opcao_b"],
+                $questao["opcao_c"],
+                $questao["opcao_d"]
+            ];
+            // Embaralha as alternativas
+            shuffle($alternativas);
             $tipos .=
                 "<h2>" . $questao['pergunta'] . "</h2>" .
-                "<section class='alternativas'>" .
-                "<button type='submit' name='resposta' value='" . $questao["opcao_a"] . "'>" . $questao["opcao_a"] . "</button>" .
-                "<button type='submit' name='resposta' value='" . $questao["opcao_b"] . "'>" . $questao["opcao_b"] . "</button>" .
-                "<button type='submit' name='resposta' value='" . $questao["opcao_c"] . "'>" . $questao["opcao_c"] . "</button>" .
-                "<button type='submit' name='resposta' value='" . $questao["opcao_d"] . "'>" . $questao["opcao_d"] . "</button>" .
-                "</section>";
+                "<section class='alternativas'>";
+            foreach ($alternativas as $alt) {
+                $tipos .= "<button type='submit' name='resposta' value='" . htmlspecialchars($alt, ENT_QUOTES, 'UTF-8') . "'>" . htmlspecialchars($alt, ENT_QUOTES, 'UTF-8') . "</button>";
+            }
+            $tipos .= "</section>";
         }
         return $tipos;
     }

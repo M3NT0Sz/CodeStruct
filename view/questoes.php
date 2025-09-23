@@ -35,7 +35,12 @@ if ($_POST['extra'] === "aumentarVida") {
 }
 
 $vida = $controlador->verificarVida($_SESSION['usuario_id']);
+
 $trilha = $_POST['trilha'] ?? $_SESSION['trilha'] ?? null;
+if (!$trilha) {
+    echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Erro</title></head><body style="font-family:sans-serif;text-align:center;padding:40px;"><h2>Modo de acesso inválido</h2><p>Esta página só pode ser acessada pelo modo história.</p><a href="jornada.php">Voltar para o modo história</a></body></html>';
+    exit;
+}
 
 function getTipoENivel($i)
 {
